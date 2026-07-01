@@ -1,5 +1,6 @@
 import type { ReactNode, CSSProperties } from 'react'
-import { noteLabels, noteIcons, won, intensityBars } from '../data'
+import { intensityBars } from '../data'
+import { useI18n } from '../i18n'
 import type { Capsule, IntensityStyle } from '../types'
 
 // 토글 스위치
@@ -35,23 +36,24 @@ export function CapsuleItem({
   intensityStyle: IntensityStyle
   onClick: () => void
 }) {
+  const { t, note, name, price } = useI18n()
   return (
     <div className="cat-item" onClick={onClick}>
       <div className="cat-ava"><i className="ti ti-coffee" /></div>
       <div className="cat-meta">
         <div className="cat-name">
-          {c.name}
+          {name(c)}
           <span className="b">{c.brand}</span>
-          {c.caffeine === 'decaf' && <span className="decaf-pill">디카페인</span>}
+          {c.caffeine === 'decaf' && <span className="decaf-pill">{t('decaf_label')}</span>}
         </div>
         <div className="cat-sub">
           <IntensityDisplay value={c.intensity} style={intensityStyle} />
-          <span>강도 {c.intensity}</span>
+          <span>{t('stat_intensity')} {c.intensity}</span>
           <span>·</span>
-          <span>{c.notes.map(n => noteLabels[n]).join(', ')}</span>
+          <span>{c.notes.map(n => note(n)).join(', ')}</span>
         </div>
       </div>
-      <span className="price-r">{won(c.price)}</span>
+      <span className="price-r">{price(c.price)}</span>
     </div>
   )
 }
@@ -65,5 +67,3 @@ export function Empty({ icon, children, style }: { icon: string; children: React
     </div>
   )
 }
-
-export { noteLabels, noteIcons }

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
-import { capsules, noteLabels, noteIcons, machineLabels, won, similar } from '../data'
+import { capsules, noteIcons, similar, buyUrlFor } from '../data'
+import { useI18n } from '../i18n'
 import type { Reviews, Review } from '../types'
 
 interface DetailViewProps {
@@ -23,6 +24,7 @@ export default function DetailView({
   onOpenDetail,
   onBack,
 }: DetailViewProps) {
+  const { t, note, machine, name, price, matchPct: fmtMatch, intensityWord } = useI18n()
   const c = capsules.find(x => x.id === id)
   const existing = reviews[id]
 
@@ -58,10 +60,10 @@ export default function DetailView({
   return (
     <section className="view active" id="view-detail">
       <div className="d-top">
-        <button className="icon-btn" aria-label="뒤로 가기" onClick={onBack}>
+        <button className="icon-btn" aria-label={t('back_aria')} onClick={onBack}>
           <i className="ti ti-arrow-left" />
         </button>
-        <button className={'icon-btn d-fav' + (isFav ? ' on' : '')} aria-label="찜하기" onClick={() => onToggleFav(id)}>
+        <button className={'icon-btn d-fav' + (isFav ? ' on' : '')} aria-label={t('fav_aria')} onClick={() => onToggleFav(id)}>
           <i className="ti ti-heart" />
         </button>
       </div>
@@ -69,41 +71,41 @@ export default function DetailView({
       <div className="d-hero">
         <div className="big"><i className="ti ti-coffee" /></div>
         {matchPct ? (
-          <div className="match-badge"><i className="ti ti-sparkles" /> 취향과 {matchPct}% 일치</div>
+          <div className="match-badge"><i className="ti ti-sparkles" /> {fmtMatch(matchPct)}</div>
         ) : null}
-        <p className="d-name">{c.name}</p>
-        <p className="d-brand">{c.brand}{c.caffeine === 'decaf' ? ' · 디카페인' : ''}</p>
+        <p className="d-name">{name(c)}</p>
+        <p className="d-brand">{c.brand}{c.caffeine === 'decaf' ? ` · ${t('decaf_label')}` : ''}</p>
       </div>
 
       <div className="sheet">
         <div className="stat-row">
-          <div className="stat hi"><div className="k">강도</div><div className="v">{c.intensity}<small>/13</small></div></div>
-          <div className="stat"><div className="k">산미</div><div className="v">{c.acidity}<small>/5</small></div></div>
-          <div className="stat"><div className="k">바디</div><div className="v">{c.body}<small>/5</small></div></div>
-          <div className="stat"><div className="k">쓴맛</div><div className="v">{c.bitterness}<small>/5</small></div></div>
+          <div className="stat hi"><div className="k">{t('stat_intensity')}</div><div className="v">{c.intensity}<small>/13</small></div></div>
+          <div className="stat"><div className="k">{t('stat_acidity')}</div><div className="v">{c.acidity}<small>/5</small></div></div>
+          <div className="stat"><div className="k">{t('stat_body')}</div><div className="v">{c.body}<small>/5</small></div></div>
+          <div className="stat"><div className="k">{t('stat_bitter')}</div><div className="v">{c.bitterness}<small>/5</small></div></div>
         </div>
 
-        <p className="section-label">호환 머신</p>
+        <p className="section-label">{t('compat_h')}</p>
         <div className="chips" style={{ marginBottom: 20 }}>
           {c.compat.map(m => (
             <span key={m} className="chip on" style={{ cursor: 'default' }}>
-              <i className="ti ti-puzzle" />{machineLabels[m]}
+              <i className="ti ti-puzzle" />{machine(m)}
             </span>
           ))}
         </div>
 
-        <p className="section-label">향미 노트</p>
+        <p className="section-label">{t('notes_h')}</p>
         <div className="chips" style={{ marginBottom: 20 }}>
           {c.notes.map(n => (
             <span key={n} className="chip on" style={{ cursor: 'default' }}>
-              <i className={'ti ' + noteIcons[n]} />{noteLabels[n]}
+              <i className={'ti ' + noteIcons[n]} />{note(n)}
             </span>
           ))}
         </div>
 
         <div className="desc">{c.desc}</div>
 
-        <div className="h-row"><i className="ti ti-message-circle-2" /> 내 후기</div>
+        <div className="h-row"><i className="ti ti-message-circle-2" /> {t('review_h')}</div>
         <div className="review-box">
           <div className="stars">
             {[1, 2, 3, 4, 5].map(v => (
@@ -116,17 +118,15 @@ export default function DetailView({
           </div>
           <textarea
             rows={2}
-            placeholder="마셔본 느낌을 한 줄 남겨보세요"
+            placeholder={t('review_ph')}
             value={text}
             onChange={e => setText(e.target.value)}
           />
-          <button className="review-save" onClick={handleSave}>후기 저장</button>
-          {savedNote && (
-            <div className="saved-note">후기를 저장했어요. 마이 페이지에서 다시 볼 수 있어요.</div>
-          )}
+          <button className="review-save" onClick={handleSave}>{t('review_save')}</button>
+          {savedNote && <div className="saved-note">{t('review_saved')}</div>}
         </div>
 
-        <div className="h-row"><i className="ti ti-flame" /> 비슷한 캡슐</div>
+        <div className="h-row"><i className="ti ti-flame" /> {t('similar_h')}</div>
         <div style={{ marginBottom: 20 }}>
           {similar(c).map(s => (
             <div key={s.id} className="sim-item" onClick={() => onOpenDetail(s.id)}>
@@ -135,10 +135,10 @@ export default function DetailView({
               </div>
               <div className="cat-meta">
                 <div style={{ fontSize: 13, fontWeight: 600 }}>
-                  {s.name} <span style={{ fontSize: 11, color: 'var(--ink-2)', fontWeight: 400 }}>{s.brand}</span>
+                  {name(s)} <span style={{ fontSize: 11, color: 'var(--ink-2)', fontWeight: 400 }}>{s.brand}</span>
                 </div>
                 <div style={{ fontSize: 11, color: 'var(--ink-3)', marginTop: 1 }}>
-                  강도 {s.intensity} · {s.notes.map(n => noteLabels[n]).join(', ')}
+                  {intensityWord(s.intensity)} · {s.notes.map(n => note(n)).join(', ')}
                 </div>
               </div>
               <i className="ti ti-chevron-right" style={{ fontSize: 16, color: 'var(--ink-3)' }} />
@@ -147,8 +147,10 @@ export default function DetailView({
         </div>
 
         <div className="buy-row">
-          <div className="buy-price"><div className="k">캡슐당</div><div className="v">{won(c.price)}</div></div>
-          <button className="buy-btn"><i className="ti ti-shopping-cart" /> 구매처 보기</button>
+          <div className="buy-price"><div className="k">{t('per_capsule')}</div><div className="v">{price(c.price)}</div></div>
+          <a className="buy-btn" href={buyUrlFor(c)} target="_blank" rel="noopener noreferrer">
+            <i className="ti ti-shopping-cart" /> {t('buy')}
+          </a>
         </div>
       </div>
     </section>

@@ -4,25 +4,42 @@ import CatView from './components/CatView'
 import FavView from './components/FavView'
 import MyView from './components/MyView'
 import DetailView from './components/DetailView'
+import { I18nProvider, useI18n } from './i18n'
 import type { RecState, CatState, Settings, Reviews, Review, TabName, ViewName } from './types'
 
-const TABS: { tab: TabName; icon: string; label: string }[] = [
-  { tab: 'cat', icon: 'ti-mug', label: '둘러보기' },
-  { tab: 'rec', icon: 'ti-sparkles', label: '추천' },
-  { tab: 'fav', icon: 'ti-heart', label: '찜' },
-  { tab: 'my', icon: 'ti-user', label: '마이' },
+const TABS: { tab: TabName; icon: string }[] = [
+  { tab: 'cat', icon: 'ti-mug' },
+  { tab: 'rec', icon: 'ti-sparkles' },
+  { tab: 'fav', icon: 'ti-heart' },
+  { tab: 'my', icon: 'ti-user' },
 ]
 
+// 하단 탭바(I18nProvider 내부에서 렌더되어 언어 컨텍스트 사용 가능)
+function TabBar({ view, onTab }: { view: ViewName; onTab: (t: TabName) => void }) {
+  const { t } = useI18n()
+  const label: Record<TabName, string> = { cat: t('tab_cat'), rec: t('tab_rec'), fav: t('tab_fav'), my: t('tab_my') }
+  return (
+    <nav className="tabbar">
+      {TABS.map(item => (
+        <button key={item.tab} className={'tab' + (view === item.tab ? ' on' : '')} onClick={() => onTab(item.tab)}>
+          <i className={'ti ' + item.icon} />
+          <span>{label[item.tab]}</span>
+        </button>
+      ))}
+    </nav>
+  )
+}
+
 export default function App() {
-  const [view, setView] = useState<ViewName>('my') // 원본과 동일하게 마이 페이지로 시작
+  const [view, setView] = useState<ViewName>('cat') // 처음 진입 시 둘러보기 화면
   const [lastTab, setLastTab] = useState<TabName>('cat')
 
-  const [favorites, setFavorites] = useState<Set<number>>(() => new Set([1, 5]))
+  const [favorites, setFavorites] = useState<Set<number>>(() => new Set([7, 11]))
   const [reviews, setReviews] = useState<Reviews>({
-    1: { rating: 5, text: '매일 아침 라떼로 내려 마시는데 코코아 향이 진하게 올라와서 만족스러워요. 우유랑 정말 잘 맞아요.' },
-    4: { rating: 4, text: '생각보다 훨씬 강렬하다. 오후엔 좀 부담스럽고 아침에 잠 깰 때 딱이에요.' },
+    7: { rating: 5, text: '매일 아침 라떼로 내려 마시는데 코코아 향이 진하게 올라와서 만족스러워요. 우유랑 정말 잘 맞아요.' },
+    2: { rating: 4, text: '생각보다 훨씬 강렬하다. 오후엔 좀 부담스럽고 아침에 잠 깰 때 딱이에요.' },
   })
-  const [settings, setSettings] = useState<Settings>({ decafDefault: false, dark: false, intensityStyle: 'bar' })
+  const [settings, setSettings] = useState<Settings>({ decafDefault: false, dark: false, intensityStyle: 'bar', lang: 'ko' })
 
   const [recState, setRecState] = useState<RecState>({ intensity: 9, acidity: 3, body: 4, notes: new Set(), decaf: false })
   const [catState, setCatState] = useState<CatState>({ brand: '전체', machine: 'all', notes: new Set(), search: '', sort: 'intensity-desc' })
@@ -65,61 +82,50 @@ export default function App() {
   const isDetail = view === 'detail'
 
   return (
-    <div className="phone">
-      <div className="screen-wrap">
-        <div className="scroll">
-          {view === 'rec' && (
-            <RecView recState={recState} setRecState={setRecState} onOpenDetail={openDetail} />
-          )}
-          {view === 'cat' && (
-            <CatView
-              catState={catState}
-              setCatState={setCatState}
-              intensityStyle={settings.intensityStyle}
-              onOpenDetail={openDetail}
-            />
-          )}
-          {view === 'fav' && (
-            <FavView favorites={favorites} intensityStyle={settings.intensityStyle} onOpenDetail={openDetail} />
-          )}
-          {view === 'my' && (
-            <MyView
-              favorites={favorites}
-              reviews={reviews}
-              settings={settings}
-              setSettings={setSettings}
-              onOpenDetail={openDetail}
-            />
-          )}
-          {isDetail && detail.id != null && (
-            <DetailView
-              id={detail.id}
-              matchPct={detail.matchPct}
-              favorites={favorites}
-              reviews={reviews}
-              onToggleFav={toggleFav}
-              onSaveReview={saveReview}
-              onOpenDetail={openDetail}
-              onBack={() => goTab(lastTab)}
-            />
-          )}
-        </div>
+    <I18nProvider lang={settings.lang}>
+      <div className="phone">
+        <div className="screen-wrap">
+          <div className="scroll">
+            {view === 'rec' && (
+              <RecView recState={recState} setRecState={setRecState} onOpenDetail={openDetail} />
+            )}
+            {view === 'cat' && (
+              <CatView
+                catState={catState}
+                setCatState={setCatState}
+                intensityStyle={settings.intensityStyle}
+                onOpenDetail={openDetail}
+              />
+            )}
+            {view === 'fav' && (
+              <FavView favorites={favorites} intensityStyle={settings.intensityStyle} onOpenDetail={openDetail} />
+            )}
+            {view === 'my' && (
+              <MyView
+                favorites={favorites}
+                reviews={reviews}
+                settings={settings}
+                setSettings={setSettings}
+                onOpenDetail={openDetail}
+              />
+            )}
+            {isDetail && detail.id != null && (
+              <DetailView
+                id={detail.id}
+                matchPct={detail.matchPct}
+                favorites={favorites}
+                reviews={reviews}
+                onToggleFav={toggleFav}
+                onSaveReview={saveReview}
+                onOpenDetail={openDetail}
+                onBack={() => goTab(lastTab)}
+              />
+            )}
+          </div>
 
-        {!isDetail && (
-          <nav className="tabbar">
-            {TABS.map(t => (
-              <button
-                key={t.tab}
-                className={'tab' + (view === t.tab ? ' on' : '')}
-                onClick={() => goTab(t.tab)}
-              >
-                <i className={'ti ' + t.icon} />
-                <span>{t.label}</span>
-              </button>
-            ))}
-          </nav>
-        )}
+          {!isDetail && <TabBar view={view} onTab={goTab} />}
+        </div>
       </div>
-    </div>
+    </I18nProvider>
   )
 }

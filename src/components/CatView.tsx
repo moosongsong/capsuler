@@ -1,15 +1,18 @@
 import type { Dispatch, SetStateAction } from 'react'
-import { capsules, noteLabels, machineLabelsShort, MACHINES } from '../data'
+import { capsules, MACHINES } from '../data'
 import { CapsuleItem, Empty } from './common'
+import { useI18n } from '../i18n'
+import type { UIKey } from '../i18n'
 import type { CatState, IntensityStyle, SortKey } from '../types'
 
-const CAT_NOTES = ['cocoa', 'woody', 'fruity', 'floral', 'nutty']
-const SORT_OPTIONS: { value: SortKey; label: string }[] = [
-  { value: 'intensity-desc', label: '진한 순' },
-  { value: 'intensity-asc', label: '연한 순' },
-  { value: 'price-asc', label: '저렴한 순' },
-  { value: 'price-desc', label: '비싼 순' },
-  { value: 'name', label: '이름순' },
+// 실제 API 향미 중 자주 등장하는 것들을 필터 칩으로 노출
+const CAT_NOTES = ['cereal', 'woody', 'cocoa', 'biscuity', 'berry', 'caramel', 'spicy', 'fruity']
+const SORT_OPTIONS: { value: SortKey; labelKey: UIKey }[] = [
+  { value: 'intensity-desc', labelKey: 'sort_intensity_desc' },
+  { value: 'intensity-asc', labelKey: 'sort_intensity_asc' },
+  { value: 'price-asc', labelKey: 'sort_price_asc' },
+  { value: 'price-desc', labelKey: 'sort_price_desc' },
+  { value: 'name', labelKey: 'sort_name' },
 ]
 
 interface CatViewProps {
@@ -20,6 +23,7 @@ interface CatViewProps {
 }
 
 export default function CatView({ catState, setCatState, intensityStyle, onOpenDetail }: CatViewProps) {
+  const { t, note, machine, totalCount, showing } = useI18n()
   const brands = ['전체', ...new Set(capsules.map(c => c.brand))]
 
   const toggleNote = (n: string) => {
@@ -36,7 +40,7 @@ export default function CatView({ catState, setCatState, intensityStyle, onOpenD
     const m = catState.machine
     list = list.filter(c => c.compat.includes(m))
   }
-  if (catState.search) list = list.filter(c => c.name.toLowerCase().includes(catState.search))
+  if (catState.search) list = list.filter(c => c.name.toLowerCase().includes(catState.search) || c.nameKo.includes(catState.search))
   if (catState.notes.size) list = list.filter(c => c.notes.some(n => catState.notes.has(n)))
   list.sort((a, b) => {
     switch (catState.sort) {
@@ -53,8 +57,8 @@ export default function CatView({ catState, setCatState, intensityStyle, onOpenD
     <section className="view active" id="view-cat">
       <div className="topbar" style={{ paddingBottom: 14 }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <h1><i className="ti ti-mug" /> 캡슐 둘러보기</h1>
-          <span style={{ fontSize: 12, color: 'var(--amber-600)', opacity: 0.8 }}>전체 {capsules.length}개</span>
+          <h1><i className="ti ti-mug" /> {t('cat_title')}</h1>
+          <span style={{ fontSize: 12, color: 'var(--amber-600)', opacity: 0.8 }}>{totalCount(capsules.length)}</span>
         </div>
       </div>
       <div className="sheet">
@@ -62,7 +66,7 @@ export default function CatView({ catState, setCatState, intensityStyle, onOpenD
           <i className="ti ti-search" />
           <input
             type="text"
-            placeholder="캡슐 이름 검색"
+            placeholder={t('search_ph')}
             value={catState.search}
             onChange={e => setCatState(s => ({ ...s, search: e.target.value.trim().toLowerCase() }))}
           />
@@ -75,7 +79,7 @@ export default function CatView({ catState, setCatState, intensityStyle, onOpenD
               className={'brand-chip' + (catState.brand === b ? ' on' : '')}
               onClick={() => setCatState(s => ({ ...s, brand: b }))}
             >
-              {b}
+              {b === '전체' ? t('brand_all') : b}
             </button>
           ))}
         </div>
@@ -85,7 +89,7 @@ export default function CatView({ catState, setCatState, intensityStyle, onOpenD
             className={'brand-chip' + (catState.machine === 'all' ? ' on' : '')}
             onClick={() => setCatState(s => ({ ...s, machine: 'all' }))}
           >
-            <i className="ti ti-puzzle" /> 전체 머신
+            <i className="ti ti-puzzle" /> {t('machine_all')}
           </button>
           {MACHINES.map(m => (
             <button
@@ -93,7 +97,7 @@ export default function CatView({ catState, setCatState, intensityStyle, onOpenD
               className={'brand-chip' + (catState.machine === m ? ' on' : '')}
               onClick={() => setCatState(s => ({ ...s, machine: m }))}
             >
-              {machineLabelsShort[m]}
+              {machine(m, true)}
             </button>
           ))}
         </div>
@@ -105,21 +109,21 @@ export default function CatView({ catState, setCatState, intensityStyle, onOpenD
               className={'chip' + (catState.notes.has(n) ? ' on' : '')}
               onClick={() => toggleNote(n)}
             >
-              {noteLabels[n]}
+              {note(n)}
             </button>
           ))}
         </div>
 
         <div className="cat-toolbar">
-          <span className="cat-count">{list.length}개 표시 중</span>
+          <span className="cat-count">{showing(list.length)}</span>
           <select value={catState.sort} onChange={e => setCatState(s => ({ ...s, sort: e.target.value as SortKey }))}>
-            {SORT_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+            {SORT_OPTIONS.map(o => <option key={o.value} value={o.value}>{t(o.labelKey)}</option>)}
           </select>
         </div>
 
         <div>
           {list.length === 0 ? (
-            <Empty icon="ti-mood-empty">조건에 맞는 캡슐이 없어요</Empty>
+            <Empty icon="ti-mood-empty">{t('empty_no_match')}</Empty>
           ) : (
             list.map(c => (
               <CapsuleItem key={c.id} capsule={c} intensityStyle={intensityStyle} onClick={() => onOpenDetail(c.id)} />

@@ -1,5 +1,6 @@
 import { capsules } from '../data'
 import { CapsuleItem, Empty } from './common'
+import { useI18n } from '../i18n'
 import type { IntensityStyle } from '../types'
 
 interface FavViewProps {
@@ -9,19 +10,20 @@ interface FavViewProps {
 }
 
 export default function FavView({ favorites, intensityStyle, onOpenDetail }: FavViewProps) {
+  const { t } = useI18n()
   const list = capsules.filter(c => favorites.has(c.id))
 
   return (
     <section className="view active" id="view-fav">
       <div className="topbar" style={{ paddingBottom: 14 }}>
-        <h1><i className="ti ti-heart" /> 찜한 캡슐</h1>
-        <p className="sub">마음에 둔 캡슐을 모아뒀어요</p>
+        <h1><i className="ti ti-heart" /> {t('fav_title')}</h1>
+        <p className="sub">{t('fav_sub')}</p>
       </div>
       <div className="sheet">
         {list.length === 0 ? (
           <Empty icon="ti-heart">
-            아직 찜한 캡슐이 없어요<br />
-            <span style={{ fontSize: 12 }}>마음에 드는 캡슐의 하트를 눌러보세요</span>
+            {t('fav_empty1')}<br />
+            <span style={{ fontSize: 12 }}>{t('fav_empty2')}</span>
           </Empty>
         ) : (
           list.map(c => (

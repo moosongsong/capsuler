@@ -2,13 +2,17 @@
 
 export type Caffeine = 'regular' | 'decaf'
 
+// 지원 언어
+export type Lang = 'ko' | 'en'
+
 // 캡슐이 호환되는 커피 머신 시스템
-export type MachineSystem = 'original' | 'vertuo' | 'dolcegusto'
+export type MachineSystem = 'original' | 'vertuo' | 'dolcegusto' | 'iperespresso'
 
 export interface Capsule {
   id: number
   brand: string
-  name: string
+  name: string   // 영문 이름
+  nameKo: string // 한글 이름
   intensity: number
   acidity: number
   body: number
@@ -47,6 +51,7 @@ export interface Settings {
   decafDefault: boolean
   dark: boolean
   intensityStyle: IntensityStyle
+  lang: Lang
 }
 
 export interface Review {
