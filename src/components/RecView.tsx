@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import type { Dispatch, SetStateAction } from 'react'
 import { capsules, noteIcons, recScore } from '../data'
 import { Switch, Empty } from './common'
@@ -16,11 +17,18 @@ const SLIDERS: { key: 'intensity' | 'acidity' | 'body'; labelKey: UIKey; icon: s
 interface RecViewProps {
   recState: RecState
   setRecState: Dispatch<SetStateAction<RecState>>
+  decafDefault: boolean
   onOpenDetail: (id: number, matchPct?: number) => void
 }
 
-export default function RecView({ recState, setRecState, onOpenDetail }: RecViewProps) {
+export default function RecView({ recState, setRecState, decafDefault, onOpenDetail }: RecViewProps) {
   const { t, note, name, brand } = useI18n()
+
+  // 추천 화면 진입 시 '디카페인 기본값' 설정이 켜져 있으면 디카페인만 보기 활성화
+  useEffect(() => {
+    if (decafDefault && !recState.decaf) setRecState(s => ({ ...s, decaf: true }))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const setField = (key: 'intensity' | 'acidity' | 'body' | 'decaf', value: number | boolean) =>
     setRecState(s => ({ ...s, [key]: value }))
