@@ -84,19 +84,21 @@ export function CapsuleItem({
   )
 }
 
-// 패키지(세트) 카드. 구매처로 연결. matched: 강조할 구성 캡슐(찜 겹침/현재 캡슐), showMatchBadge: '내 찜 N개 포함' 배지
+// 패키지(세트) 카드. 클릭 시 패키지 상세로 이동. matched: 강조할 구성 캡슐(찜 겹침/현재 캡슐), showMatchBadge: '내 찜 N개 포함' 배지
 export function PackageCard({
   pkg,
   matched = [],
   showMatchBadge = false,
+  onClick,
 }: {
   pkg: Package
   matched?: Capsule[]
   showMatchBadge?: boolean
+  onClick?: () => void
 }) {
   const { name, price, brand, pkgMatch, pkgSize } = useI18n()
   return (
-    <a className="pkg-item" href={pkg.buyUrl || '#'} target="_blank" rel="noopener noreferrer">
+    <div className="pkg-item" onClick={onClick} role="button">
       <div className="cat-ava"><AvatarInner url={pkg.image} /></div>
       <div className="cat-meta">
         <div className="cat-name">
@@ -118,7 +120,7 @@ export function PackageCard({
         )}
       </div>
       <span className="price-r">{price(pkg.price)}</span>
-    </a>
+    </div>
   )
 }
 

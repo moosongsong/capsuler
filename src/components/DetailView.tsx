@@ -12,6 +12,7 @@ interface DetailViewProps {
   onToggleFav: (id: number) => void
   onSaveReview: (id: number, review: Review) => void
   onOpenDetail: (id: number) => void
+  onOpenPackage: (id: number) => void
   onBack: () => void
 }
 
@@ -23,6 +24,7 @@ export default function DetailView({
   onToggleFav,
   onSaveReview,
   onOpenDetail,
+  onOpenPackage,
   onBack,
 }: DetailViewProps) {
   const { t, note, machine, name, price, matchPct: fmtMatch, intensityWord, brand } = useI18n()
@@ -154,7 +156,7 @@ export default function DetailView({
             <div className="h-row"><i className="ti ti-package" /> {t('pkg_in_h')}</div>
             <div style={{ marginBottom: 20 }}>
               {packagesContaining(c.id).map(p => (
-                <PackageCard key={p.id} pkg={p} matched={[c]} />
+                <PackageCard key={p.id} pkg={p} matched={[c]} onClick={() => onOpenPackage(p.id)} />
               ))}
             </div>
           </>

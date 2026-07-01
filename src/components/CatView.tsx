@@ -26,9 +26,10 @@ interface CatViewProps {
   setCatState: Dispatch<SetStateAction<CatState>>
   intensityStyle: IntensityStyle
   onOpenDetail: (id: number) => void
+  onOpenPackage: (id: number) => void
 }
 
-export default function CatView({ catState, setCatState, intensityStyle, onOpenDetail }: CatViewProps) {
+export default function CatView({ catState, setCatState, intensityStyle, onOpenDetail, onOpenPackage }: CatViewProps) {
   const { t, note, machine, brand, totalCount, showing } = useI18n()
   const isPkg = catState.mode === 'package'
   const brands = ['전체', ...new Set(capsules.map(c => c.brand))]
@@ -170,7 +171,7 @@ export default function CatView({ catState, setCatState, intensityStyle, onOpenD
             pkgList.length === 0 ? (
               <Empty icon="ti-mood-empty">{t('empty_no_pkg')}</Empty>
             ) : (
-              pkgList.map(p => <PackageCard key={p.id} pkg={p} />)
+              pkgList.map(p => <PackageCard key={p.id} pkg={p} onClick={() => onOpenPackage(p.id)} />)
             )
           ) : list.length === 0 ? (
             <Empty icon="ti-mood-empty">{t('empty_no_match')}</Empty>

@@ -7,9 +7,10 @@ interface FavViewProps {
   favorites: Set<number>
   intensityStyle: IntensityStyle
   onOpenDetail: (id: number) => void
+  onOpenPackage: (id: number) => void
 }
 
-export default function FavView({ favorites, intensityStyle, onOpenDetail }: FavViewProps) {
+export default function FavView({ favorites, intensityStyle, onOpenDetail, onOpenPackage }: FavViewProps) {
   const { t } = useI18n()
   const list = capsules.filter(c => favorites.has(c.id))
   const byId = new Map(capsules.map(c => [c.id, c]))
@@ -43,6 +44,7 @@ export default function FavView({ favorites, intensityStyle, onOpenDetail }: Fav
                 pkg={m.pkg}
                 matched={m.matchIds.map(id => byId.get(id)).filter((c): c is NonNullable<typeof c> => !!c)}
                 showMatchBadge
+                onClick={() => onOpenPackage(m.pkg.id)}
               />
             ))}
           </>

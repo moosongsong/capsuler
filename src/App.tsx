@@ -5,6 +5,7 @@ import CatView from './components/CatView'
 import FavView from './components/FavView'
 import MyView from './components/MyView'
 import DetailView from './components/DetailView'
+import PackageDetailView from './components/PackageDetailView'
 import { capsules } from './data'
 import { I18nProvider, useI18n } from './i18n'
 import type { RecState, CatState, Settings, Reviews, Review } from './types'
@@ -40,7 +41,7 @@ const TABS: { to: string; icon: string; key: 'tab_cat' | 'tab_rec' | 'tab_fav' |
 function TabBar() {
   const { t } = useI18n()
   const { pathname } = useLocation()
-  if (pathname.startsWith('/capsule')) return null
+  if (pathname.startsWith('/capsule') || pathname.startsWith('/package')) return null
   return (
     <nav className="tabbar">
       {TABS.map(item => (
@@ -60,6 +61,7 @@ function DetailRoute(props: {
   onToggleFav: (id: number) => void
   onSaveReview: (id: number, r: Review) => void
   onOpenDetail: (id: number, matchPct?: number) => void
+  onOpenPackage: (id: number) => void
 }) {
   const { id } = useParams()
   const location = useLocation()
@@ -75,9 +77,17 @@ function DetailRoute(props: {
       onToggleFav={props.onToggleFav}
       onSaveReview={props.onSaveReview}
       onOpenDetail={props.onOpenDetail}
+      onOpenPackage={props.onOpenPackage}
       onBack={() => navigate(-1)}
     />
   )
+}
+
+// /package/:id 라우트 래퍼
+function PackageDetailRoute({ onOpenDetail }: { onOpenDetail: (id: number) => void }) {
+  const { id } = useParams()
+  const navigate = useNavigate()
+  return <PackageDetailView id={Number(id)} onOpenDetail={onOpenDetail} onBack={() => navigate(-1)} />
 }
 
 // 라우터 내부 셸: 상태 보관 + 라우트 렌더
@@ -117,6 +127,10 @@ function AppShell() {
     navigate(`/capsule/${id}`, { state: { matchPct } })
   }
 
+  const openPackage = (id: number) => {
+    navigate(`/package/${id}`)
+  }
+
   const toggleFav = (id: number) => {
     setFavorites(prev => {
       const next = new Set(prev)
@@ -136,14 +150,15 @@ function AppShell() {
           <div className="scroll">
             <Routes>
               <Route index element={<Navigate to="/browse" replace />} />
-              <Route path="/browse" element={<CatView catState={catState} setCatState={setCatState} intensityStyle={settings.intensityStyle} onOpenDetail={openDetail} />} />
+              <Route path="/browse" element={<CatView catState={catState} setCatState={setCatState} intensityStyle={settings.intensityStyle} onOpenDetail={openDetail} onOpenPackage={openPackage} />} />
               <Route path="/recommend" element={<RecView recState={recState} setRecState={setRecState} decafDefault={settings.decafDefault} onOpenDetail={openDetail} />} />
-              <Route path="/saved" element={<FavView favorites={favorites} intensityStyle={settings.intensityStyle} onOpenDetail={openDetail} />} />
+              <Route path="/saved" element={<FavView favorites={favorites} intensityStyle={settings.intensityStyle} onOpenDetail={openDetail} onOpenPackage={openPackage} />} />
               <Route path="/my" element={<MyView favorites={favorites} reviews={reviews} settings={settings} setSettings={setSettings} onOpenDetail={openDetail} />} />
               <Route
                 path="/capsule/:id"
-                element={<DetailRoute favorites={favorites} reviews={reviews} onToggleFav={toggleFav} onSaveReview={saveReview} onOpenDetail={openDetail} />}
+                element={<DetailRoute favorites={favorites} reviews={reviews} onToggleFav={toggleFav} onSaveReview={saveReview} onOpenDetail={openDetail} onOpenPackage={openPackage} />}
               />
+              <Route path="/package/:id" element={<PackageDetailRoute onOpenDetail={openDetail} />} />
               <Route path="*" element={<Navigate to="/browse" replace />} />
             </Routes>
           </div>

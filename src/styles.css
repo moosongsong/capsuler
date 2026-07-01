@@ -121,6 +121,7 @@ select { font-size:12px; height:32px; padding:0 10px; border-radius:12px; border
 .pkg-item:active { transform:scale(.99); }
 .pkg-badge { background:var(--amber-100); color:var(--amber-600); font-weight:600; padding:1px 7px; border-radius:9px; }
 .pkg-chips { display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; }
+.qty-badge { font-size:12px; font-weight:600; color:var(--amber-600); background:var(--amber-50); padding:2px 8px; border-radius:9px; flex-shrink:0; }
 
 .empty { text-align:center; padding:3rem 0; color:var(--ink-3); font-size:13px; }
 .empty i { font-size:24px; display:block; margin-bottom:8px; }
