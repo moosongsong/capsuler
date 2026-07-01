@@ -174,6 +174,12 @@ for (const cat of products) for (const p of cat.products ?? []) {
 const capByTail = new Map()
 for (const c of capsules) { const t = (c.buyUrl || '').split('/').pop(); if (t) capByTail.set(t, c.id) }
 
+// 팩 전용 SKU 코드 → 캡슐 id 수동 별칭.
+// 일부 세트는 구성 캡슐을 카탈로그에 없는 팩 전용 코드로 참조한다(같은 커피의 단품은 다른 코드 사용).
+// 이런 코드는 codeToTail로 풀리지 않으므로 여기서 직접 잇는다.
+//   7888.80=아르페지오(1007), 7889.80=콜롬비아(1088)  ← 오리지널 스타터 셀렉션 4종
+const CODE_ALIAS = { '7888.80': 1007, '7889.80': 1088 }
+
 // API 번들 → nameKo 기준 dedup, 구성 캡슐을 내 id로 매핑
 const apiPkgByKo = new Map()
 for (const cat of products) for (const p of cat.products ?? []) {
@@ -184,7 +190,7 @@ for (const cat of products) for (const p of cat.products ?? []) {
   for (const g of p.groupedProducts ?? []) {
     if (g.type !== 'capsule') continue
     const tail = codeToTail.get(g.productCode)
-    const id = tail ? capByTail.get(tail) : null
+    const id = (tail && capByTail.get(tail)) || CODE_ALIAS[g.productCode] || null
     if (id) items.push({ id, qty: g.quantity })
   }
   if (items.length < 2) continue // 순수 캡슐 어소트먼트만(하드웨어 세트·매핑 부족 제외)
