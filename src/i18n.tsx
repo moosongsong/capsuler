@@ -5,12 +5,18 @@ import type { Lang, Capsule, MachineSystem } from './types'
 
 // ── 호환 머신 라벨(언어별) ──
 const MACHINE_LABELS: Record<Lang, Record<MachineSystem, string>> = {
-  ko: { original: '네스프레소 오리지널', vertuo: '네스프레소 버츄오', dolcegusto: '돌체구스토', iperespresso: 'illy 이페르에스프레소' },
-  en: { original: 'Nespresso Original', vertuo: 'Nespresso Vertuo', dolcegusto: 'Dolce Gusto', iperespresso: 'illy iperEspresso' },
+  ko: { original: '네스프레소 오리지널', vertuo: '네스프레소 버츄오', dolcegusto: '돌체구스토', iperespresso: 'illy 이페르에스프레소', kanubarista: '카누 바리스타' },
+  en: { original: 'Nespresso Original', vertuo: 'Nespresso Vertuo', dolcegusto: 'Dolce Gusto', iperespresso: 'illy iperEspresso', kanubarista: 'KANU Barista' },
 }
+// ── 브랜드 라벨(언어별). 매핑에 없으면 원래 이름 그대로 사용 ──
+const BRAND_LABELS: Record<Lang, Record<string, string>> = {
+  ko: { '카누': '카누' },
+  en: { '카누': 'KANU' },
+}
+
 const MACHINE_LABELS_SHORT: Record<Lang, Record<MachineSystem, string>> = {
-  ko: { original: '오리지널', vertuo: '버츄오', dolcegusto: '돌체구스토', iperespresso: '이페르에스프레소' },
-  en: { original: 'Original', vertuo: 'Vertuo', dolcegusto: 'Dolce Gusto', iperespresso: 'iperEspresso' },
+  ko: { original: '오리지널', vertuo: '버츄오', dolcegusto: '돌체구스토', iperespresso: '이페르에스프레소', kanubarista: '카누 바리스타' },
+  en: { original: 'Original', vertuo: 'Vertuo', dolcegusto: 'Dolce Gusto', iperespresso: 'iperEspresso', kanubarista: 'KANU Barista' },
 }
 
 // ── UI 문자열(언어별) ──
@@ -66,6 +72,7 @@ export interface I18n {
   t: (key: UIKey) => string
   note: (key: string) => string
   machine: (key: MachineSystem, short?: boolean) => string
+  brand: (name: string) => string
   name: (c: Capsule) => string
   price: (n: number) => string
   totalCount: (n: number) => string
@@ -80,12 +87,16 @@ function build(lang: Lang): I18n {
     t: key => UI[lang][key],
     note: key => NOTE_LABELS[lang][key] ?? key,
     machine: (key, short) => (short ? MACHINE_LABELS_SHORT : MACHINE_LABELS)[lang][key],
+    brand: name => BRAND_LABELS[lang][name] ?? name,
     name: c => (lang === 'ko' ? c.nameKo : c.name),
     price: n => (lang === 'ko' ? n.toLocaleString('ko-KR') + '원' : '₩' + n.toLocaleString('en-US')),
     totalCount: n => (lang === 'ko' ? `전체 ${n}개` : `${n} total`),
     showing: n => (lang === 'ko' ? `${n}개 표시 중` : `${n} shown`),
     matchPct: n => (lang === 'ko' ? `취향과 ${n}% 일치` : `${n}% match`),
-    intensityWord: n => (lang === 'ko' ? `강도 ${n}` : `Intensity ${n}`),
+    intensityWord: n => {
+      const v = n === 0 ? '–' : n // 강도 미표기(0)는 대시로
+      return lang === 'ko' ? `강도 ${v}` : `Intensity ${v}`
+    },
   }
 }
 

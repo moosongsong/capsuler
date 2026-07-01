@@ -14,6 +14,10 @@ export function Switch({ on, onClick }: { on: boolean; onClick: () => void }) {
 
 // 강도 막대(또는 숫자) 표시
 export function IntensityDisplay({ value, style }: { value: number; style: IntensityStyle }) {
+  // 강도 미표기(0)는 대시로 표시
+  if (value === 0) {
+    return <span style={{ color: 'var(--ink-3)' }}>–</span>
+  }
   if (style === 'num') {
     return <span style={{ fontWeight: 600, color: 'var(--amber-400)' }}>{value}</span>
   }
@@ -36,19 +40,19 @@ export function CapsuleItem({
   intensityStyle: IntensityStyle
   onClick: () => void
 }) {
-  const { t, note, name, price } = useI18n()
+  const { t, note, name, price, intensityWord, brand } = useI18n()
   return (
     <div className="cat-item" onClick={onClick}>
       <div className="cat-ava"><i className="ti ti-coffee" /></div>
       <div className="cat-meta">
         <div className="cat-name">
           {name(c)}
-          <span className="b">{c.brand}</span>
+          <span className="b">{brand(c.brand)}</span>
           {c.caffeine === 'decaf' && <span className="decaf-pill">{t('decaf_label')}</span>}
         </div>
         <div className="cat-sub">
           <IntensityDisplay value={c.intensity} style={intensityStyle} />
-          <span>{t('stat_intensity')} {c.intensity}</span>
+          <span>{intensityWord(c.intensity)}</span>
           <span>·</span>
           <span>{c.notes.map(n => note(n)).join(', ')}</span>
         </div>

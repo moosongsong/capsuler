@@ -6,7 +6,7 @@ export type Caffeine = 'regular' | 'decaf'
 export type Lang = 'ko' | 'en'
 
 // 캡슐이 호환되는 커피 머신 시스템
-export type MachineSystem = 'original' | 'vertuo' | 'dolcegusto' | 'iperespresso'
+export type MachineSystem = 'original' | 'vertuo' | 'dolcegusto' | 'iperespresso' | 'kanubarista'
 
 export interface Capsule {
   id: number

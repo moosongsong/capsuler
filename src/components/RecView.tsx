@@ -20,7 +20,7 @@ interface RecViewProps {
 }
 
 export default function RecView({ recState, setRecState, onOpenDetail }: RecViewProps) {
-  const { t, note, name } = useI18n()
+  const { t, note, name, brand } = useI18n()
 
   const setField = (key: 'intensity' | 'acidity' | 'body' | 'decaf', value: number | boolean) =>
     setRecState(s => ({ ...s, [key]: value }))
@@ -105,7 +105,7 @@ export default function RecView({ recState, setRecState, onOpenDetail }: RecView
                         {i === 0 && <><i className="ti ti-crown" style={{ color: 'var(--amber-400)', fontSize: 14 }} /> </>}
                         {name(c)}
                       </span>
-                      <span className="rec-brand">{c.brand}</span>
+                      <span className="rec-brand">{brand(c.brand)}</span>
                     </div>
                     <span className="pct">{pct}%</span>
                   </div>

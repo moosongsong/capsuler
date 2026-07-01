@@ -24,7 +24,7 @@ export default function DetailView({
   onOpenDetail,
   onBack,
 }: DetailViewProps) {
-  const { t, note, machine, name, price, matchPct: fmtMatch, intensityWord } = useI18n()
+  const { t, note, machine, name, price, matchPct: fmtMatch, intensityWord, brand } = useI18n()
   const c = capsules.find(x => x.id === id)
   const existing = reviews[id]
 
@@ -74,12 +74,12 @@ export default function DetailView({
           <div className="match-badge"><i className="ti ti-sparkles" /> {fmtMatch(matchPct)}</div>
         ) : null}
         <p className="d-name">{name(c)}</p>
-        <p className="d-brand">{c.brand}{c.caffeine === 'decaf' ? ` · ${t('decaf_label')}` : ''}</p>
+        <p className="d-brand">{brand(c.brand)}{c.caffeine === 'decaf' ? ` · ${t('decaf_label')}` : ''}</p>
       </div>
 
       <div className="sheet">
         <div className="stat-row">
-          <div className="stat hi"><div className="k">{t('stat_intensity')}</div><div className="v">{c.intensity}<small>/13</small></div></div>
+          <div className="stat hi"><div className="k">{t('stat_intensity')}</div><div className="v">{c.intensity === 0 ? '–' : <>{c.intensity}<small>/13</small></>}</div></div>
           <div className="stat"><div className="k">{t('stat_acidity')}</div><div className="v">{c.acidity}<small>/5</small></div></div>
           <div className="stat"><div className="k">{t('stat_body')}</div><div className="v">{c.body}<small>/5</small></div></div>
           <div className="stat"><div className="k">{t('stat_bitter')}</div><div className="v">{c.bitterness}<small>/5</small></div></div>
@@ -135,7 +135,7 @@ export default function DetailView({
               </div>
               <div className="cat-meta">
                 <div style={{ fontSize: 13, fontWeight: 600 }}>
-                  {name(s)} <span style={{ fontSize: 11, color: 'var(--ink-2)', fontWeight: 400 }}>{s.brand}</span>
+                  {name(s)} <span style={{ fontSize: 11, color: 'var(--ink-2)', fontWeight: 400 }}>{brand(s.brand)}</span>
                 </div>
                 <div style={{ fontSize: 11, color: 'var(--ink-3)', marginTop: 1 }}>
                   {intensityWord(s.intensity)} · {s.notes.map(n => note(n)).join(', ')}

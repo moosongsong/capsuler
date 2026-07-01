@@ -23,7 +23,7 @@ interface CatViewProps {
 }
 
 export default function CatView({ catState, setCatState, intensityStyle, onOpenDetail }: CatViewProps) {
-  const { t, note, machine, totalCount, showing } = useI18n()
+  const { t, note, machine, brand, totalCount, showing } = useI18n()
   const brands = ['전체', ...new Set(capsules.map(c => c.brand))]
 
   const toggleNote = (n: string) => {
@@ -79,7 +79,7 @@ export default function CatView({ catState, setCatState, intensityStyle, onOpenD
               className={'brand-chip' + (catState.brand === b ? ' on' : '')}
               onClick={() => setCatState(s => ({ ...s, brand: b }))}
             >
-              {b === '전체' ? t('brand_all') : b}
+              {b === '전체' ? t('brand_all') : brand(b)}
             </button>
           ))}
         </div>

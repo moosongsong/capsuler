@@ -14,7 +14,7 @@ interface MyViewProps {
 }
 
 export default function MyView({ favorites, reviews, settings, setSettings, onOpenDetail }: MyViewProps) {
-  const { t, name } = useI18n()
+  const { t, name, brand } = useI18n()
   const [loginToggled, setLoginToggled] = useState(false)
 
   const revList = Object.entries(reviews)
@@ -60,7 +60,7 @@ export default function MyView({ favorites, reviews, settings, setSettings, onOp
               return (
                 <div key={id} className="review-item" style={{ cursor: 'pointer' }} onClick={() => onOpenDetail(c.id)}>
                   <div className="review-item-top">
-                    <div className="review-item-name">{name(c)}<span>{c.brand}</span></div>
+                    <div className="review-item-name">{name(c)}<span>{brand(c.brand)}</span></div>
                     <div className="stars sm">
                       {[1, 2, 3, 4, 5].map(i => (
                         <i key={i} className={'ti ti-star-filled' + (i <= r.rating ? ' on' : '')} />
