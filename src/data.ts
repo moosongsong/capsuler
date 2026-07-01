@@ -7,7 +7,9 @@ import type { Capsule, Lang, RecPrefs } from './types'
 import capsulesData from './data/capsules.json'
 import notesData from './data/notes.json'
 
-export const capsules = capsulesData as unknown as Capsule[]
+// 전체 데이터(단종 포함). 공개 목록에서는 isEnabled !== false 인 것만 노출.
+export const allCapsules = capsulesData as unknown as Capsule[]
+export const capsules = allCapsules.filter(c => c.isEnabled !== false)
 
 // ── 향미 라벨/아이콘 (notes.json 파생) ──
 interface NoteInfo { ko: string; en: string; icon: string }

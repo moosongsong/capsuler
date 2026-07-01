@@ -23,6 +23,7 @@ export interface Capsule {
   price: number
   desc: string
   buyUrl?: string // 구매 페이지(없으면 머신 카테고리로 폴백)
+  isEnabled?: boolean // false면 단종 처리(공개 목록에서 제외). 미지정=공개
 }
 
 // 추천 점수 계산에 필요한 사용자 취향

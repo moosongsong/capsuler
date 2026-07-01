@@ -2788,5 +2788,170 @@
     "price": 781,
     "buyUrl": "https://www.kanu.co.kr/product-detail/132864410",
     "desc": "아몬드의 고소함과 밀크 초콜릿의 달콤한 부드러움. 카누 돌체구스토 호환 싱글오리진 캡슐."
+  },
+  {
+    "id": 135,
+    "brand": "Nespresso",
+    "name": "Freddo Intenso",
+    "nameKo": "프레도 인텐소",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "cereal",
+      "woody"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 790,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/freddo-intenso",
+    "desc": "아이스로 즐기는 인텐스 블렌드. 곡물·우디 노트의 시원한 프레도 커피."
+  },
+  {
+    "id": 136,
+    "brand": "Nespresso",
+    "name": "Vanilla Decaffeinato",
+    "nameKo": "바닐라향 디카페나토 커피",
+    "intensity": 0,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "vanilla",
+      "nutty",
+      "fruity",
+      "cereal",
+      "sweet"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "original"
+    ],
+    "price": 890,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/vaniglia-decaffeinato",
+    "desc": "바닐라와 견과류의 부드러운 향, 은은한 단맛의 디카페인 가향 캡슐."
+  },
+  {
+    "id": 137,
+    "brand": "Nespresso",
+    "name": "Scuro",
+    "nameKo": "스쿠로",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "roasted"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 750,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/barista-scuro",
+    "desc": "진한 다크 로스팅 향. 우유와 잘 어울리는 바리스타 크리에이션 스쿠로."
+  },
+  {
+    "id": 138,
+    "brand": "Nespresso",
+    "name": "Chiaro",
+    "nameKo": "키아로",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "biscuity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 750,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/barista-chiaro",
+    "desc": "비스킷 같은 고소함의 부드러운 바리스타 크리에이션 키아로."
+  },
+  {
+    "id": 139,
+    "brand": "Nespresso",
+    "name": "Vanilla",
+    "nameKo": "바닐라향 커피",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "vanilla"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 860,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/vaniglia-coffee",
+    "desc": "달콤한 바닐라 향의 가향 커피 캡슐."
+  },
+  {
+    "id": 140,
+    "brand": "Nespresso",
+    "name": "Caramel",
+    "nameKo": "캐러멜향 커피",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "caramel"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 860,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/caramello-coffee",
+    "desc": "부드러운 캐러멜 향의 가향 커피 캡슐."
+  },
+  {
+    "id": 141,
+    "brand": "Nespresso",
+    "name": "Chocolate",
+    "nameKo": "초콜릿향 커피",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "chocolate"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 860,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/cioccolatino-coffee",
+    "desc": "진한 초콜릿 향의 가향 커피 캡슐."
+  },
+  {
+    "id": 142,
+    "brand": "Nespresso",
+    "name": "Hazelnut",
+    "nameKo": "헤이즐넛향 커피",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "hazelnut"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 860,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/nocciola-coffee",
+    "desc": "고소한 헤이즐넛 향의 가향 커피 캡슐."
   }
 ]
