@@ -229,6 +229,11 @@
     "en": "Wine",
     "icon": "ti-glass-full"
   },
+  "winey": {
+    "ko": "와인향",
+    "en": "Winey",
+    "icon": "ti-glass-full"
+  },
   "woody": {
     "ko": "우디향",
     "en": "Woody",

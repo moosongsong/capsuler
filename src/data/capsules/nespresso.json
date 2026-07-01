@@ -583,10 +583,10 @@
     "compat": [
       "original"
     ],
-    "price": 1000,
-    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/master-origins-ethiopia",
+    "price": 860,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/ethiopia-coffee",
     "desc": "에티오피아 싱글 오리진. 화사한 꽃향과 밝은 과일 산미가 돋보여요.",
-    "image": "https://www.nespresso.com/ecom/medias/sys_master/public/17200623288350/ethiopia-2x.png"
+    "image": "https://www.nespresso.com/ecom/medias/sys_master/public/16653733724190/ethiopia-2x.png"
   },
   {
     "id": 1028,
@@ -1885,5 +1885,71 @@
     "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/nocciola-coffee",
     "desc": "고소한 헤이즐넛 향의 가향 커피 캡슐.",
     "image": "https://www.nespresso.com/ecom/medias/sys_master/public/17432559943710/C-1063-Responsive-PLP.png"
+  },
+  {
+    "id": 1088,
+    "brand": "Nespresso",
+    "name": "Colombia",
+    "nameKo": "콜롬비아",
+    "intensity": 6,
+    "acidity": 5,
+    "body": 3,
+    "bitterness": 2,
+    "notes": [
+      "berry",
+      "winey"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 860,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/master-origins-colombia",
+    "desc": "콜롬비아 싱글 오리진. 베리류 과일과 와인 같은 산미가 밝게 어우러져요.",
+    "image": "https://www.nespresso.com/ecom/medias/sys_master/public/16653527384094/colombia-2x.png"
+  },
+  {
+    "id": 1089,
+    "brand": "Nespresso",
+    "name": "Ice Yuzu Vanilla",
+    "nameKo": "아이스 유자 바닐라향 커피",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "caspuleAromatic_Hint_of_Vanilla",
+      "caspuleAromatic_yuzu"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 890,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/yuzu-vanilla-ol",
+    "image": "https://www.nespresso.com/ecom/medias/sys_master/public/47955984711710/C-1388-PLP-320x320.png",
+    "desc": "상큼한 유자와 부드러운 바닐라 향의 아이스 전용 오리지널 캡슐."
+  },
+  {
+    "id": 1090,
+    "brand": "Nespresso",
+    "name": "Ice Coconut Vanilla",
+    "nameKo": "아이스 코코넛 바닐라향 커피",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "vanilla",
+      "coconut"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 890,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/coconut-vanilla-ol",
+    "image": "https://www.nespresso.com/ecom/medias/sys_master/public/34928975446046/C-1310-OL-Responsive-plp.png",
+    "desc": "달콤한 코코넛과 바닐라 향이 어우러진 아이스 전용 오리지널 캡슐."
   }
 ]
