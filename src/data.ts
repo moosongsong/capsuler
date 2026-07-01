@@ -10,6 +10,7 @@ import nespressoData from './data/capsules/nespresso.json'
 import illyData from './data/capsules/illy.json'
 import kanuData from './data/capsules/kanu.json'
 import nespressoPackages from './data/packages/nespresso.json'
+import kanuPackages from './data/packages/kanu.json'
 import notesData from './data/notes.json'
 
 // 전체 데이터(단종 포함). 공개 목록에서는 isEnabled !== false 인 것만 노출.
@@ -17,12 +18,12 @@ export const allCapsules = [...nespressoData, ...illyData, ...kanuData] as unkno
 export const capsules = allCapsules.filter(c => c.isEnabled !== false)
 
 // 패키지(어소트먼트/세트). 출처별 JSON을 합치고, 구성 중 존재하는 캡슐만 남겨 정리.
-const allPackages = [...nespressoPackages] as unknown as Package[]
+// items가 빈 패키지(구성 미확보·둘러보기 전용)도 유지 — 추천/상세엔 안 잡히고 목록에만 노출.
+const allPackages = [...nespressoPackages, ...kanuPackages] as unknown as Package[]
 const capsuleIds = new Set(capsules.map(c => c.id))
 export const packages: Package[] = allPackages
   .filter(p => p.isEnabled !== false)
   .map(p => ({ ...p, items: p.items.filter(it => capsuleIds.has(it.id)) }))
-  .filter(p => p.items.length > 0)
 
 // ── 향미 라벨/아이콘 (notes.json 파생) ──
 interface NoteInfo { ko: string; en: string; icon: string }

@@ -1,0 +1,360 @@
+[
+  {
+    "id": 5001,
+    "brand": "카누",
+    "name": "Variety Pack (Barista, 40)",
+    "nameKo": "버라이어티팩 · 바리스타 40캡슐",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 37600,
+    "image": "https://shopby-images.cdn-nhncommerce.com/Mall-No-k1uh/20260615/114323.577136753/BCC_Variety-pack.jpg",
+    "buyUrl": "https://www.kanu.co.kr/product-detail/133785082",
+    "items": [
+      {
+        "id": 3007,
+        "qty": 10
+      },
+      {
+        "id": 3015,
+        "qty": 10
+      },
+      {
+        "id": 3010,
+        "qty": 10
+      },
+      {
+        "id": 3013,
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "id": 5002,
+    "brand": "카누",
+    "name": "Ice Collection (Barista, 40)",
+    "nameKo": "아이스 컬렉션 · 바리스타 40캡슐",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 37600,
+    "image": "https://shopby-images.cdn-nhncommerce.com/Mall-No-k1uh/20260629/142427.87247036/Ice Collection_4pack.jpg",
+    "buyUrl": "https://www.kanu.co.kr/product-detail/133720328",
+    "items": [
+      {
+        "id": 3001,
+        "qty": 10
+      },
+      {
+        "id": 3012,
+        "qty": 10
+      },
+      {
+        "id": 3002,
+        "qty": 10
+      },
+      {
+        "id": 3013,
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "id": 5003,
+    "brand": "카누",
+    "name": "Fruity Collection (Barista, 40)",
+    "nameKo": "프루티 컬렉션 · 바리스타 40캡슐",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 38790,
+    "image": "https://shopby-images.cdn-nhncommerce.com/Mall-No-k1uh/20260614/235659.546096537/Fruity Collection_4pack.jpg",
+    "buyUrl": "https://www.kanu.co.kr/product-detail/133720331",
+    "items": [
+      {
+        "id": 3006,
+        "qty": 10
+      },
+      {
+        "id": 3007,
+        "qty": 10
+      },
+      {
+        "id": 3014,
+        "qty": 10
+      },
+      {
+        "id": 3018,
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "id": 5004,
+    "brand": "카누",
+    "name": "Starter Collection (Barista, 100)",
+    "nameKo": "스타터 컬렉션 · 바리스타 100캡슐",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 94000,
+    "image": "https://shopby-images.cdn-nhncommerce.com/Mall-No-k1uh/20260611/112244.415834069/Barista_Starter.jpg",
+    "buyUrl": "https://www.kanu.co.kr/product-detail/133386216",
+    "items": [
+      {
+        "id": 3006,
+        "qty": 10
+      },
+      {
+        "id": 3012,
+        "qty": 10
+      },
+      {
+        "id": 3007,
+        "qty": 10
+      },
+      {
+        "id": 3014,
+        "qty": 10
+      },
+      {
+        "id": 3008,
+        "qty": 10
+      },
+      {
+        "id": 3015,
+        "qty": 10
+      },
+      {
+        "id": 3009,
+        "qty": 10
+      },
+      {
+        "id": 3013,
+        "qty": 10
+      },
+      {
+        "id": 3010,
+        "qty": 10
+      },
+      {
+        "id": 3011,
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "id": 5005,
+    "brand": "카누",
+    "name": "Best Collection (Barista, 60)",
+    "nameKo": "베스트 컬렉션 · 바리스타 60캡슐",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 56400,
+    "image": "https://shopby-images.cdn-nhncommerce.com/Mall-No-k1uh/20260611/111919.190880705/Barista_Best_6pack.jpg",
+    "buyUrl": "https://www.kanu.co.kr/product-detail/133012144",
+    "items": [
+      {
+        "id": 3010,
+        "qty": 10
+      },
+      {
+        "id": 3011,
+        "qty": 10
+      },
+      {
+        "id": 3013,
+        "qty": 10
+      },
+      {
+        "id": 3009,
+        "qty": 10
+      },
+      {
+        "id": 3007,
+        "qty": 10
+      },
+      {
+        "id": 3008,
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "id": 5006,
+    "brand": "카누",
+    "name": "Single Origin Collection (Barista, 60)",
+    "nameKo": "싱글오리진 컬렉션 · 바리스타 60캡슐",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 63540,
+    "image": "https://shopby-images.cdn-nhncommerce.com/Mall-No-k1uh/20260611/112145.819175607/Barista_Single_6pack.jpg",
+    "buyUrl": "https://www.kanu.co.kr/product-detail/133012287",
+    "items": [
+      {
+        "id": 3003,
+        "qty": 15
+      },
+      {
+        "id": 3016,
+        "qty": 15
+      },
+      {
+        "id": 3017,
+        "qty": 15
+      },
+      {
+        "id": 3018,
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "id": 5007,
+    "brand": "카누",
+    "name": "Variety Pack (Nespresso-compatible, 40)",
+    "nameKo": "버라이어티팩 · 네스프레소 호환 40캡슐",
+    "compat": [
+      "original"
+    ],
+    "price": 31960,
+    "image": "https://shopby-images.cdn-nhncommerce.com/Mall-No-k1uh/20260615/115315.782536374/NCC_Variety-pack.jpg",
+    "buyUrl": "https://www.kanu.co.kr/product-detail/133785083",
+    "items": [
+      {
+        "id": 3022,
+        "qty": 10
+      },
+      {
+        "id": 3026,
+        "qty": 10
+      },
+      {
+        "id": 3023,
+        "qty": 10
+      },
+      {
+        "id": 3024,
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "id": 5008,
+    "brand": "카누",
+    "name": "Summer Collection (Nespresso-compatible, 40)",
+    "nameKo": "썸머 컬렉션 · 네스프레소 호환 40캡슐",
+    "compat": [
+      "original"
+    ],
+    "price": 31960,
+    "image": "https://shopby-images.cdn-nhncommerce.com/Mall-No-k1uh/20260614/235650.259864062/Summer Collection_4pack.jpg",
+    "buyUrl": "https://www.kanu.co.kr/product-detail/133720332",
+    "items": [
+      {
+        "id": 3021,
+        "qty": 20
+      },
+      {
+        "id": 3027,
+        "qty": 20
+      }
+    ]
+  },
+  {
+    "id": 5009,
+    "brand": "카누",
+    "name": "Best Collection (Nespresso-compatible, 60)",
+    "nameKo": "베스트 컬렉션 · 네스프레소 호환 60캡슐",
+    "compat": [
+      "original"
+    ],
+    "price": 47940,
+    "image": "https://shopby-images.cdn-nhncommerce.com/Mall-No-k1uh/20260611/114424.904992844/NCC_Best_6pack.jpg",
+    "buyUrl": "https://www.kanu.co.kr/product-detail/133012424",
+    "items": [
+      {
+        "id": 3023,
+        "qty": 10
+      },
+      {
+        "id": 3022,
+        "qty": 10
+      },
+      {
+        "id": 3024,
+        "qty": 10
+      },
+      {
+        "id": 3020,
+        "qty": 10
+      },
+      {
+        "id": 3019,
+        "qty": 10
+      },
+      {
+        "id": 3021,
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "id": 5010,
+    "brand": "카누",
+    "name": "Single Origin Collection (Nespresso-compatible, 60)",
+    "nameKo": "싱글오리진 컬렉션 · 네스프레소 호환 60캡슐",
+    "compat": [
+      "original"
+    ],
+    "price": 52800,
+    "image": "https://shopby-images.cdn-nhncommerce.com/Mall-No-k1uh/20260611/114245.62485513/NCC_Single_6pack.jpg",
+    "buyUrl": "https://www.kanu.co.kr/product-detail/133012483",
+    "items": [
+      {
+        "id": 3028,
+        "qty": 15
+      },
+      {
+        "id": 3029,
+        "qty": 15
+      },
+      {
+        "id": 3031,
+        "qty": 15
+      },
+      {
+        "id": 3030,
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "id": 5011,
+    "brand": "카누",
+    "name": "Best Collection (Dolce Gusto, 48)",
+    "nameKo": "베스트 컬렉션 · 돌체구스토 호환 48캡슐",
+    "compat": [
+      "dolcegusto"
+    ],
+    "price": 37470,
+    "image": "https://shopby-images.cdn-nhncommerce.com/Mall-No-k1uh/20260614/235638.890910501/Best Collection_3pack.jpg",
+    "buyUrl": "https://www.kanu.co.kr/product-detail/133720348",
+    "items": [
+      {
+        "id": 3033,
+        "qty": 16
+      },
+      {
+        "id": 3035,
+        "qty": 16
+      },
+      {
+        "id": 3036,
+        "qty": 16
+      }
+    ]
+  }
+]

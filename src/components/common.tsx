@@ -103,10 +103,12 @@ export function PackageCard({
           {name(pkg)}
           <span className="b">{brand(pkg.brand)}</span>
         </div>
-        <div className="cat-sub">
-          <span>{pkgSize(pkg.items.length)}</span>
-          {showMatchBadge && matched.length > 0 && <span className="pkg-badge">{pkgMatch(matched.length)}</span>}
-        </div>
+        {(pkg.items.length > 0 || (showMatchBadge && matched.length > 0)) && (
+          <div className="cat-sub">
+            {pkg.items.length > 0 && <span>{pkgSize(pkg.items.length)}</span>}
+            {showMatchBadge && matched.length > 0 && <span className="pkg-badge">{pkgMatch(matched.length)}</span>}
+          </div>
+        )}
         {matched.length > 0 && (
           <div className="pkg-chips">
             {matched.map(c => (
