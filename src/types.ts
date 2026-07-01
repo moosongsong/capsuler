@@ -69,6 +69,7 @@ export type RecState = RecPrefs
 export type SortKey = 'intensity-desc' | 'intensity-asc' | 'price-asc' | 'price-desc' | 'name'
 
 export interface CatState {
+  mode: 'single' | 'package' // 단품 캡슐 / 패키지(세트) 보기
   brand: string
   machine: 'all' | MachineSystem
   notes: Set<string>

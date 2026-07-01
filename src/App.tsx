@@ -92,7 +92,7 @@ function AppShell() {
   })
   const [settings, setSettings] = useState<Settings>({ decafDefault: false, dark: false, intensityStyle: 'bar', lang: 'ko' })
   const [recState, setRecState] = useState<RecState>({ intensity: 9, acidity: 3, body: 4, notes: new Set(), decaf: false })
-  const [catState, setCatState] = useState<CatState>({ brand: '전체', machine: 'all', notes: new Set(), search: '', sort: 'intensity-desc' })
+  const [catState, setCatState] = useState<CatState>({ mode: 'single', brand: '전체', machine: 'all', notes: new Set(), search: '', sort: 'intensity-desc' })
 
   // 다크 모드 반영
   useEffect(() => {

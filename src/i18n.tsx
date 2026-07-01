@@ -42,6 +42,7 @@ const UI = {
     per_capsule: '캡슐당', buy: '구매처 보기', stat_intensity: '강도', stat_acidity: '산미', stat_body: '바디', stat_bitter: '쓴맛',
     back_aria: '뒤로 가기', fav_aria: '찜하기',
     fav_pkg_h: '내 찜이 담긴 패키지', fav_pkg_sub: '찜한 캡슐이 많이 들어있는 세트예요', pkg_in_h: '이 캡슐이 든 패키지',
+    seg_single: '단품', seg_package: '패키지', empty_no_pkg: '조건에 맞는 패키지가 없어요',
   },
   en: {
     tab_cat: 'Browse', tab_rec: 'Picks', tab_fav: 'Saved', tab_my: 'My',
@@ -64,6 +65,7 @@ const UI = {
     per_capsule: 'Per capsule', buy: 'Where to buy', stat_intensity: 'Intensity', stat_acidity: 'Acidity', stat_body: 'Body', stat_bitter: 'Bitter',
     back_aria: 'Go back', fav_aria: 'Save',
     fav_pkg_h: 'Packages with your saved', fav_pkg_sub: 'Sets packed with capsules you saved', pkg_in_h: 'Packages with this capsule',
+    seg_single: 'Singles', seg_package: 'Packages', empty_no_pkg: 'No packages match your filters',
   },
 } as const
 
