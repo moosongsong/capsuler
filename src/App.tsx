@@ -8,7 +8,7 @@ import DetailView from './components/DetailView'
 import PackageDetailView from './components/PackageDetailView'
 import { capsules } from './data'
 import { I18nProvider, useI18n } from './i18n'
-import type { RecState, CatState, Settings, Reviews, Review } from './types'
+import type { RecState, CatState, Settings } from './types'
 
 // ── 찜 목록 localStorage 영속화 ──
 const FAV_KEY = 'capsuler:favorites'
@@ -57,9 +57,7 @@ function TabBar() {
 // /capsule/:id 라우트 래퍼 (URL에서 id, 히스토리 state에서 matchPct 획득)
 function DetailRoute(props: {
   favorites: Set<number>
-  reviews: Reviews
   onToggleFav: (id: number) => void
-  onSaveReview: (id: number, r: Review) => void
   onOpenDetail: (id: number, matchPct?: number) => void
   onOpenPackage: (id: number) => void
 }) {
@@ -73,9 +71,7 @@ function DetailRoute(props: {
       id={capId}
       matchPct={matchPct}
       favorites={props.favorites}
-      reviews={props.reviews}
       onToggleFav={props.onToggleFav}
-      onSaveReview={props.onSaveReview}
       onOpenDetail={props.onOpenDetail}
       onOpenPackage={props.onOpenPackage}
       onBack={() => navigate(-1)}
@@ -96,10 +92,6 @@ function AppShell() {
   const { pathname } = useLocation()
 
   const [favorites, setFavorites] = useState<Set<number>>(loadFavorites)
-  const [reviews, setReviews] = useState<Reviews>({
-    1007: { rating: 5, text: '매일 아침 라떼로 내려 마시는데 코코아 향이 진하게 올라와서 만족스러워요. 우유랑 정말 잘 맞아요.' },
-    1002: { rating: 4, text: '생각보다 훨씬 강렬하다. 오후엔 좀 부담스럽고 아침에 잠 깰 때 딱이에요.' },
-  })
   const [settings, setSettings] = useState<Settings>({ decafDefault: false, dark: false, intensityStyle: 'bar', lang: 'ko' })
   const [recState, setRecState] = useState<RecState>({ intensity: 9, acidity: 3, body: 4, notes: new Set(), decaf: false })
   const [catState, setCatState] = useState<CatState>({ mode: 'single', brand: '전체', machine: 'all', notes: new Set(), search: '', sort: 'intensity-desc' })
@@ -139,10 +131,6 @@ function AppShell() {
     })
   }
 
-  const saveReview = (id: number, review: Review) => {
-    setReviews(prev => ({ ...prev, [id]: review }))
-  }
-
   return (
     <I18nProvider lang={settings.lang}>
       <div className="phone">
@@ -153,10 +141,10 @@ function AppShell() {
               <Route path="/browse" element={<CatView catState={catState} setCatState={setCatState} intensityStyle={settings.intensityStyle} onOpenDetail={openDetail} onOpenPackage={openPackage} />} />
               <Route path="/recommend" element={<RecView recState={recState} setRecState={setRecState} decafDefault={settings.decafDefault} onOpenDetail={openDetail} />} />
               <Route path="/saved" element={<FavView favorites={favorites} intensityStyle={settings.intensityStyle} onOpenDetail={openDetail} onOpenPackage={openPackage} />} />
-              <Route path="/my" element={<MyView favorites={favorites} reviews={reviews} settings={settings} setSettings={setSettings} onOpenDetail={openDetail} />} />
+              <Route path="/my" element={<MyView settings={settings} setSettings={setSettings} />} />
               <Route
                 path="/capsule/:id"
-                element={<DetailRoute favorites={favorites} reviews={reviews} onToggleFav={toggleFav} onSaveReview={saveReview} onOpenDetail={openDetail} onOpenPackage={openPackage} />}
+                element={<DetailRoute favorites={favorites} onToggleFav={toggleFav} onOpenDetail={openDetail} onOpenPackage={openPackage} />}
               />
               <Route path="/package/:id" element={<PackageDetailRoute onOpenDetail={openDetail} />} />
               <Route path="*" element={<Navigate to="/browse" replace />} />

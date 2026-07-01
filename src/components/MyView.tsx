@@ -1,26 +1,17 @@
 import { useState } from 'react'
 import type { Dispatch, SetStateAction } from 'react'
-import { capsules } from '../data'
-import { Switch, Empty } from './common'
+import { Switch } from './common'
 import { useI18n } from '../i18n'
-import type { Reviews, Settings, IntensityStyle, Lang } from '../types'
+import type { Settings, IntensityStyle, Lang } from '../types'
 
 interface MyViewProps {
-  favorites: Set<number>
-  reviews: Reviews
   settings: Settings
   setSettings: Dispatch<SetStateAction<Settings>>
-  onOpenDetail: (id: number) => void
 }
 
-export default function MyView({ favorites, reviews, settings, setSettings, onOpenDetail }: MyViewProps) {
-  const { t, name, brand } = useI18n()
+export default function MyView({ settings, setSettings }: MyViewProps) {
+  const { t } = useI18n()
   const [loginToggled, setLoginToggled] = useState(false)
-
-  const revList = Object.entries(reviews)
-  const avg = revList.length
-    ? (revList.reduce((s, [, r]) => s + r.rating, 0) / revList.length).toFixed(1)
-    : '–'
 
   return (
     <section className="view active" id="view-my">
@@ -40,41 +31,7 @@ export default function MyView({ favorites, reviews, settings, setSettings, onOp
           <i className="ti ti-chevron-right" style={{ fontSize: 18, color: 'var(--ink-3)' }} />
         </div>
 
-        <div className="mp-stats">
-          <div className="mp-stat"><div className="n">{favorites.size}</div><div className="l">{t('stat_fav')}</div></div>
-          <div className="mp-stat"><div className="n">{revList.length}</div><div className="l">{t('stat_review')}</div></div>
-          <div className="mp-stat"><div className="n">{avg}</div><div className="l">{t('stat_avg')}</div></div>
-        </div>
-
-        <div className="h-row"><i className="ti ti-message-circle-2" /> {t('my_reviews_h')}</div>
-        <div style={{ marginBottom: 22 }}>
-          {revList.length === 0 ? (
-            <Empty icon="ti-message-circle-2" style={{ padding: '1.5rem 0' }}>
-              {t('my_reviews_empty1')}<br />
-              <span style={{ fontSize: 12 }}>{t('my_reviews_empty2')}</span>
-            </Empty>
-          ) : (
-            revList.map(([id, r]) => {
-              const c = capsules.find(x => x.id === +id)
-              if (!c) return null
-              return (
-                <div key={id} className="review-item" style={{ cursor: 'pointer' }} onClick={() => onOpenDetail(c.id)}>
-                  <div className="review-item-top">
-                    <div className="review-item-name">{name(c)}<span>{brand(c.brand)}</span></div>
-                    <div className="stars sm">
-                      {[1, 2, 3, 4, 5].map(i => (
-                        <i key={i} className={'ti ti-star-filled' + (i <= r.rating ? ' on' : '')} />
-                      ))}
-                    </div>
-                  </div>
-                  {r.text && <div className="review-item-text">{r.text}</div>}
-                </div>
-              )
-            })
-          )}
-        </div>
-
-        <div className="h-row"><i className="ti ti-settings" /> {t('settings_h')}</div>
+        <div className="h-row" style={{ marginTop: 20 }}><i className="ti ti-settings" /> {t('settings_h')}</div>
         <div className="settings-group">
           <div className="setting-row">
             <div className="setting-label">

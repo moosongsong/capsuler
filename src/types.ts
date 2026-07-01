@@ -86,12 +86,5 @@ export interface Settings {
   lang: Lang
 }
 
-export interface Review {
-  rating: number
-  text: string
-}
-
-export type Reviews = Record<number, Review>
-
 export type TabName = 'cat' | 'rec' | 'fav' | 'my'
 export type ViewName = TabName | 'detail'

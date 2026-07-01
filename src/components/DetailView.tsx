@@ -1,16 +1,12 @@
-import { useState, useEffect, useRef } from 'react'
 import { capsules, noteIcons, similar, buyUrlFor, packagesContaining } from '../data'
 import { AvatarInner, PackageCard } from './common'
 import { useI18n } from '../i18n'
-import type { Reviews, Review } from '../types'
 
 interface DetailViewProps {
   id: number
   matchPct?: number
   favorites: Set<number>
-  reviews: Reviews
   onToggleFav: (id: number) => void
-  onSaveReview: (id: number, review: Review) => void
   onOpenDetail: (id: number) => void
   onOpenPackage: (id: number) => void
   onBack: () => void
@@ -20,43 +16,15 @@ export default function DetailView({
   id,
   matchPct,
   favorites,
-  reviews,
   onToggleFav,
-  onSaveReview,
   onOpenDetail,
   onOpenPackage,
   onBack,
 }: DetailViewProps) {
   const { t, note, machine, name, price, matchPct: fmtMatch, intensityWord, brand } = useI18n()
   const c = capsules.find(x => x.id === id)
-  const existing = reviews[id]
-
-  const [rating, setRating] = useState(existing ? existing.rating : 0)
-  const [text, setText] = useState(existing ? existing.text : '')
-  const [savedNote, setSavedNote] = useState(false)
-  const timerRef = useRef<ReturnType<typeof setTimeout>>()
-
-  // 다른 캡슐(비슷한 캡슐 클릭 등)로 전환되면 후기 입력 상태를 다시 채움
-  useEffect(() => {
-    const r = reviews[id]
-    setRating(r ? r.rating : 0)
-    setText(r ? r.text : '')
-    setSavedNote(false)
-    document.querySelector('.scroll')?.scrollTo(0, 0)
-  }, [id]) // eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => () => clearTimeout(timerRef.current), [])
 
   if (!c) return null
-
-  const handleSave = () => {
-    const trimmed = text.trim()
-    if (rating === 0 && !trimmed) return
-    onSaveReview(id, { rating: rating || 0, text: trimmed })
-    setSavedNote(true)
-    clearTimeout(timerRef.current)
-    timerRef.current = setTimeout(() => setSavedNote(false), 2400)
-  }
 
   const isFav = favorites.has(id)
 
@@ -109,27 +77,6 @@ export default function DetailView({
         </div>
 
         <div className="desc">{c.desc}</div>
-
-        <div className="h-row"><i className="ti ti-message-circle-2" /> {t('review_h')}</div>
-        <div className="review-box">
-          <div className="stars">
-            {[1, 2, 3, 4, 5].map(v => (
-              <i
-                key={v}
-                className={'ti ti-star-filled' + (v <= rating ? ' on' : '')}
-                onClick={() => setRating(v)}
-              />
-            ))}
-          </div>
-          <textarea
-            rows={2}
-            placeholder={t('review_ph')}
-            value={text}
-            onChange={e => setText(e.target.value)}
-          />
-          <button className="review-save" onClick={handleSave}>{t('review_save')}</button>
-          {savedNote && <div className="saved-note">{t('review_saved')}</div>}
-        </div>
 
         <div className="h-row"><i className="ti ti-flame" /> {t('similar_h')}</div>
         <div style={{ marginBottom: 20 }}>
