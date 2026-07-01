@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { ReactNode, CSSProperties } from 'react'
-import { intensityBars } from '../data'
+import { intensityBars, perCapsulePrice } from '../data'
 import { useI18n } from '../i18n'
 import type { Capsule, IntensityStyle, Package } from '../types'
 
@@ -96,7 +96,8 @@ export function PackageCard({
   showMatchBadge?: boolean
   onClick?: () => void
 }) {
-  const { name, price, brand, pkgMatch, pkgSize } = useI18n()
+  const { t, name, price, brand, pkgMatch, pkgSize } = useI18n()
+  const perCap = perCapsulePrice(pkg)
   return (
     <div className="pkg-item" onClick={onClick} role="button">
       <div className="cat-ava"><AvatarInner url={pkg.image} /></div>
@@ -119,7 +120,10 @@ export function PackageCard({
           </div>
         )}
       </div>
-      <span className="price-r">{price(pkg.price)}</span>
+      <div className="pkg-price-col">
+        <span className="price-r">{price(pkg.price)}</span>
+        {perCap != null && <span className="per-cap">{t('per_capsule')} {price(perCap)}</span>}
+      </div>
     </div>
   )
 }

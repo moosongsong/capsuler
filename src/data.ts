@@ -71,6 +71,12 @@ export function intensityBars(v: number): boolean[] {
   return Array.from({ length: 5 }, (_, i) => i < f)
 }
 
+// 패키지 캡슐 개당 가격(총가격 ÷ 구성 수량 합). 구성 수량이 없으면 null.
+export function perCapsulePrice(pkg: Package): number | null {
+  const total = pkg.items.reduce((s, it) => s + it.qty, 0)
+  return total ? Math.round(pkg.price / total) : null
+}
+
 // 찜한 캡슐과 겹치는 패키지를 추천(혼합 기준).
 // 정렬: ① 겹친 절대 개수 → ② 커버리지 비율(패키지+찜) → ③ 저렴한 순
 export function recommendedPackages(favorites: Set<number>, limit = 5): PackageMatch[] {

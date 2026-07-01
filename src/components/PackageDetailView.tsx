@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { packages, capsules } from '../data'
+import { packages, capsules, perCapsulePrice } from '../data'
 import { AvatarInner } from './common'
 import { useI18n } from '../i18n'
 
@@ -12,6 +12,7 @@ interface PackageDetailViewProps {
 export default function PackageDetailView({ id, onOpenDetail, onBack }: PackageDetailViewProps) {
   const { t, note, machine, name, price, brand, intensityWord } = useI18n()
   const pkg = packages.find(p => p.id === id)
+  const perCap = pkg ? perCapsulePrice(pkg) : null
 
   useEffect(() => {
     document.querySelector('.scroll')?.scrollTo(0, 0)
@@ -63,14 +64,21 @@ export default function PackageDetailView({ id, onOpenDetail, onBack }: PackageD
                   {c.intensity !== 0 ? `${intensityWord(c.intensity)} · ` : ''}{c.notes.map(n => note(n)).join(', ')}
                 </div>
               </div>
-              <span className="qty-badge">×{qty}</span>
+              <div className="pkg-mem-right">
+                <span className="mem-price">{price(c.price)}</span>
+                <span className="qty-badge">×{qty}</span>
+              </div>
               <i className="ti ti-chevron-right" style={{ fontSize: 16, color: 'var(--ink-3)' }} />
             </div>
           ))}
         </div>
 
         <div className="buy-row">
-          <div className="buy-price"><div className="k">{t('pkg_price')}</div><div className="v">{price(pkg.price)}</div></div>
+          <div className="buy-price">
+            <div className="k">{t('pkg_price')}</div>
+            <div className="v">{price(pkg.price)}</div>
+            {perCap != null && <div className="per-cap">{t('per_capsule')} {price(perCap)}</div>}
+          </div>
           <a className="buy-btn" href={pkg.buyUrl || '#'} target="_blank" rel="noopener noreferrer">
             <i className="ti ti-shopping-cart" /> {t('buy')}
           </a>
