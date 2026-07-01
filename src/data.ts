@@ -1,14 +1,18 @@
 // 캡슐/향미 데이터 로더 및 추천·향미 관련 헬퍼
 //
-// 실제 데이터는 아래 JSON 파일에서 관리합니다(자주 갱신되는 데이터/코드 분리):
-//   src/data/capsules.json  — 캡슐 목록(각 캡슐에 buyUrl 포함)
-//   src/data/notes.json     — 향미 key -> { ko, en, icon }
+// 실제 데이터는 아래 JSON 파일에서 출처별로 관리합니다(각 업데이트 스킬이 자기 파일만 담당):
+//   src/data/capsules/nespresso.json — Nespresso·Starbucks·Blue Bottle (id 1xxx)
+//   src/data/capsules/illy.json      — illy (id 2xxx)
+//   src/data/capsules/kanu.json      — 카누 (id 3xxx)
+//   src/data/notes.json              — 향미 key -> { ko, en, icon } (출처 공통)
 import type { Capsule, Lang, RecPrefs } from './types'
-import capsulesData from './data/capsules.json'
+import nespressoData from './data/capsules/nespresso.json'
+import illyData from './data/capsules/illy.json'
+import kanuData from './data/capsules/kanu.json'
 import notesData from './data/notes.json'
 
 // 전체 데이터(단종 포함). 공개 목록에서는 isEnabled !== false 인 것만 노출.
-export const allCapsules = capsulesData as unknown as Capsule[]
+export const allCapsules = [...nespressoData, ...illyData, ...kanuData] as unknown as Capsule[]
 export const capsules = allCapsules.filter(c => c.isEnabled !== false)
 
 // ── 향미 라벨/아이콘 (notes.json 파생) ──

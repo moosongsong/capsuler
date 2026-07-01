@@ -1,0 +1,359 @@
+[
+  {
+    "id": 2001,
+    "brand": "illy",
+    "name": "Classico",
+    "nameKo": "클라시코",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "floral"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000727",
+    "desc": "부드러운 맛과 향의 완벽한 균형. 캐러멜·오렌지꽃·재스민의 섬세한 아로마와 달콤한 여운."
+  },
+  {
+    "id": 2002,
+    "brand": "illy",
+    "name": "Intenso",
+    "nameKo": "인텐소",
+    "intensity": 10,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000728",
+    "desc": "풍부하고 강렬한 맛과 향. 코코아와 건과일의 아로마, 묵직하고 긴 여운."
+  },
+  {
+    "id": 2003,
+    "brand": "illy",
+    "name": "Forte",
+    "nameKo": "포르테",
+    "intensity": 13,
+    "acidity": 1,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "dark-chocolate",
+      "roasted"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000731",
+    "desc": "기분 좋은 쓴맛의 정점. 구운 빵의 진한 향과 다크 초콜릿의 긴 여운."
+  },
+  {
+    "id": 2004,
+    "brand": "illy",
+    "name": "Classico Lungo",
+    "nameKo": "클라시코 룽고",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "caramel",
+      "floral"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000729",
+    "desc": "부드러운 맛과 향의 완벽한 균형. 워터리한 바디감, 캐러멜·오렌지꽃·재스민의 섬세한 아로마."
+  },
+  {
+    "id": 2005,
+    "brand": "illy",
+    "name": "Decaffeinato",
+    "nameKo": "디카페나토",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "cocoa"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000730",
+    "desc": "부드러운 맛과 향의 완벽한 균형. 캐러멜·구운 빵·초콜릿의 섬세한 아로마와 달콤한 여운."
+  },
+  {
+    "id": 2006,
+    "brand": "illy",
+    "name": "Arabica Colombia",
+    "nameKo": "아라비카 콜롬비아",
+    "intensity": 6,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "citrus",
+      "redFruits"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000792",
+    "desc": "illy 아라비카 싱글오리진. 감귤류·레드베리 과일 아로마에 기분 좋은 산미와 단맛."
+  },
+  {
+    "id": 2007,
+    "brand": "illy",
+    "name": "Arabica Guatemala",
+    "nameKo": "아라비카 과테말라",
+    "intensity": 9,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "dark-chocolate"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000732",
+    "desc": "illy 아라비카 싱글오리진. 초콜릿 아로마와 뚜렷한 쓴맛, 강렬한 아로마와 바디감."
+  },
+  {
+    "id": 2008,
+    "brand": "illy",
+    "name": "Arabica Brazil",
+    "nameKo": "아라비카 브라질",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000733",
+    "desc": "illy 아라비카 싱글오리진. 캐러멜과 건과일의 아로마, 신맛과 쓴맛의 균형, 부드러운 목넘김."
+  },
+  {
+    "id": 2009,
+    "brand": "illy",
+    "name": "Arabica Ethiopia",
+    "nameKo": "아라비카 에티오피아",
+    "intensity": 4,
+    "acidity": 5,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "floral",
+      "citrus"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000734",
+    "desc": "illy 아라비카 싱글오리진. 재스민·오렌지꽃·카모마일의 플로럴 아로마, 균형 잡힌 산미와 단맛."
+  },
+  {
+    "id": 2010,
+    "brand": "illy",
+    "name": "Filter Intenso",
+    "nameKo": "필터 인텐소",
+    "intensity": 10,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000089",
+    "desc": "풍부하고 강렬한 맛과 향. 코코아와 건과일의 아로마, 묵직하고 긴 여운. ※ 필터 캡슐은 'Espresso & Coffee' 로고가 부착된 머신(Iperespresso Y3.2 / Y3.3)에서만 사용 가능합니다."
+  },
+  {
+    "id": 2011,
+    "brand": "illy",
+    "name": "Filter Classico",
+    "nameKo": "필터 클라시코",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "floral"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000090",
+    "desc": "부드러운 맛과 향의 완벽한 균형. 캐러멜·오렌지꽃·재스민의 섬세한 아로마와 달콤한 여운. ※ 필터 캡슐은 'Espresso & Coffee' 로고가 부착된 머신(Iperespresso Y3.2 / Y3.3)에서만 사용 가능합니다."
+  },
+  {
+    "id": 2012,
+    "brand": "illy",
+    "name": "Classico (Nespresso)",
+    "nameKo": "클라시코 (네스프레소 호환)",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "floral"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 690,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000193",
+    "desc": "부드러운 맛과 향의 완벽한 균형. 캐러멜·오렌지꽃·재스민의 섬세한 아로마와 달콤한 여운. 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 2013,
+    "brand": "illy",
+    "name": "Intenso (Nespresso)",
+    "nameKo": "인텐소 (네스프레소 호환)",
+    "intensity": 10,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 690,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000194",
+    "desc": "풍부하고 강렬한 맛과 향. 코코아와 건과일의 아로마, 묵직하고 긴 여운. 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 2014,
+    "brand": "illy",
+    "name": "Forte (Nespresso)",
+    "nameKo": "포르테 (네스프레소 호환)",
+    "intensity": 13,
+    "acidity": 1,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "dark-chocolate",
+      "roasted"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 690,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000196",
+    "desc": "기분 좋은 쓴맛의 정점. 구운 빵의 진한 향과 다크 초콜릿의 긴 여운. 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 2015,
+    "brand": "illy",
+    "name": "Classico Lungo (Nespresso)",
+    "nameKo": "클라시코 룽고 (네스프레소 호환)",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "caramel",
+      "floral"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 690,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000195",
+    "desc": "부드러운 맛과 향의 완벽한 균형. 룽고 컵에 맞춘 캐러멜·오렌지꽃·재스민의 섬세한 아로마. 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 2016,
+    "brand": "illy",
+    "name": "Intenso Lungo (Nespresso)",
+    "nameKo": "인텐소 룽고 (네스프레소 호환)",
+    "intensity": 10,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 690,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000827",
+    "desc": "풍부하고 강렬한 맛과 향. 룽고 컵에 맞춘 코코아·건과일의 아로마와 진한 여운. 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 2017,
+    "brand": "illy",
+    "name": "Decaffeinato (Nespresso)",
+    "nameKo": "디카페나토 (네스프레소 호환)",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "cocoa"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "original"
+    ],
+    "price": 690,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000414",
+    "desc": "부드러운 맛과 향의 완벽한 균형. 캐러멜·구운 빵·초콜릿의 섬세한 아로마와 달콤한 여운. 네스프레소 오리지널 호환 디카페인 캡슐."
+  }
+]

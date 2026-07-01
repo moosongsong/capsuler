@@ -6,7 +6,7 @@ description: 네스프레소(오리지널/버츄오, 스타벅스·블루보틀 
 # 네스프레소 캡슐 업데이트
 
 네스프레소 코리아 공식 API(`scripts/nespresso-fetch.sh`)로 현재 전시 중인 캡슐을 가져와
-`src/data/capsules.json` · `src/data/notes.json` 을 최신 상태로 맞춘다.
+`src/data/capsules/nespresso.json` · `src/data/notes.json` 을 최신 상태로 맞춘다.
 
 ## 스코프
 - **대상 브랜드**: `Nespresso`, `Starbucks`, `Blue Bottle` (모두 네스프레소 API 상품)

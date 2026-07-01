@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const CAPS = resolve(ROOT, 'src/data/capsules.json')
+const CAPS = resolve(ROOT, 'src/data/capsules/kanu.json')
 const FETCH = resolve(ROOT, 'scripts/kanu-fetch.sh')
 const DRY = process.argv.includes('--dry-run')
 

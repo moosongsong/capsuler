@@ -34,10 +34,10 @@ export default function App() {
   const [view, setView] = useState<ViewName>('cat') // 처음 진입 시 둘러보기 화면
   const [lastTab, setLastTab] = useState<TabName>('cat')
 
-  const [favorites, setFavorites] = useState<Set<number>>(() => new Set([7, 11]))
+  const [favorites, setFavorites] = useState<Set<number>>(() => new Set([1007, 1011]))
   const [reviews, setReviews] = useState<Reviews>({
-    7: { rating: 5, text: '매일 아침 라떼로 내려 마시는데 코코아 향이 진하게 올라와서 만족스러워요. 우유랑 정말 잘 맞아요.' },
-    2: { rating: 4, text: '생각보다 훨씬 강렬하다. 오후엔 좀 부담스럽고 아침에 잠 깰 때 딱이에요.' },
+    1007: { rating: 5, text: '매일 아침 라떼로 내려 마시는데 코코아 향이 진하게 올라와서 만족스러워요. 우유랑 정말 잘 맞아요.' },
+    1002: { rating: 4, text: '생각보다 훨씬 강렬하다. 오후엔 좀 부담스럽고 아침에 잠 깰 때 딱이에요.' },
   })
   const [settings, setSettings] = useState<Settings>({ decafDefault: false, dark: false, intensityStyle: 'bar', lang: 'ko' })
 

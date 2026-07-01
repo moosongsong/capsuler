@@ -5,7 +5,7 @@ description: 카누(KANU) 캡슐 데이터를 공식몰 API로 최신화한다. 
 
 # 카누(KANU) 캡슐 업데이트
 
-카누 공식몰 API(`scripts/kanu-fetch.sh`)로 3개 라인의 캡슐을 가져와 `src/data/capsules.json`을 최신화한다.
+카누 공식몰 API(`scripts/kanu-fetch.sh`)로 3개 라인의 캡슐을 가져와 `src/data/capsules/kanu.json`을 최신화한다.
 
 | 라인 | 카테고리 | 앱 compat | nameKo 접미어 |
 |------|:--:|--------|--------|
