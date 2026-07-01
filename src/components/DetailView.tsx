@@ -65,7 +65,7 @@ export default function DetailView({
           <i className="ti ti-arrow-left" />
         </button>
         <button className={'icon-btn d-fav' + (isFav ? ' on' : '')} aria-label={t('fav_aria')} onClick={() => onToggleFav(id)}>
-          <i className="ti ti-heart" />
+          <i className={'ti ' + (isFav ? 'ti-heart-filled' : 'ti-heart')} />
         </button>
       </div>
 
@@ -80,7 +80,9 @@ export default function DetailView({
 
       <div className="sheet">
         <div className="stat-row">
-          <div className="stat hi"><div className="k">{t('stat_intensity')}</div><div className="v">{c.intensity === 0 ? '–' : <>{c.intensity}<small>/13</small></>}</div></div>
+          {c.intensity !== 0 && (
+            <div className="stat hi"><div className="k">{t('stat_intensity')}</div><div className="v">{c.intensity}<small>/13</small></div></div>
+          )}
           <div className="stat"><div className="k">{t('stat_acidity')}</div><div className="v">{c.acidity}<small>/5</small></div></div>
           <div className="stat"><div className="k">{t('stat_body')}</div><div className="v">{c.body}<small>/5</small></div></div>
           <div className="stat"><div className="k">{t('stat_bitter')}</div><div className="v">{c.bitterness}<small>/5</small></div></div>
@@ -139,7 +141,7 @@ export default function DetailView({
                   {name(s)} <span style={{ fontSize: 11, color: 'var(--ink-2)', fontWeight: 400 }}>{brand(s.brand)}</span>
                 </div>
                 <div style={{ fontSize: 11, color: 'var(--ink-3)', marginTop: 1 }}>
-                  {intensityWord(s.intensity)} · {s.notes.map(n => note(n)).join(', ')}
+                  {s.intensity !== 0 ? `${intensityWord(s.intensity)} · ` : ''}{s.notes.map(n => note(n)).join(', ')}
                 </div>
               </div>
               <i className="ti ti-chevron-right" style={{ fontSize: 16, color: 'var(--ink-3)' }} />

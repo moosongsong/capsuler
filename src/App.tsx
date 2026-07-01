@@ -5,8 +5,29 @@ import CatView from './components/CatView'
 import FavView from './components/FavView'
 import MyView from './components/MyView'
 import DetailView from './components/DetailView'
+import { capsules } from './data'
 import { I18nProvider, useI18n } from './i18n'
 import type { RecState, CatState, Settings, Reviews, Review } from './types'
+
+// ── 찜 목록 localStorage 영속화 ──
+const FAV_KEY = 'capsuler:favorites'
+const validIds = new Set(capsules.map(c => c.id))
+
+// 저장된 찜을 읽어온다(손상/미존재 id는 걸러냄). 최초 방문 시 데모용 기본값.
+function loadFavorites(): Set<number> {
+  try {
+    const raw = localStorage.getItem(FAV_KEY)
+    if (raw !== null) {
+      const ids = (JSON.parse(raw) as unknown[]).filter(
+        (n): n is number => typeof n === 'number' && validIds.has(n),
+      )
+      return new Set(ids)
+    }
+  } catch {
+    // 손상된 값은 무시하고 빈 목록 사용
+  }
+  return new Set()
+}
 
 const TABS: { to: string; icon: string; key: 'tab_cat' | 'tab_rec' | 'tab_fav' | 'tab_my' }[] = [
   { to: '/browse', icon: 'ti-mug', key: 'tab_cat' },
@@ -64,7 +85,7 @@ function AppShell() {
   const navigate = useNavigate()
   const { pathname } = useLocation()
 
-  const [favorites, setFavorites] = useState<Set<number>>(() => new Set([1007, 1011]))
+  const [favorites, setFavorites] = useState<Set<number>>(loadFavorites)
   const [reviews, setReviews] = useState<Reviews>({
     1007: { rating: 5, text: '매일 아침 라떼로 내려 마시는데 코코아 향이 진하게 올라와서 만족스러워요. 우유랑 정말 잘 맞아요.' },
     1002: { rating: 4, text: '생각보다 훨씬 강렬하다. 오후엔 좀 부담스럽고 아침에 잠 깰 때 딱이에요.' },
@@ -77,6 +98,15 @@ function AppShell() {
   useEffect(() => {
     document.body.classList.toggle('dark', settings.dark)
   }, [settings.dark])
+
+  // 찜 목록이 바뀔 때마다 localStorage에 저장
+  useEffect(() => {
+    try {
+      localStorage.setItem(FAV_KEY, JSON.stringify([...favorites]))
+    } catch {
+      // 저장 실패(용량 초과 등)는 무시
+    }
+  }, [favorites])
 
   // 라우트 전환 시 스크롤 최상단
   useEffect(() => {

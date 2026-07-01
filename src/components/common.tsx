@@ -69,9 +69,13 @@ export function CapsuleItem({
           {c.caffeine === 'decaf' && <span className="decaf-pill">{t('decaf_label')}</span>}
         </div>
         <div className="cat-sub">
-          <IntensityDisplay value={c.intensity} style={intensityStyle} />
-          <span>{intensityWord(c.intensity)}</span>
-          <span>·</span>
+          {c.intensity !== 0 && (
+            <>
+              <IntensityDisplay value={c.intensity} style={intensityStyle} />
+              <span>{intensityWord(c.intensity)}</span>
+              <span>·</span>
+            </>
+          )}
           <span>{c.notes.map(n => note(n)).join(', ')}</span>
         </div>
       </div>
