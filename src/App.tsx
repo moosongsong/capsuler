@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { HashRouter, Routes, Route, Navigate, NavLink, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, NavLink, useLocation, useNavigate, useParams } from 'react-router-dom'
 import RecView from './components/RecView'
 import CatView from './components/CatView'
 import FavView from './components/FavView'
@@ -155,9 +155,10 @@ function AppShell() {
 }
 
 export default function App() {
+  // basename은 vite base(/capsuler/)와 일치시켜 GitHub Pages 프로젝트 경로에서 동작하게 한다
   return (
-    <HashRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <AppShell />
-    </HashRouter>
+    </BrowserRouter>
   )
 }

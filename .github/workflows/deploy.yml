@@ -35,6 +35,11 @@ jobs:
       - name: 빌드
         run: npm run build
 
+      # SPA fallback: BrowserRouter 딥링크/새로고침 시 GitHub Pages가 404.html을 주므로
+      # index.html을 그대로 복사해두면 앱이 로드되고 라우터가 현재 경로를 렌더한다.
+      - name: 404 폴백 생성
+        run: cp dist/index.html dist/404.html
+
       - name: Pages 설정
         uses: actions/configure-pages@v5
 

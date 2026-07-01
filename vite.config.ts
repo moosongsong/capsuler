@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// base를 './'로 두면 GitHub Pages 프로젝트 경로(/저장소이름/) 에서도
-// 별도 설정 없이 정적 자산 경로가 올바르게 잡힙니다.
+// BrowserRouter(경로 기반 라우팅)를 쓰므로 base를 절대 경로로 둔다.
+// (상대 './'는 /capsuler/capsule/1001 같은 다중 세그먼트 경로에서 자산 경로가 깨짐)
+// GitHub Pages 프로젝트 사이트 경로와 일치시킨다: https://<user>.github.io/capsuler/
 export default defineConfig({
-  base: './',
+  base: '/capsuler/',
   plugins: [react()],
   server: {
     open: true,
