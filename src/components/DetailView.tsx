@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
-import { capsules, noteIcons, similar, buyUrlFor } from '../data'
-import { AvatarInner } from './common'
+import { capsules, noteIcons, similar, buyUrlFor, packagesContaining } from '../data'
+import { AvatarInner, PackageCard } from './common'
 import { useI18n } from '../i18n'
 import type { Reviews, Review } from '../types'
 
@@ -148,6 +148,17 @@ export default function DetailView({
             </div>
           ))}
         </div>
+
+        {packagesContaining(c.id).length > 0 && (
+          <>
+            <div className="h-row"><i className="ti ti-package" /> {t('pkg_in_h')}</div>
+            <div style={{ marginBottom: 20 }}>
+              {packagesContaining(c.id).map(p => (
+                <PackageCard key={p.id} pkg={p} matched={[c]} />
+              ))}
+            </div>
+          </>
+        )}
 
         <div className="buy-row">
           <div className="buy-price"><div className="k">{t('per_capsule')}</div><div className="v">{price(c.price)}</div></div>

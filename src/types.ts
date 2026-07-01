@@ -27,6 +27,34 @@ export interface Capsule {
   isEnabled?: boolean // false면 단종 처리(공개 목록에서 제외). 미지정=공개
 }
 
+// 패키지(여러 단일 캡슐을 묶은 어소트먼트/세트 상품)
+export interface PackageItem {
+  id: number // 구성 캡슐(Capsule.id) 참조
+  qty: number // 패키지에 담긴 수량
+}
+
+export interface Package {
+  id: number
+  brand: string
+  name: string   // 영문 이름
+  nameKo: string // 한글 이름
+  compat: MachineSystem[]
+  price: number  // 패키지 전체 가격
+  image?: string
+  buyUrl?: string
+  items: PackageItem[] // 구성 캡슐
+  isEnabled?: boolean
+}
+
+// 찜 캡슐과의 겹침 기준으로 계산한 패키지 추천 결과
+export interface PackageMatch {
+  pkg: Package
+  matchIds: number[] // 내 찜과 겹친 구성 캡슐 id
+  matchCount: number // 겹친 개수(절대)
+  coveragePkg: number // matchCount / 패키지 구성 수 (패키지가 얼마나 내 취향인지)
+  coverageFav: number // matchCount / 내 찜 수 (내 찜을 얼마나 담는지)
+}
+
 // 추천 점수 계산에 필요한 사용자 취향
 export interface RecPrefs {
   intensity: number

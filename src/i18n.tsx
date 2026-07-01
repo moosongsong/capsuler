@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react'
 import type { ReactNode } from 'react'
 import { noteLabels as NOTE_LABELS } from './data'
-import type { Lang, Capsule, MachineSystem } from './types'
+import type { Lang, MachineSystem } from './types'
 
 // ── 호환 머신 라벨(언어별) ──
 const MACHINE_LABELS: Record<Lang, Record<MachineSystem, string>> = {
@@ -41,6 +41,7 @@ const UI = {
     review_save: '후기 저장', review_saved: '후기를 저장했어요. 마이 페이지에서 다시 볼 수 있어요.', similar_h: '비슷한 캡슐',
     per_capsule: '캡슐당', buy: '구매처 보기', stat_intensity: '강도', stat_acidity: '산미', stat_body: '바디', stat_bitter: '쓴맛',
     back_aria: '뒤로 가기', fav_aria: '찜하기',
+    fav_pkg_h: '내 찜이 담긴 패키지', fav_pkg_sub: '찜한 캡슐이 많이 들어있는 세트예요', pkg_in_h: '이 캡슐이 든 패키지',
   },
   en: {
     tab_cat: 'Browse', tab_rec: 'Picks', tab_fav: 'Saved', tab_my: 'My',
@@ -62,6 +63,7 @@ const UI = {
     review_save: 'Save review', review_saved: 'Review saved. You can find it on My Page.', similar_h: 'Similar capsules',
     per_capsule: 'Per capsule', buy: 'Where to buy', stat_intensity: 'Intensity', stat_acidity: 'Acidity', stat_body: 'Body', stat_bitter: 'Bitter',
     back_aria: 'Go back', fav_aria: 'Save',
+    fav_pkg_h: 'Packages with your saved', fav_pkg_sub: 'Sets packed with capsules you saved', pkg_in_h: 'Packages with this capsule',
   },
 } as const
 
@@ -73,12 +75,14 @@ export interface I18n {
   note: (key: string) => string
   machine: (key: MachineSystem, short?: boolean) => string
   brand: (name: string) => string
-  name: (c: Capsule) => string
+  name: (c: { name: string; nameKo: string }) => string
   price: (n: number) => string
   totalCount: (n: number) => string
   showing: (n: number) => string
   matchPct: (n: number) => string
   intensityWord: (n: number) => string
+  pkgMatch: (n: number) => string
+  pkgSize: (n: number) => string
 }
 
 function build(lang: Lang): I18n {
@@ -97,6 +101,8 @@ function build(lang: Lang): I18n {
       const v = n === 0 ? '–' : n // 강도 미표기(0)는 대시로
       return lang === 'ko' ? `강도 ${v}` : `Intensity ${v}`
     },
+    pkgMatch: n => (lang === 'ko' ? `내 찜 ${n}개 포함` : `Includes ${n} saved`),
+    pkgSize: n => (lang === 'ko' ? `${n}종 구성` : `${n} kinds`),
   }
 }
 

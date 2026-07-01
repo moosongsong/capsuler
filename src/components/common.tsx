@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type { ReactNode, CSSProperties } from 'react'
 import { intensityBars } from '../data'
 import { useI18n } from '../i18n'
-import type { Capsule, IntensityStyle } from '../types'
+import type { Capsule, IntensityStyle, Package } from '../types'
 
 // 아바타 내부: 상품 이미지가 있으면 표시, 없거나 로드 실패 시 커피 아이콘으로 폴백
 export function AvatarInner({ url }: { url?: string }) {
@@ -81,6 +81,42 @@ export function CapsuleItem({
       </div>
       <span className="price-r">{price(c.price)}</span>
     </div>
+  )
+}
+
+// 패키지(세트) 카드. 구매처로 연결. matched: 강조할 구성 캡슐(찜 겹침/현재 캡슐), showMatchBadge: '내 찜 N개 포함' 배지
+export function PackageCard({
+  pkg,
+  matched = [],
+  showMatchBadge = false,
+}: {
+  pkg: Package
+  matched?: Capsule[]
+  showMatchBadge?: boolean
+}) {
+  const { name, price, brand, pkgMatch, pkgSize } = useI18n()
+  return (
+    <a className="pkg-item" href={pkg.buyUrl || '#'} target="_blank" rel="noopener noreferrer">
+      <div className="cat-ava"><AvatarInner url={pkg.image} /></div>
+      <div className="cat-meta">
+        <div className="cat-name">
+          {name(pkg)}
+          <span className="b">{brand(pkg.brand)}</span>
+        </div>
+        <div className="cat-sub">
+          <span>{pkgSize(pkg.items.length)}</span>
+          {showMatchBadge && matched.length > 0 && <span className="pkg-badge">{pkgMatch(matched.length)}</span>}
+        </div>
+        {matched.length > 0 && (
+          <div className="pkg-chips">
+            {matched.map(c => (
+              <span key={c.id} className="tag-sm match">{name(c)}</span>
+            ))}
+          </div>
+        )}
+      </div>
+      <span className="price-r">{price(pkg.price)}</span>
+    </a>
   )
 }
 

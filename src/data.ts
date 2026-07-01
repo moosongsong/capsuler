@@ -5,15 +5,24 @@
 //   src/data/capsules/illy.json      — illy (id 2xxx)
 //   src/data/capsules/kanu.json      — 카누 (id 3xxx)
 //   src/data/notes.json              — 향미 key -> { ko, en, icon } (출처 공통)
-import type { Capsule, Lang, RecPrefs } from './types'
+import type { Capsule, Lang, RecPrefs, Package, PackageMatch } from './types'
 import nespressoData from './data/capsules/nespresso.json'
 import illyData from './data/capsules/illy.json'
 import kanuData from './data/capsules/kanu.json'
+import nespressoPackages from './data/packages/nespresso.json'
 import notesData from './data/notes.json'
 
 // 전체 데이터(단종 포함). 공개 목록에서는 isEnabled !== false 인 것만 노출.
 export const allCapsules = [...nespressoData, ...illyData, ...kanuData] as unknown as Capsule[]
 export const capsules = allCapsules.filter(c => c.isEnabled !== false)
+
+// 패키지(어소트먼트/세트). 출처별 JSON을 합치고, 구성 중 존재하는 캡슐만 남겨 정리.
+const allPackages = [...nespressoPackages] as unknown as Package[]
+const capsuleIds = new Set(capsules.map(c => c.id))
+export const packages: Package[] = allPackages
+  .filter(p => p.isEnabled !== false)
+  .map(p => ({ ...p, items: p.items.filter(it => capsuleIds.has(it.id)) }))
+  .filter(p => p.items.length > 0)
 
 // ── 향미 라벨/아이콘 (notes.json 파생) ──
 interface NoteInfo { ko: string; en: string; icon: string }
@@ -59,6 +68,37 @@ export function recScore(p: RecPrefs, c: Capsule): number {
 export function intensityBars(v: number): boolean[] {
   const f = Math.round(v / 13 * 5)
   return Array.from({ length: 5 }, (_, i) => i < f)
+}
+
+// 찜한 캡슐과 겹치는 패키지를 추천(혼합 기준).
+// 정렬: ① 겹친 절대 개수 → ② 커버리지 비율(패키지+찜) → ③ 저렴한 순
+export function recommendedPackages(favorites: Set<number>, limit = 5): PackageMatch[] {
+  if (favorites.size === 0) return []
+  return packages
+    .map((pkg): PackageMatch => {
+      const matchIds = pkg.items.filter(it => favorites.has(it.id)).map(it => it.id)
+      return {
+        pkg,
+        matchIds,
+        matchCount: matchIds.length,
+        coveragePkg: matchIds.length / pkg.items.length,
+        coverageFav: matchIds.length / favorites.size,
+      }
+    })
+    .filter(m => m.matchCount > 0)
+    .sort((a, b) =>
+      b.matchCount - a.matchCount ||
+      (b.coveragePkg + b.coverageFav) - (a.coveragePkg + a.coverageFav) ||
+      a.pkg.price - b.pkg.price,
+    )
+    .slice(0, limit)
+}
+
+// 특정 캡슐이 포함된 패키지(구성 수 적은 순 → 저렴한 순)
+export function packagesContaining(capsuleId: number): Package[] {
+  return packages
+    .filter(p => p.items.some(it => it.id === capsuleId))
+    .sort((a, b) => a.items.length - b.items.length || a.price - b.price)
 }
 
 // 특정 캡슐과 비슷한 캡슐 상위 2개

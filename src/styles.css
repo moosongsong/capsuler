@@ -111,6 +111,11 @@ select { font-size:12px; height:32px; padding:0 10px; border-radius:12px; border
 .ibar span.f { background:var(--amber-400); }
 .price-r { font-size:13px; font-weight:600; color:var(--amber-600); flex-shrink:0; }
 .decaf-pill { font-size:10px; padding:1px 7px; border-radius:10px; background:var(--accent-bg); color:var(--accent); margin-left:5px; }
+/* 패키지(세트) 카드 */
+.pkg-item { display:flex; align-items:flex-start; gap:10px; background:var(--soft); border-radius:16px; padding:11px 13px; margin-bottom:8px; cursor:pointer; transition:.1s; text-decoration:none; color:inherit; }
+.pkg-item:active { transform:scale(.99); }
+.pkg-badge { background:var(--amber-100); color:var(--amber-600); font-weight:600; padding:1px 7px; border-radius:9px; }
+.pkg-chips { display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; }
 
 .empty { text-align:center; padding:3rem 0; color:var(--ink-3); font-size:13px; }
 .empty i { font-size:24px; display:block; margin-bottom:8px; }
