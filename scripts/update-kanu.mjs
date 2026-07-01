@@ -16,15 +16,25 @@ import { dirname, resolve } from 'node:path'
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const CAPS = resolve(ROOT, 'src/data/capsules/kanu.json')
+const PKGS = resolve(ROOT, 'src/data/packages/kanu.json')
 const FETCH = resolve(ROOT, 'scripts/kanu-fetch.sh')
 const DRY = process.argv.includes('--dry-run')
 
-// 카누 3개 라인: 카테고리 → 앱 compat + nameKo 접미어
+// 카누 3개 라인: 카테고리 → 앱 compat + nameKo 접미어 + 패키지용 시스템 라벨(영/한)
 const LINES = [
-  { cat: '930896', compat: 'kanubarista', suffix: '' },
-  { cat: '930897', compat: 'original', suffix: ' (네스프레소 호환)' },
-  { cat: '930898', compat: 'dolcegusto', suffix: ' (돌체구스토 호환)' },
+  { cat: '930896', compat: 'kanubarista', suffix: '', en: 'Barista', koSys: '바리스타' },
+  { cat: '930897', compat: 'original', suffix: ' (네스프레소 호환)', en: 'Nespresso-compatible', koSys: '네스프레소 호환' },
+  { cat: '930898', compat: 'dolcegusto', suffix: ' (돌체구스토 호환)', en: 'Dolce Gusto', koSys: '돌체구스토 호환' },
 ]
+
+// 세트명(한글) → 영문. 매핑 없으면 한글 유지(리포트에 영문명 검토요망으로 표기).
+const SET_EN = {
+  '버라이어티팩': 'Variety Pack', '아이스 컬렉션': 'Ice Collection', '프루티 컬렉션': 'Fruity Collection',
+  '스타터 컬렉션': 'Starter Collection', '베스트 컬렉션': 'Best Collection',
+  '싱글오리진 컬렉션': 'Single Origin Collection', '썸머 컬렉션': 'Summer Collection',
+}
+// 구성(items) 비교(순서 무관)
+const canonItems = arr => JSON.stringify([...arr].sort((x, y) => x.id - y.id))
 
 const norm = s => s.replace(/\s+/g, ' ').trim()
 const baseName = productName => norm(productName.split('|')[0]) // "이름 | 카누 ... (N캡슐)" → "이름"
@@ -64,8 +74,10 @@ const capsules = JSON.parse(readFileSync(CAPS, 'utf8'))
 
 // API: 라인별 개별 캡슐 수집. key = compat|base
 const apiByKey = new Map()
-for (const { cat, compat, suffix } of LINES) {
+const lineData = [] // 번들(패키지) 처리에 재사용
+for (const { cat, compat, suffix, en, koSys } of LINES) {
   const items = fetchCat(cat)
+  lineData.push({ compat, en, koSys, items })
   const singles = items.filter(p => !isBundle(p.productName) && (packSizeOf(p.productName) ?? 99) <= 16)
   if (singles.length === 0) {
     console.error(`⚠️ 카테고리 ${cat}(${compat}) 개별 캡슐 0개 — 조회 실패 의심. 중단.`)
@@ -126,6 +138,72 @@ for (const [key, c] of existing) {
   if (!apiByKey.has(key) && c.isEnabled !== false) { c.isEnabled = false; disabled.push(c.nameKo) }
 }
 
+// ── 패키지(세트/컬렉션) 처리 ──
+// 카누 API는 세트 구성을 구조화해 주지 않지만, imageUrlInfo에 구성 캡슐 이미지가 함께 온다.
+// 그 파일명이 단품 image 파일명과 같으므로 이를 매칭해 구성(items)을 복원한다(수량=총캡슐수÷맛수).
+const packages = JSON.parse(readFileSync(PKGS, 'utf8'))
+// 단품 이미지 basename → capsule id (이번 실행에서 새로 추가된 캡슐 포함)
+const idByImg = new Map()
+for (const c of capsules) {
+  if (c.brand !== '카누') continue
+  const b = (c.image || '').split('/').pop()
+  if (b) idByImg.set(b, c.id)
+}
+
+const apiPkgByKey = new Map() // key = compat|base
+for (const { compat, en: enSys, koSys, items } of lineData) {
+  for (const p of items) {
+    if (!isBundle(p.productName)) continue
+    const base = baseName(p.productName)
+    const key = compat + '|' + norm(base)
+    if (apiPkgByKey.has(key)) continue
+    const caps = packSizeOf(p.productName)
+    const memberIds = (p.imageUrlInfo || []).map(i => idByImg.get(i.url.split('/').pop())).filter(Boolean)
+    const qty = memberIds.length && caps ? Math.round(caps / memberIds.length) : 0
+    if (caps && memberIds.length && caps % memberIds.length !== 0)
+      console.warn(`  ⚠️ 구성 수량 비정수: ${p.productName} (${caps}/${memberIds.length})`)
+    apiPkgByKey.set(key, {
+      compat, base, caps,
+      name: `${SET_EN[base] || base} (${enSys}${caps ? ', ' + caps : ''})`,
+      nameKo: `${base} · ${koSys} ${caps}캡슐`,
+      hasEn: !!SET_EN[base],
+      price: p.salePrice ?? 0,
+      buyUrl: `https://www.kanu.co.kr/product-detail/${p.productNo}`,
+      image: (u => (u ? (u.startsWith('//') ? 'https:' + u : u) : null))(p.imageUrls?.[0] || p.imageUrlInfo?.[0]?.url),
+      items: memberIds.map(id => ({ id, qty })),
+    })
+  }
+}
+
+const existingPkg = new Map()
+for (const p of packages) existingPkg.set(p.compat[0] + '|' + norm(p.nameKo.split('·')[0]), p)
+
+const pkgAdded = [], pkgDisabled = [], pkgUpdated = []
+let maxPkgId = packages.reduce((m, p) => Math.max(m, p.id), 5000)
+for (const [key, a] of apiPkgByKey) {
+  const cur = existingPkg.get(key)
+  if (!cur) {
+    const pkg = {
+      id: ++maxPkgId, brand: '카누', name: a.name, nameKo: a.nameKo,
+      compat: [a.compat], price: a.price,
+      ...(a.image ? { image: a.image } : {}),
+      ...(a.buyUrl ? { buyUrl: a.buyUrl } : {}),
+      items: a.items,
+    }
+    packages.push(pkg)
+    pkgAdded.push({ pkg, hasEn: a.hasEn })
+  } else {
+    if (cur.isEnabled === false) { delete cur.isEnabled; pkgUpdated.push(`${cur.nameKo} (재전시)`) }
+    if (a.price != null && a.price !== cur.price) { pkgUpdated.push(`${cur.nameKo}: ${cur.price}→${a.price}`); cur.price = a.price }
+    if (a.buyUrl && a.buyUrl !== cur.buyUrl) cur.buyUrl = a.buyUrl
+    if (a.image && a.image !== cur.image) cur.image = a.image
+    if (canonItems(cur.items) !== canonItems(a.items)) { cur.items = a.items; pkgUpdated.push(`${cur.nameKo} (구성 변경)`) }
+  }
+}
+for (const [key, p] of existingPkg) {
+  if (!apiPkgByKey.has(key) && p.isEnabled !== false) { p.isEnabled = false; pkgDisabled.push(p.nameKo) }
+}
+
 // ── 리포트 ──
 const line = '─'.repeat(48)
 console.log(line + `\n카누 캡슐 업데이트 ${DRY ? '(DRY-RUN)' : ''}\n` + line)
@@ -134,10 +212,20 @@ console.log(`\n[신규] ${added.length}종`); added.forEach(c => console.log(`  
 console.log(`\n[단종] ${disabled.length}종`); disabled.forEach(n => console.log(`  - ${n}`))
 console.log(`\n[가격/재전시] ${priceChanged.length}건`); priceChanged.forEach(n => console.log(`  ~ ${n}`))
 console.log(`\n⚠️ [보완 필요] ${needReview.length}종`); needReview.forEach(n => console.log(`  ! ${n}`))
+
+console.log(`\n${line}\n카누 패키지(세트) 업데이트`)
+console.log(`API 세트: ${apiPkgByKey.size} | 기존 패키지: ${existingPkg.size}`)
+console.log(`\n[신규 패키지] ${pkgAdded.length}종`)
+pkgAdded.forEach(({ pkg, hasEn }) => console.log(`  + #${pkg.id} ${pkg.nameKo} (${pkg.compat[0]}, 구성 ${pkg.items.length}종, ${pkg.price}원)${hasEn ? '' : ' [영문명 검토요망: ' + pkg.name + ']'}`))
+console.log(`\n[패키지 단종] ${pkgDisabled.length}종`); pkgDisabled.forEach(n => console.log(`  - ${n}`))
+console.log(`\n[패키지 변경] ${pkgUpdated.length}건`); pkgUpdated.forEach(n => console.log(`  ~ ${n}`))
 console.log(line)
 
+const capChanged = added.length || disabled.length || priceChanged.length
+const pkgChanged = pkgAdded.length || pkgDisabled.length || pkgUpdated.length
 if (DRY) console.log('DRY-RUN: 파일 미수정.')
-else if (added.length || disabled.length || priceChanged.length) {
-  writeFileSync(CAPS, JSON.stringify(capsules, null, 2) + '\n')
-  console.log('capsules.json 갱신 완료.')
+else if (capChanged || pkgChanged) {
+  if (capChanged) writeFileSync(CAPS, JSON.stringify(capsules, null, 2) + '\n')
+  writeFileSync(PKGS, JSON.stringify(packages, null, 2) + '\n')
+  console.log('capsules/kanu.json / packages/kanu.json 갱신 완료.')
 } else console.log('변경 없음.')
