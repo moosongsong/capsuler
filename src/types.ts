@@ -22,6 +22,7 @@ export interface Capsule {
   compat: MachineSystem[] // 호환 머신(여러 개 가능)
   price: number
   desc: string
+  buyUrl?: string // 구매 페이지(없으면 머신 카테고리로 폴백)
 }
 
 // 추천 점수 계산에 필요한 사용자 취향

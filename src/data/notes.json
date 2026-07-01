@@ -1,0 +1,237 @@
+{
+  "C-1035-7": {
+    "ko": "달콤하고 부드러움",
+    "en": "C 1035 7",
+    "icon": "ti-coffee"
+  },
+  "Smoky": {
+    "ko": "스모키향",
+    "en": "Smoky",
+    "icon": "ti-flame"
+  },
+  "almonds": {
+    "ko": "아몬드향",
+    "en": "Almonds",
+    "icon": "ti-seeding"
+  },
+  "balanced": {
+    "ko": "균형감",
+    "en": "Balanced",
+    "icon": "ti-coffee"
+  },
+  "berry": {
+    "ko": "베리향",
+    "en": "Berry",
+    "icon": "ti-apple"
+  },
+  "biscuity": {
+    "ko": "비스킷향",
+    "en": "Biscuity",
+    "icon": "ti-wheat"
+  },
+  "brown-sugar-and-roasted-notes": {
+    "ko": "캐러멜향과 로스팅향",
+    "en": "Brown sugar and roasted notes",
+    "icon": "ti-honey"
+  },
+  "caramel": {
+    "ko": "캐러멜향",
+    "en": "Caramel",
+    "icon": "ti-honey"
+  },
+  "caramel_2": {
+    "ko": "캐러멜향",
+    "en": "Caramel",
+    "icon": "ti-honey"
+  },
+  "caramelized": {
+    "ko": "카라멜향",
+    "en": "Caramelized",
+    "icon": "ti-honey"
+  },
+  "caspuleAromatic_Hint_of_Vanilla": {
+    "ko": "바닐라향",
+    "en": "Caspule aromatic_hint_of_vanilla",
+    "icon": "ti-flower-2"
+  },
+  "caspuleAromatic_yuzu": {
+    "ko": "유자향",
+    "en": "Caspule aromatic_yuzu",
+    "icon": "ti-lemon-2"
+  },
+  "cereal": {
+    "ko": "곡물향",
+    "en": "Cereal",
+    "icon": "ti-wheat"
+  },
+  "chocolate": {
+    "ko": "초콜릿향",
+    "en": "Chocolate",
+    "icon": "ti-candy"
+  },
+  "citric": {
+    "ko": "시트러스향",
+    "en": "Citric",
+    "icon": "ti-lemon-2"
+  },
+  "citrus": {
+    "ko": "시트러스향",
+    "en": "Citrus",
+    "icon": "ti-lemon-2"
+  },
+  "cocoa": {
+    "ko": "코코아향",
+    "en": "Cocoa",
+    "icon": "ti-candy"
+  },
+  "coconut": {
+    "ko": "코코넛향",
+    "en": "Coconut",
+    "icon": "ti-seeding"
+  },
+  "dark-chocolate": {
+    "ko": "다크 초콜릿향",
+    "en": "Dark chocolate",
+    "icon": "ti-candy"
+  },
+  "floral": {
+    "ko": "꽃향",
+    "en": "Floral",
+    "icon": "ti-flower"
+  },
+  "flowery": {
+    "ko": "꽃향",
+    "en": "Flowery",
+    "icon": "ti-flower"
+  },
+  "fruity": {
+    "ko": "과일",
+    "en": "Fruity",
+    "icon": "ti-apple"
+  },
+  "ginseng": {
+    "ko": "인삼향",
+    "en": "Ginseng",
+    "icon": "ti-flower-2"
+  },
+  "hazelnut": {
+    "ko": "헤이즐넛향",
+    "en": "Hazelnut",
+    "icon": "ti-seeding"
+  },
+  "herb": {
+    "ko": "허브향",
+    "en": "Herb",
+    "icon": "ti-leaf"
+  },
+  "intense": {
+    "ko": "강렬함",
+    "en": "Intense",
+    "icon": "ti-coffee"
+  },
+  "malt": {
+    "ko": "몰트",
+    "en": "Malt",
+    "icon": "ti-wheat"
+  },
+  "malted-cereal": {
+    "ko": "시리얼향과 몰트향",
+    "en": "Malted cereal",
+    "icon": "ti-wheat"
+  },
+  "mild": {
+    "ko": "마일드",
+    "en": "Mild",
+    "icon": "ti-coffee"
+  },
+  "nutty": {
+    "ko": "견과류향",
+    "en": "Nutty",
+    "icon": "ti-seeding"
+  },
+  "redFruits": {
+    "ko": "붉은 과일향",
+    "en": "Red fruits",
+    "icon": "ti-apple"
+  },
+  "rich": {
+    "ko": "풍부한",
+    "en": "Rich",
+    "icon": "ti-coffee"
+  },
+  "roasted": {
+    "ko": "로스팅향",
+    "en": "Roasted",
+    "icon": "ti-flame"
+  },
+  "roasted-cereal": {
+    "ko": "구운 곡물",
+    "en": "Roasted cereal",
+    "icon": "ti-wheat"
+  },
+  "robusta": {
+    "ko": "Robusta",
+    "en": "Robusta",
+    "icon": "ti-coffee"
+  },
+  "smooth": {
+    "ko": "부드러운",
+    "en": "Smooth",
+    "icon": "ti-coffee"
+  },
+  "softChocolate": {
+    "ko": "소프트 초콜릿",
+    "en": "Soft chocolate",
+    "icon": "ti-candy"
+  },
+  "spicy": {
+    "ko": "스파이시향",
+    "en": "Spicy",
+    "icon": "ti-pepper"
+  },
+  "sweet": {
+    "ko": "은은한 달콤함",
+    "en": "Sweet",
+    "icon": "ti-honey"
+  },
+  "sweet-cereal": {
+    "ko": "곡물향",
+    "en": "Sweet cereal",
+    "icon": "ti-honey"
+  },
+  "sweet-notes": {
+    "ko": "강렬함",
+    "en": "Sweet notes",
+    "icon": "ti-honey"
+  },
+  "toasted-cereal": {
+    "ko": "구운 곡물향",
+    "en": "Toasted cereal",
+    "icon": "ti-wheat"
+  },
+  "vanilla": {
+    "ko": "바닐라향",
+    "en": "Vanilla",
+    "icon": "ti-flower-2"
+  },
+  "vanilla-almonds": {
+    "ko": "바닐라와 아몬드향",
+    "en": "Vanilla almonds",
+    "icon": "ti-seeding"
+  },
+  "very-roasted": {
+    "ko": "강한 로스팅향",
+    "en": "Very roasted",
+    "icon": "ti-flame"
+  },
+  "wine": {
+    "ko": "와인향",
+    "en": "Wine",
+    "icon": "ti-glass-full"
+  },
+  "woody": {
+    "ko": "우디향",
+    "en": "Woody",
+    "icon": "ti-trees"
+  }
+}

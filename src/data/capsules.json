@@ -1,0 +1,2792 @@
+[
+  {
+    "id": 1,
+    "brand": "Nespresso",
+    "name": "Napoli",
+    "nameKo": "나폴리",
+    "intensity": 13,
+    "acidity": 1,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "very-roasted",
+      "cocoa"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 720,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/ispirazione-napoli",
+    "desc": "이탈리아식 다크 로스트의 정점. 강렬하고 묵직한 바디에 진한 코코아 여운이 오래 남아요."
+  },
+  {
+    "id": 2,
+    "brand": "Nespresso",
+    "name": "Kazaar",
+    "nameKo": "카자르",
+    "intensity": 12,
+    "acidity": 2,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "woody",
+      "spicy"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 720,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/ispirazione-palermo",
+    "desc": "강렬한 강도와 스파이시한 여운. 진한 커피를 좋아하는 분께 추천해요."
+  },
+  {
+    "id": 3,
+    "brand": "Nespresso",
+    "name": "India",
+    "nameKo": "인디아",
+    "intensity": 11,
+    "acidity": 2,
+    "body": 5,
+    "bitterness": 4,
+    "notes": [
+      "spicy"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 860,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/indian-coffee",
+    "desc": "인도 원두 특유의 스파이시함과 진한 바디. 깊고 강한 풍미를 원할 때."
+  },
+  {
+    "id": 4,
+    "brand": "Nespresso",
+    "name": "Ristretto",
+    "nameKo": "리스트레토",
+    "intensity": 10,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "very-roasted",
+      "berry"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 720,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/isp-ristretto-italiano",
+    "desc": "짧고 진한 리스트레토용 블렌드. 강렬한 로스팅 향과 씁쓸한 코코아 노트."
+  },
+  {
+    "id": 5,
+    "brand": "Nespresso",
+    "name": "Ristretto Decaffeinato",
+    "nameKo": "리스트레토 디카페나토",
+    "intensity": 10,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "very-roasted",
+      "berry"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "original"
+    ],
+    "price": 750,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/isp-rist-italiano-decaf",
+    "desc": "리스트레토의 강렬함을 카페인 없이. 진한 바디와 코코아 여운은 그대로."
+  },
+  {
+    "id": 6,
+    "brand": "Nespresso",
+    "name": "Cape Town Lungo",
+    "nameKo": "케이프타운 룽고",
+    "intensity": 10,
+    "acidity": 3,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "roasted",
+      "woody"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 750,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/wex-capetown-lungo",
+    "desc": "룽고 컵에 어울리는 진한 블렌드. 로스티한 향과 곡물의 구수함이 어우러져요."
+  },
+  {
+    "id": 7,
+    "brand": "Nespresso",
+    "name": "Arpeggio",
+    "nameKo": "아르페지오",
+    "intensity": 9,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "very-roasted"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 720,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/ispirazione-firenze",
+    "desc": "진한 코코아 향과 묵직한 바디가 특징인 인텐스 에스프레소. 우유와 잘 어울려 라떼에도 좋아요."
+  },
+  {
+    "id": 8,
+    "brand": "Nespresso",
+    "name": "Arpeggio Extra",
+    "nameKo": "아르페지오 엑스트라",
+    "intensity": 9,
+    "acidity": 2,
+    "body": 5,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "very-roasted"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 750,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/arpeggio-extra-coffee",
+    "desc": "아르페지오를 더 진하게. 강화된 바디와 깊은 코코아 풍미."
+  },
+  {
+    "id": 9,
+    "brand": "Nespresso",
+    "name": "Arpeggio Decaffeinato",
+    "nameKo": "아르페지오 디카페나토",
+    "intensity": 9,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "very-roasted"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "original"
+    ],
+    "price": 750,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/isp-firenze-decaf",
+    "desc": "아르페지오의 진한 풍미를 카페인 없이 즐기는 디카페인 버전."
+  },
+  {
+    "id": 10,
+    "brand": "Nespresso",
+    "name": "Venezia",
+    "nameKo": "베네치아",
+    "intensity": 8,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "roasted"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 720,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/ispirazione-venezia",
+    "desc": "부드러운 카라멜 단맛과 은은한 우디 노트가 조화로운 이탈리안 스타일."
+  },
+  {
+    "id": 11,
+    "brand": "Nespresso",
+    "name": "Roma",
+    "nameKo": "로마",
+    "intensity": 8,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "woody",
+      "cereal"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 720,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/ispirazione-roma",
+    "desc": "균형 잡힌 데일리 에스프레소. 우디한 향과 곡물의 고소함."
+  },
+  {
+    "id": 12,
+    "brand": "Nespresso",
+    "name": "Stockholm Lungo",
+    "nameKo": "스톡홀름 룽고",
+    "intensity": 8,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "roasted",
+      "malted-cereal"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 750,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/wex-stockholm-lungo",
+    "desc": "북유럽 감성의 진한 룽고. 로스티한 향과 카라멜 단맛의 균형."
+  },
+  {
+    "id": 13,
+    "brand": "Nespresso",
+    "name": "Indonesia",
+    "nameKo": "인도네시아",
+    "intensity": 8,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "intense",
+      "woody"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 860,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/indonesian-coffee",
+    "desc": "인도네시아 싱글 오리진. 묵직한 바디에 우디하고 스파이시한 개성."
+  },
+  {
+    "id": 14,
+    "brand": "Nespresso",
+    "name": "Livanto",
+    "nameKo": "리반토",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "toasted-cereal"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 720,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/ispirazione-genova",
+    "desc": "균형 잡힌 라운드한 에스프레소. 카라멜 단맛과 고소한 견과류 노트."
+  },
+  {
+    "id": 15,
+    "brand": "Nespresso",
+    "name": "Vienna Lungo Decaffeinato",
+    "nameKo": "비엔나 룽고 디카페나토",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "cereal"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "original"
+    ],
+    "price": 780,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/vienna-lungo-decaf",
+    "desc": "부드러운 룽고를 카페인 없이. 카라멜과 곡물의 은은한 단맛."
+  },
+  {
+    "id": 16,
+    "brand": "Nespresso",
+    "name": "Paris",
+    "nameKo": "파리",
+    "intensity": 6,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 2,
+    "notes": [
+      "cereal",
+      "biscuity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 750,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/paris-espresso-coffee",
+    "desc": "우아하고 부드러운 블렌드. 은은한 꽃향과 카라멜의 섬세한 조화."
+  },
+  {
+    "id": 17,
+    "brand": "Nespresso",
+    "name": "Tokyo Lungo",
+    "nameKo": "도쿄 룽고",
+    "intensity": 6,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "flowery",
+      "roasted"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 750,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/wex-tokyo-lungo",
+    "desc": "깔끔하고 산뜻한 룽고. 밝은 꽃향과 곡물의 가벼운 여운."
+  },
+  {
+    "id": 18,
+    "brand": "Nespresso",
+    "name": "Vienna Lungo",
+    "nameKo": "비엔나 룽고",
+    "intensity": 6,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 2,
+    "notes": [
+      "malted-cereal"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 750,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/wex-vienna-lungo",
+    "desc": "부드럽고 편안한 룽고. 카라멜과 곡물의 포근한 단맛."
+  },
+  {
+    "id": 19,
+    "brand": "Nespresso",
+    "name": "Colombia",
+    "nameKo": "콜롬비아",
+    "intensity": 6,
+    "acidity": 4,
+    "body": 3,
+    "bitterness": 2,
+    "notes": [
+      "redFruits"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 1100,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/colombia-vertuo-coffee",
+    "desc": "콜롬비아 싱글 오리진. 상큼한 과일 산미와 고소한 견과류의 균형."
+  },
+  {
+    "id": 20,
+    "brand": "Nespresso",
+    "name": "Shanghai Lungo",
+    "nameKo": "상하이 룽고",
+    "intensity": 5,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "citric",
+      "berry"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 750,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/shanghai-lungo",
+    "desc": "가볍고 부드러운 룽고. 곡물의 구수함과 은은한 단맛."
+  },
+  {
+    "id": 21,
+    "brand": "Nespresso",
+    "name": "Capriccio",
+    "nameKo": "카프리치오",
+    "intensity": 5,
+    "acidity": 4,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "cereal",
+      "balanced"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 720,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/espresso-capriccio",
+    "desc": "산미와 바디의 경쾌한 균형. 곡물 향에 살짝 과일의 상큼함이 더해져요."
+  },
+  {
+    "id": 22,
+    "brand": "Nespresso",
+    "name": "Nicaragua",
+    "nameKo": "니카라과",
+    "intensity": 5,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "sweet-cereal"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 860,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/nicaragua-coffee",
+    "desc": "니카라과 싱글 오리진. 부드러운 견과류 향과 캐러멜 같은 단맛."
+  },
+  {
+    "id": 23,
+    "brand": "Nespresso",
+    "name": "Volluto Decaffeinato",
+    "nameKo": "볼루토 디카페나토",
+    "intensity": 4,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "balanced",
+      "cereal",
+      "fruity"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "original"
+    ],
+    "price": 750,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/espresso-volluto-decaf",
+    "desc": "볼루토의 산뜻함을 카페인 없이. 가벼운 과일 향과 곡물의 단맛."
+  },
+  {
+    "id": 24,
+    "brand": "Nespresso",
+    "name": "Buenos Aires Lungo",
+    "nameKo": "부에노스 아이레스 룽고",
+    "intensity": 4,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "cereal",
+      "caramelized"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 750,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/wex-buenos-aires-lungo",
+    "desc": "밝고 가벼운 룽고. 상큼한 과일 향과 곡물의 부드러운 마무리."
+  },
+  {
+    "id": 25,
+    "brand": "Nespresso",
+    "name": "Volluto",
+    "nameKo": "볼루토",
+    "intensity": 4,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "balanced",
+      "fruity",
+      "cereal"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 720,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/espresso-volluto",
+    "desc": "가볍고 상큼한 산미가 살아있는 부드러운 캡슐. 아침에 깔끔하게 즐기기 좋아요."
+  },
+  {
+    "id": 26,
+    "brand": "Nespresso",
+    "name": "Cosi",
+    "nameKo": "코지",
+    "intensity": 4,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "cereal",
+      "citrus"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 720,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/original/espresso-cosi",
+    "desc": "라이트 로스트의 부드러운 블렌드. 곡물과 은은한 꽃향의 산뜻함."
+  },
+  {
+    "id": 27,
+    "brand": "Nespresso",
+    "name": "Ethiopia",
+    "nameKo": "에티오피아",
+    "intensity": 4,
+    "acidity": 5,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "flowery"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 1000,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/master-origins-ethiopia",
+    "desc": "에티오피아 싱글 오리진. 화사한 꽃향과 밝은 과일 산미가 돋보여요."
+  },
+  {
+    "id": 28,
+    "brand": "Starbucks",
+    "name": "Starbucks Espresso Roast",
+    "nameKo": "스타벅스 에스프레소 로스트",
+    "intensity": 11,
+    "acidity": 1,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "caramel",
+      "rich"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 920,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/starbucks-esp-roast",
+    "desc": "강도 11의 버츄오 커피. 에스프레소 (40ml) 사이즈로 초콜릿·우디 풍미가 어우러져요."
+  },
+  {
+    "id": 29,
+    "brand": "Nespresso",
+    "name": "Double Espresso Scuro",
+    "nameKo": "더블 에스프레소 스쿠로",
+    "intensity": 11,
+    "acidity": 1,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "Smoky",
+      "robusta"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 930,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/double-espresso-scuro-vl",
+    "desc": "강도 11의 버츄오 커피. 더블 에스프레소 (80ml) 사이즈로 초콜릿·우디 풍미가 어우러져요."
+  },
+  {
+    "id": 30,
+    "brand": "Nespresso",
+    "name": "Diavolitto",
+    "nameKo": "디아볼리토",
+    "intensity": 11,
+    "acidity": 1,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "intense"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 770,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/diavolitto-espresso",
+    "desc": "강도 11의 버츄오 커피. 에스프레소 (40ml) 사이즈로 우디·스파이시 풍미가 어우러져요."
+  },
+  {
+    "id": 31,
+    "brand": "Nespresso",
+    "name": "Il Caffè",
+    "nameKo": "일카페",
+    "intensity": 11,
+    "acidity": 1,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cereal",
+      "woody"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 770,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/ilcaffe-espresso",
+    "desc": "강도 11의 버츄오 커피. 에스프레소 (40ml) 사이즈로 초콜릿·우디 풍미가 어우러져요."
+  },
+  {
+    "id": 32,
+    "brand": "Starbucks",
+    "name": "Starbucks Caffè Verona",
+    "nameKo": "스타벅스 카페 베로나",
+    "intensity": 10,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "sweet-notes",
+      "dark-chocolate"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1200,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/starbucks-caffe-verona",
+    "desc": "강도 10의 버츄오 커피. 머그 (230ml) 사이즈로 초콜릿·우디 풍미가 어우러져요."
+  },
+  {
+    "id": 33,
+    "brand": "Nespresso",
+    "name": "Intenso",
+    "nameKo": "인텐소",
+    "intensity": 9,
+    "acidity": 2,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "brown-sugar-and-roasted-notes"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1000,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/intenso-vertuo-coffee",
+    "desc": "강도 9의 버츄오 커피. 머그 (230ml) 사이즈로 초콜릿·우디 풍미가 어우러져요."
+  },
+  {
+    "id": 34,
+    "brand": "Nespresso",
+    "name": "Altissio Decaffeinato",
+    "nameKo": "알티시오 디카페나토",
+    "intensity": 9,
+    "acidity": 2,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "cocoa"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 800,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/altissio-decaf-espresso",
+    "desc": "강도 9의 버츄오 커피. 에스프레소 (40ml) 사이즈로 초콜릿·곡물 풍미가 어우러져요."
+  },
+  {
+    "id": 35,
+    "brand": "Nespresso",
+    "name": "Ristretto Classico",
+    "nameKo": "리스트레토 클라시코",
+    "intensity": 9,
+    "acidity": 2,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "berry",
+      "very-roasted"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 770,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/ristretto-classico-vertuo",
+    "desc": "강도 9의 버츄오 커피. 리스트레토 (25 ml) 사이즈로 초콜릿·우디 풍미가 어우러져요."
+  },
+  {
+    "id": 36,
+    "brand": "Nespresso",
+    "name": "Altissio",
+    "nameKo": "알티시오",
+    "intensity": 9,
+    "acidity": 2,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "cocoa"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 770,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/altissio-espresso",
+    "desc": "강도 9의 버츄오 커피. 에스프레소 (40ml) 사이즈로 초콜릿·곡물 풍미가 어우러져요."
+  },
+  {
+    "id": 37,
+    "brand": "Nespresso",
+    "name": "Double Espresso Chiaro Decaffeinato",
+    "nameKo": "더블 에스프레소 키아로 디카페나토",
+    "intensity": 8,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "toasted-cereal",
+      "sweet-notes",
+      "woody"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 970,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/double-esp-chiaro-decaf",
+    "desc": "강도 8의 버츄오 커피. 더블 에스프레소 (80ml) 사이즈로 카라멜·곡물 풍미가 어우러져요."
+  },
+  {
+    "id": 38,
+    "brand": "Nespresso",
+    "name": "Double Espresso Chiaro",
+    "nameKo": "더블 에스프레소 키아로",
+    "intensity": 8,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "woody",
+      "roasted-cereal"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 930,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/double-espresso-chiaro-vl",
+    "desc": "강도 8의 버츄오 커피. 더블 에스프레소 (80ml) 사이즈로 카라멜·곡물 풍미가 어우러져요."
+  },
+  {
+    "id": 39,
+    "brand": "Nespresso",
+    "name": "Stormio",
+    "nameKo": "스토미오",
+    "intensity": 8,
+    "acidity": 2,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "intense"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1000,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/stormio-vertuo-coffee",
+    "desc": "강도 8의 버츄오 커피. 머그 (230ml) 사이즈로 우디·곡물 풍미가 어우러져요."
+  },
+  {
+    "id": 40,
+    "brand": "Nespresso",
+    "name": "Fortado Decaffeinato",
+    "nameKo": "포르타도 디카페나토",
+    "intensity": 8,
+    "acidity": 2,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "woody"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 970,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/fortado-decaffeinato",
+    "desc": "강도 8의 버츄오 커피. 그랑 룽고 (150ml) 사이즈로 초콜릿·우디 풍미가 어우러져요."
+  },
+  {
+    "id": 41,
+    "brand": "Nespresso",
+    "name": "Fortado",
+    "nameKo": "포르타도",
+    "intensity": 8,
+    "acidity": 2,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "very-roasted",
+      "woody"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 930,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/fortado-vertuo-coffee",
+    "desc": "강도 8의 버츄오 커피. 밀크 레시피 사이즈로 초콜릿·우디 풍미가 어우러져요."
+  },
+  {
+    "id": 42,
+    "brand": "Starbucks",
+    "name": "Starbucks Pike Place Roast",
+    "nameKo": "스타벅스 파이크 플레이스 로스트",
+    "intensity": 7,
+    "acidity": 2,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "softChocolate"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1200,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/starbucks-pikeplace-roast",
+    "desc": "강도 7의 버츄오 커피. 머그 (230ml) 사이즈로 고소·초콜릿 풍미가 어우러져요."
+  },
+  {
+    "id": 43,
+    "brand": "Starbucks",
+    "name": "Starbucks Single-Origin Colombia",
+    "nameKo": "스타벅스 싱글 오리진 콜롬비아",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "balanced",
+      "nutty"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1320,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/starbucks-colombia",
+    "desc": "강도 7의 버츄오 커피. 머그 (230ml) 사이즈로 고소·과일 풍미가 어우러져요."
+  },
+  {
+    "id": 44,
+    "brand": "Nespresso",
+    "name": "Mexico",
+    "nameKo": "멕시코",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "woody",
+      "spicy"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1100,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/mexico-vertuo-coffee",
+    "desc": "강도 7의 버츄오 커피. 머그 (230ml) 사이즈로 고소·카라멜 풍미가 어우러져요."
+  },
+  {
+    "id": 45,
+    "brand": "Nespresso",
+    "name": "Odacio",
+    "nameKo": "오다치오",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "intense"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1000,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/odacio-vertuo-coffee",
+    "desc": "강도 7의 버츄오 커피. 머그 (230ml) 사이즈로 과일·우디 풍미가 어우러져요."
+  },
+  {
+    "id": 46,
+    "brand": "Nespresso",
+    "name": "Costa Rica",
+    "nameKo": "코스타리카",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "malted-cereal"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1000,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/master-origins-costa-rica",
+    "desc": "강도 7의 버츄오 커피. 그랑 룽고 (150ml) 사이즈로 과일·카라멜 풍미가 어우러져요."
+  },
+  {
+    "id": 47,
+    "brand": "Starbucks",
+    "name": "Starbucks Blonde Espresso Roast",
+    "nameKo": "스타벅스 블론드 에스프레소 로스트",
+    "intensity": 6,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "smooth",
+      "sweet"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 920,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/starbucks-blonde-roast",
+    "desc": "강도 6의 버츄오 커피. 에스프레소 (40ml) 사이즈로 곡물·카라멜 풍미가 어우러져요."
+  },
+  {
+    "id": 48,
+    "brand": "Starbucks",
+    "name": "Starbucks Veranda Blend",
+    "nameKo": "스타벅스 베란다 블렌드",
+    "intensity": 6,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "cocoa"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1200,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/starbucks-veranda-blend",
+    "desc": "강도 6의 버츄오 커피. 머그 (230ml) 사이즈로 고소·곡물 풍미가 어우러져요."
+  },
+  {
+    "id": 49,
+    "brand": "Nespresso",
+    "name": "Vivida",
+    "nameKo": "비비다",
+    "intensity": 6,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "biscuity",
+      "cereal"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1200,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/vivida",
+    "desc": "강도 6의 버츄오 커피. 머그 (230ml) 사이즈로 과일·꽃향 풍미가 어우러져요."
+  },
+  {
+    "id": 50,
+    "brand": "Nespresso",
+    "name": "Melozio",
+    "nameKo": "멜로지오",
+    "intensity": 6,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "mild"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1000,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/melozio-vertuo-coffee",
+    "desc": "강도 6의 버츄오 커피. 머그 (230ml) 사이즈로 카라멜·곡물 풍미가 어우러져요."
+  },
+  {
+    "id": 51,
+    "brand": "Nespresso",
+    "name": "Melozio Go",
+    "nameKo": "멜로지오 고",
+    "intensity": 6,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "cereal",
+      "biscuity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1200,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/melozio-go",
+    "desc": "강도 6의 버츄오 커피. 머그 (230ml) 사이즈로 카라멜·곡물 풍미가 어우러져요."
+  },
+  {
+    "id": 52,
+    "brand": "Nespresso",
+    "name": "Melozio Decaffeinato",
+    "nameKo": "멜로지오 디카페나토",
+    "intensity": 6,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "roasted-cereal",
+      "biscuity"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1050,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/melozio-decaffeinato",
+    "desc": "강도 6의 버츄오 커피. 머그 (230ml) 사이즈로 카라멜·곡물 풍미가 어우러져요."
+  },
+  {
+    "id": 53,
+    "brand": "Nespresso",
+    "name": "Arondio",
+    "nameKo": "아론디오",
+    "intensity": 6,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "cereal"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 930,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/arondio-vertuo-coffee",
+    "desc": "강도 6의 버츄오 커피. 그랑 룽고 (150ml) 사이즈로 고소·곡물 풍미가 어우러져요."
+  },
+  {
+    "id": 54,
+    "brand": "Nespresso",
+    "name": "Orafio",
+    "nameKo": "오라피오",
+    "intensity": 6,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "cereal"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 770,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/orafio-espresso",
+    "desc": "강도 6의 버츄오 커피. 에스프레소 (40ml) 사이즈로 카라멜·고소 풍미가 어우러져요."
+  },
+  {
+    "id": 55,
+    "brand": "Blue Bottle",
+    "name": "Blue Bottle Bold Blend",
+    "nameKo": "블루보틀 볼드 블렌드",
+    "intensity": 5,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "caramel_2",
+      "biscuity",
+      "malt"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1550,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/blue-bottle-bold-blend",
+    "desc": "강도 5의 버츄오 커피. 머그 (230ml) 사이즈로 초콜릿·우디 풍미가 어우러져요."
+  },
+  {
+    "id": 56,
+    "brand": "Starbucks",
+    "name": "Starbucks Creamy Vanilla",
+    "nameKo": "스타벅스 크리미 바닐라향 커피",
+    "intensity": 5,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "vanilla",
+      "biscuity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1320,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/starbucks-creamy-vanilla",
+    "desc": "강도 5의 버츄오 커피. 머그 (230ml) 사이즈로 카라멜·곡물 풍미가 어우러져요."
+  },
+  {
+    "id": 57,
+    "brand": "Starbucks",
+    "name": "Starbucks Smooth Caramel",
+    "nameKo": "스타벅스 스무스 캐러멜향 커피",
+    "intensity": 5,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "caramel",
+      "vanilla"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1320,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/starbucks-smooth-caramel",
+    "desc": "강도 5의 버츄오 커피. 머그 (230ml) 사이즈로 카라멜·곡물 풍미가 어우러져요."
+  },
+  {
+    "id": 58,
+    "brand": "Nespresso",
+    "name": "Double Espresso Dolce",
+    "nameKo": "더블 에스프레소 돌체",
+    "intensity": 5,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "cereal"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 930,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/double-espresso-dolce-vl",
+    "desc": "강도 5의 버츄오 커피. 더블 에스프레소 (80ml) 사이즈로 카라멜·곡물 풍미가 어우러져요."
+  },
+  {
+    "id": 59,
+    "brand": "Nespresso",
+    "name": "El Salvador",
+    "nameKo": "엘살바도르",
+    "intensity": 5,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "fruity",
+      "biscuity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1100,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/master-origins-el-salvador",
+    "desc": "강도 5의 버츄오 커피. 머그 (230ml) 사이즈로 과일·카라멜 풍미가 어우러져요."
+  },
+  {
+    "id": 60,
+    "brand": "Nespresso",
+    "name": "Colombia",
+    "nameKo": "콜롬비아",
+    "intensity": 5,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "redFruits"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1100,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/colombia-vertuo-coffee",
+    "desc": "강도 5의 버츄오 커피. 머그 (230ml) 사이즈로 과일·고소 풍미가 어우러져요."
+  },
+  {
+    "id": 61,
+    "brand": "Nespresso",
+    "name": "Half Caffeinato",
+    "nameKo": "하프 카페나토",
+    "intensity": 5,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "mild"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1000,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/half-caffeinato-coffee",
+    "desc": "강도 5의 버츄오 커피. 머그 (230ml) 사이즈로 곡물·카라멜 풍미가 어우러져요."
+  },
+  {
+    "id": 62,
+    "brand": "Nespresso",
+    "name": "Ethiopia",
+    "nameKo": "에티오피아",
+    "intensity": 4,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "flowery"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1000,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/master-origins-ethiopia",
+    "desc": "강도 4의 버츄오 커피. 그랑 룽고 (150ml) 사이즈로 꽃향·과일 풍미가 어우러져요."
+  },
+  {
+    "id": 63,
+    "brand": "Nespresso",
+    "name": "Inizio",
+    "nameKo": "이니지오",
+    "intensity": 4,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "floral"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 930,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/inizio-vertuo",
+    "desc": "강도 4의 버츄오 커피. 그랑 룽고 (150ml) 사이즈로 곡물·카라멜 풍미가 어우러져요."
+  },
+  {
+    "id": 64,
+    "brand": "Nespresso",
+    "name": "Voltesso",
+    "nameKo": "볼테소",
+    "intensity": 4,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "mild"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 770,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/voltesso-espresso",
+    "desc": "강도 4의 버츄오 커피. 에스프레소 (40ml) 사이즈로 카라멜·곡물 풍미가 어우러져요."
+  },
+  {
+    "id": 65,
+    "brand": "Nespresso",
+    "name": "Solelio",
+    "nameKo": "솔레리오",
+    "intensity": 2,
+    "acidity": 5,
+    "body": 1,
+    "bitterness": 1,
+    "notes": [
+      "citrus"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1000,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/solelio-vertuo-coffee",
+    "desc": "강도 2의 버츄오 커피. 머그 (230ml) 사이즈로 곡물·과일 풍미가 어우러져요."
+  },
+  {
+    "id": 66,
+    "brand": "illy",
+    "name": "Classico",
+    "nameKo": "클라시코",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "floral"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000727",
+    "desc": "부드러운 맛과 향의 완벽한 균형. 캐러멜·오렌지꽃·재스민의 섬세한 아로마와 달콤한 여운."
+  },
+  {
+    "id": 67,
+    "brand": "illy",
+    "name": "Intenso",
+    "nameKo": "인텐소",
+    "intensity": 10,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000728",
+    "desc": "풍부하고 강렬한 맛과 향. 코코아와 건과일의 아로마, 묵직하고 긴 여운."
+  },
+  {
+    "id": 68,
+    "brand": "illy",
+    "name": "Forte",
+    "nameKo": "포르테",
+    "intensity": 13,
+    "acidity": 1,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "dark-chocolate",
+      "roasted"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000731",
+    "desc": "기분 좋은 쓴맛의 정점. 구운 빵의 진한 향과 다크 초콜릿의 긴 여운."
+  },
+  {
+    "id": 69,
+    "brand": "illy",
+    "name": "Classico Lungo",
+    "nameKo": "클라시코 룽고",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "caramel",
+      "floral"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000729",
+    "desc": "부드러운 맛과 향의 완벽한 균형. 워터리한 바디감, 캐러멜·오렌지꽃·재스민의 섬세한 아로마."
+  },
+  {
+    "id": 70,
+    "brand": "illy",
+    "name": "Decaffeinato",
+    "nameKo": "디카페나토",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "cocoa"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000730",
+    "desc": "부드러운 맛과 향의 완벽한 균형. 캐러멜·구운 빵·초콜릿의 섬세한 아로마와 달콤한 여운."
+  },
+  {
+    "id": 71,
+    "brand": "illy",
+    "name": "Arabica Colombia",
+    "nameKo": "아라비카 콜롬비아",
+    "intensity": 6,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "citrus",
+      "redFruits"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000792",
+    "desc": "illy 아라비카 싱글오리진. 감귤류·레드베리 과일 아로마에 기분 좋은 산미와 단맛."
+  },
+  {
+    "id": 72,
+    "brand": "illy",
+    "name": "Arabica Guatemala",
+    "nameKo": "아라비카 과테말라",
+    "intensity": 9,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "dark-chocolate"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000732",
+    "desc": "illy 아라비카 싱글오리진. 초콜릿 아로마와 뚜렷한 쓴맛, 강렬한 아로마와 바디감."
+  },
+  {
+    "id": 73,
+    "brand": "illy",
+    "name": "Arabica Brazil",
+    "nameKo": "아라비카 브라질",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000733",
+    "desc": "illy 아라비카 싱글오리진. 캐러멜과 건과일의 아로마, 신맛과 쓴맛의 균형, 부드러운 목넘김."
+  },
+  {
+    "id": 74,
+    "brand": "illy",
+    "name": "Arabica Ethiopia",
+    "nameKo": "아라비카 에티오피아",
+    "intensity": 4,
+    "acidity": 5,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "floral",
+      "citrus"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000734",
+    "desc": "illy 아라비카 싱글오리진. 재스민·오렌지꽃·카모마일의 플로럴 아로마, 균형 잡힌 산미와 단맛."
+  },
+  {
+    "id": 75,
+    "brand": "illy",
+    "name": "Filter Intenso",
+    "nameKo": "필터 인텐소",
+    "intensity": 10,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000089",
+    "desc": "풍부하고 강렬한 맛과 향. 코코아와 건과일의 아로마, 묵직하고 긴 여운. ※ 필터 캡슐은 'Espresso & Coffee' 로고가 부착된 머신(Iperespresso Y3.2 / Y3.3)에서만 사용 가능합니다."
+  },
+  {
+    "id": 76,
+    "brand": "illy",
+    "name": "Filter Classico",
+    "nameKo": "필터 클라시코",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "floral"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "iperespresso"
+    ],
+    "price": 733,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000090",
+    "desc": "부드러운 맛과 향의 완벽한 균형. 캐러멜·오렌지꽃·재스민의 섬세한 아로마와 달콤한 여운. ※ 필터 캡슐은 'Espresso & Coffee' 로고가 부착된 머신(Iperespresso Y3.2 / Y3.3)에서만 사용 가능합니다."
+  },
+  {
+    "id": 77,
+    "brand": "illy",
+    "name": "Classico (Nespresso)",
+    "nameKo": "클라시코 (네스프레소 호환)",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "floral"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 690,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000193",
+    "desc": "부드러운 맛과 향의 완벽한 균형. 캐러멜·오렌지꽃·재스민의 섬세한 아로마와 달콤한 여운. 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 78,
+    "brand": "illy",
+    "name": "Intenso (Nespresso)",
+    "nameKo": "인텐소 (네스프레소 호환)",
+    "intensity": 10,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 690,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000194",
+    "desc": "풍부하고 강렬한 맛과 향. 코코아와 건과일의 아로마, 묵직하고 긴 여운. 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 79,
+    "brand": "illy",
+    "name": "Forte (Nespresso)",
+    "nameKo": "포르테 (네스프레소 호환)",
+    "intensity": 13,
+    "acidity": 1,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "dark-chocolate",
+      "roasted"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 690,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000196",
+    "desc": "기분 좋은 쓴맛의 정점. 구운 빵의 진한 향과 다크 초콜릿의 긴 여운. 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 80,
+    "brand": "illy",
+    "name": "Classico Lungo (Nespresso)",
+    "nameKo": "클라시코 룽고 (네스프레소 호환)",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "caramel",
+      "floral"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 690,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000195",
+    "desc": "부드러운 맛과 향의 완벽한 균형. 룽고 컵에 맞춘 캐러멜·오렌지꽃·재스민의 섬세한 아로마. 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 81,
+    "brand": "illy",
+    "name": "Intenso Lungo (Nespresso)",
+    "nameKo": "인텐소 룽고 (네스프레소 호환)",
+    "intensity": 10,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 690,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000827",
+    "desc": "풍부하고 강렬한 맛과 향. 룽고 컵에 맞춘 코코아·건과일의 아로마와 진한 여운. 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 82,
+    "brand": "illy",
+    "name": "Decaffeinato (Nespresso)",
+    "nameKo": "디카페나토 (네스프레소 호환)",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "cocoa"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "original"
+    ],
+    "price": 690,
+    "buyUrl": "https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=1000000414",
+    "desc": "부드러운 맛과 향의 완벽한 균형. 캐러멜·구운 빵·초콜릿의 섬세한 아로마와 달콤한 여운. 네스프레소 오리지널 호환 디카페인 캡슐."
+  },
+  {
+    "id": 83,
+    "brand": "Nespresso",
+    "name": "Ice Yuzu Vanilla",
+    "nameKo": "아이스 유자 바닐라향 커피",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "caspuleAromatic_Hint_of_Vanilla",
+      "caspuleAromatic_yuzu"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1050,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/yuzu-vanilla-vl",
+    "desc": "바닐라향·유자향 향이 어우러진 버츄오 가향 커피."
+  },
+  {
+    "id": 84,
+    "brand": "Nespresso",
+    "name": "Ice Coconut Vanilla",
+    "nameKo": "아이스 코코넛 바닐라향 커피",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "coconut",
+      "vanilla"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1200,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/coconut-vanilla-vl",
+    "desc": "코코넛향·바닐라향 향이 어우러진 버츄오 가향 커피."
+  },
+  {
+    "id": 85,
+    "brand": "Nespresso",
+    "name": "Ice Leggero",
+    "nameKo": "아이스 레제로",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 930,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/ice-leggero",
+    "desc": "과일 향이 어우러진 버츄오 가향 커피."
+  },
+  {
+    "id": 86,
+    "brand": "Nespresso",
+    "name": "Ice Forte",
+    "nameKo": "아이스 포르테",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "very-roasted"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1000,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/ice-forte",
+    "desc": "강한 로스팅향 향이 어우러진 버츄오 가향 커피."
+  },
+  {
+    "id": 87,
+    "brand": "Nespresso",
+    "name": "Active",
+    "nameKo": "액티브",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "vanilla-almonds"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1100,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/vl-active-coffee",
+    "desc": "바닐라와 아몬드향 향이 어우러진 버츄오 가향 커피."
+  },
+  {
+    "id": 88,
+    "brand": "Nespresso",
+    "name": "Bianco Doppio for Milk",
+    "nameKo": "비앙코 도피오 포 밀크",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "caramel"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 930,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/bianco-doppio",
+    "desc": "캐러멜향 향이 어우러진 버츄오 가향 커피."
+  },
+  {
+    "id": 89,
+    "brand": "Nespresso",
+    "name": "Ginseng Delight",
+    "nameKo": "진생 딜라이트",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "ginseng"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1100,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/ginseng-delight",
+    "desc": "인삼향 향이 어우러진 버츄오 가향 커피."
+  },
+  {
+    "id": 90,
+    "brand": "Nespresso",
+    "name": "Sweet Vanilla Decaffeinato",
+    "nameKo": "스위트 바닐라향* 디카페나토",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "vanilla"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1150,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/sweet-vanilla-decaffeinato",
+    "desc": "바닐라향 향이 어우러진 버츄오 가향 커피."
+  },
+  {
+    "id": 91,
+    "brand": "Nespresso",
+    "name": "Bianco Forte for Milk",
+    "nameKo": "비앙코 포르테 포 밀크",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "very-roasted"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1000,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/bianco-forte",
+    "desc": "강한 로스팅향 향이 어우러진 버츄오 가향 커피."
+  },
+  {
+    "id": 92,
+    "brand": "Nespresso",
+    "name": "Sweet Vanilla",
+    "nameKo": "스위트 바닐라향* 커피",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "cereal",
+      "biscuity",
+      "vanilla"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1100,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/sweet-vanilla-coffee",
+    "desc": "곡물향·비스킷향·바닐라향 향이 어우러진 버츄오 가향 커피."
+  },
+  {
+    "id": 93,
+    "brand": "Nespresso",
+    "name": "Golden Caramel",
+    "nameKo": "골든 캐러멜향* 커피",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "caramel",
+      "biscuity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1100,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/golden-caramel-coffee",
+    "desc": "캐러멜향·비스킷향 향이 어우러진 버츄오 가향 커피."
+  },
+  {
+    "id": 94,
+    "brand": "Nespresso",
+    "name": "Roasted Hazelnut",
+    "nameKo": "로스티드 헤이즐넛향* 커피",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "hazelnut",
+      "nutty",
+      "sweet",
+      "caramelized",
+      "biscuity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1100,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/roasted-hazelnut-coffee",
+    "desc": "헤이즐넛향·견과류향·은은한 달콤함·카라멜향·비스킷향 향이 어우러진 버츄오 가향 커피."
+  },
+  {
+    "id": 95,
+    "brand": "Nespresso",
+    "name": "Rich Chocolate",
+    "nameKo": "리치 초콜릿향* 커피",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "cereal",
+      "chocolate",
+      "caramel",
+      "almonds"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 1100,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/rich-chocolate-coffee",
+    "desc": "곡물향·초콜릿향·캐러멜향·아몬드향 향이 어우러진 버츄오 가향 커피."
+  },
+  {
+    "id": 96,
+    "brand": "Nespresso",
+    "name": "Bianco Piccolo for Milk",
+    "nameKo": "비앙코 피콜로 포 밀크",
+    "intensity": 0,
+    "acidity": 3,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "C-1035-7"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "vertuo"
+    ],
+    "price": 770,
+    "buyUrl": "https://www.nespresso.com/kr/ko/order/capsules/vertuo/bianco-piccolo",
+    "desc": "달콤하고 부드러움 향이 어우러진 버츄오 가향 커피."
+  },
+  {
+    "id": 97,
+    "brand": "카누",
+    "name": "Lively Breeze",
+    "nameKo": "라이블리 브리즈",
+    "intensity": 4,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "berry",
+      "wine"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 940,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/133720354",
+    "desc": "베리의 달콤함과 우아한 와인향. 카누 바리스타 전용 아이스 캡슐."
+  },
+  {
+    "id": 98,
+    "brand": "카누",
+    "name": "Infinite Peak",
+    "nameKo": "인피니트 피크",
+    "intensity": 13,
+    "acidity": 2,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "nutty",
+      "Smoky"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 940,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/133720353",
+    "desc": "고소한 견과류와 은은한 그을음향. 카누 바리스타 전용 아이스 캡슐."
+  },
+  {
+    "id": 99,
+    "brand": "카누",
+    "name": "Brazil Cerrado",
+    "nameKo": "브라질 세하도",
+    "intensity": 8,
+    "acidity": 3,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "nutty",
+      "cocoa"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 1059,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/132093415",
+    "desc": "아몬드의 고소함과 밀크 초콜릿의 달콤한 부드러움. 카누 바리스타 싱글오리진 캡슐."
+  },
+  {
+    "id": 100,
+    "brand": "카누",
+    "name": "Forte Ensemble",
+    "nameKo": "포르테 앙상블",
+    "intensity": 12,
+    "acidity": 1,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "dark-chocolate",
+      "nutty"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 940,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/132093413",
+    "desc": "묵직한 다크 초콜릿 풍미와 고소한 단맛의 조화. 카누 바리스타 라떼 전용 캡슐. ※ 라떼 전용 — 우유나 스팀 밀크를 넣어 마시면 더욱 맛있어요. 우유가 들어있지 않은 블랙 커피 제품입니다."
+  },
+  {
+    "id": 101,
+    "brand": "카누",
+    "name": "Soft Harmony",
+    "nameKo": "소프트 하모니",
+    "intensity": 5,
+    "acidity": 2,
+    "body": 3,
+    "bitterness": 2,
+    "notes": [
+      "caramel",
+      "sweet"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 940,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/132093399",
+    "desc": "솜사탕처럼 부드럽고 달콤한 풍미. 카누 바리스타 라떼 전용 캡슐. ※ 라떼 전용 — 우유나 스팀 밀크를 넣어 마시면 더욱 맛있어요. 우유가 들어있지 않은 블랙 커피 제품입니다."
+  },
+  {
+    "id": 102,
+    "brand": "카누",
+    "name": "Bright Garden",
+    "nameKo": "브라이트 가든",
+    "intensity": 4,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "citrus",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 940,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129678036",
+    "desc": "시트러스의 가벼운 산미와 부드러움. 카누 바리스타 전용 캡슐."
+  },
+  {
+    "id": 103,
+    "brand": "카누",
+    "name": "Mellow Wind",
+    "nameKo": "멜로우 윈드",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "cocoa",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 940,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129678111",
+    "desc": "밀크 초콜릿과 크리미한 과일향. 카누 바리스타 전용 캡슐."
+  },
+  {
+    "id": 104,
+    "brand": "카누",
+    "name": "Gentle Sky",
+    "nameKo": "젠틀 스카이",
+    "intensity": 9,
+    "acidity": 3,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "nutty"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 940,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129678156",
+    "desc": "리치한 캐러멜과 고소한 견과류. 카누 바리스타 전용 캡슐."
+  },
+  {
+    "id": 105,
+    "brand": "카누",
+    "name": "Proud Ocean",
+    "nameKo": "프라우드 오션",
+    "intensity": 11,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "nutty",
+      "biscuity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 940,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129678199",
+    "desc": "구운 아몬드의 고소함과 부드러움. 카누 바리스타 전용 캡슐."
+  },
+  {
+    "id": 106,
+    "brand": "카누",
+    "name": "Deep Forest",
+    "nameKo": "딥 포레스트",
+    "intensity": 13,
+    "acidity": 1,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "cocoa",
+      "Smoky"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 940,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129678302",
+    "desc": "진한 초콜릿의 스모키 향미. 카누 바리스타 전용 캡슐."
+  },
+  {
+    "id": 107,
+    "brand": "카누",
+    "name": "Eternal Mountain",
+    "nameKo": "이터널 마운틴",
+    "intensity": 13,
+    "acidity": 1,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "cocoa",
+      "dark-chocolate"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 940,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129678328",
+    "desc": "풍부하고 진한 초콜릿향. 카누 바리스타 전용 캡슐."
+  },
+  {
+    "id": 108,
+    "brand": "카누",
+    "name": "Joyful Snow",
+    "nameKo": "조이풀 스노우",
+    "intensity": 6,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "wine",
+      "redFruits"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 940,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129678080",
+    "desc": "와인향에 가벼운 산미. 카누 바리스타 전용 아이스 캡슐."
+  },
+  {
+    "id": 109,
+    "brand": "카누",
+    "name": "Wild Waterfall",
+    "nameKo": "와일드 워터폴",
+    "intensity": 12,
+    "acidity": 2,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "Smoky",
+      "cocoa"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 940,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129678281",
+    "desc": "스모키함과 초콜릿향. 카누 바리스타 전용 아이스 캡슐."
+  },
+  {
+    "id": 110,
+    "brand": "카누",
+    "name": "Serenity Moon Decaf",
+    "nameKo": "세레니티 문 디카페인",
+    "intensity": 7,
+    "acidity": 4,
+    "body": 3,
+    "bitterness": 2,
+    "notes": [
+      "citrus",
+      "fruity"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 940,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129678359",
+    "desc": "청사과처럼 산뜻하고 깔끔한. 카누 바리스타 전용 디카페인 캡슐."
+  },
+  {
+    "id": 111,
+    "brand": "카누",
+    "name": "Caring Star Decaf",
+    "nameKo": "케어링 스타 디카페인",
+    "intensity": 9,
+    "acidity": 3,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "nutty"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 940,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129678398",
+    "desc": "달콤하고 고소한 캐러멜. 카누 바리스타 전용 디카페인 캡슐."
+  },
+  {
+    "id": 112,
+    "brand": "카누",
+    "name": "Ethiopia Yirgacheffe",
+    "nameKo": "에티오피아 예가체프",
+    "intensity": 5,
+    "acidity": 5,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "flowery",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 1059,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129678433",
+    "desc": "에티오피아 특유의 은은한 꽃향기와 부드러움. 카누 바리스타 싱글오리진 캡슐."
+  },
+  {
+    "id": 113,
+    "brand": "카누",
+    "name": "Indonesia Sumatra",
+    "nameKo": "인도네시아 수마트라",
+    "intensity": 10,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "herb"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 1059,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129678470",
+    "desc": "길링바사 가공 원두의 카카오와 허브향. 카누 바리스타 싱글오리진 캡슐."
+  },
+  {
+    "id": 114,
+    "brand": "카누",
+    "name": "Colombia Tolima",
+    "nameKo": "콜롬비아 톨리마",
+    "intensity": 7,
+    "acidity": 4,
+    "body": 3,
+    "bitterness": 2,
+    "notes": [
+      "fruity",
+      "citrus"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "kanubarista"
+    ],
+    "price": 1059,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129678525",
+    "desc": "콜롬비아 특유의 독특한 과실향. 카누 바리스타 싱글오리진 캡슐."
+  },
+  {
+    "id": 115,
+    "brand": "카누",
+    "name": "Silky Light Roast (Nespresso)",
+    "nameKo": "실키 라이트 로스트 (네스프레소 호환)",
+    "intensity": 4,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "flowery",
+      "citrus"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 799,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676110",
+    "desc": "재스민향과 산뜻한 산미. 카누 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 116,
+    "brand": "카누",
+    "name": "Juicy Light Roast (Nespresso)",
+    "nameKo": "쥬시 라이트 로스트 (네스프레소 호환)",
+    "intensity": 4,
+    "acidity": 5,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "citrus",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 799,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676162",
+    "desc": "청량하고 상큼한 향. 카누 네스프레소 오리지널 호환 룽고 캡슐."
+  },
+  {
+    "id": 117,
+    "brand": "카누",
+    "name": "Smooth Medium Roast (Nespresso)",
+    "nameKo": "스무스 미디엄 로스트 (네스프레소 호환)",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "fruity",
+      "herb"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 799,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676245",
+    "desc": "달콤한 과일향과 허브의 향미. 카누 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 118,
+    "brand": "카누",
+    "name": "Velvety Medium Roast (Nespresso)",
+    "nameKo": "벨베티 미디엄 로스트 (네스프레소 호환)",
+    "intensity": 9,
+    "acidity": 3,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "balanced"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 799,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676317",
+    "desc": "부드러운 캐러멜과 균형잡힌 향미. 카누 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 119,
+    "brand": "카누",
+    "name": "Bold Dark Roast (Nespresso)",
+    "nameKo": "볼드 다크 로스트 (네스프레소 호환)",
+    "intensity": 12,
+    "acidity": 1,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "dark-chocolate",
+      "nutty"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 799,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676350",
+    "desc": "다크 초콜릿과 고소한 견과류의 향미. 카누 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 120,
+    "brand": "카누",
+    "name": "Smoky Dark Roast (Nespresso)",
+    "nameKo": "스모키 다크 로스트 (네스프레소 호환)",
+    "intensity": 13,
+    "acidity": 1,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "Smoky",
+      "woody"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 799,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676506",
+    "desc": "풀 바디의 스모키한 향미. 카누 네스프레소 오리지널 호환 캡슐."
+  },
+  {
+    "id": 121,
+    "brand": "카누",
+    "name": "Relax Decaf (Nespresso)",
+    "nameKo": "릴렉스 디카페인 (네스프레소 호환)",
+    "intensity": 5,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "citrus",
+      "cereal"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "original"
+    ],
+    "price": 799,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676548",
+    "desc": "산뜻하고 깔끔한 디카페인. 카누 네스프레소 오리지널 호환 룽고 캡슐."
+  },
+  {
+    "id": 122,
+    "brand": "카누",
+    "name": "Balance Decaf (Nespresso)",
+    "nameKo": "밸런스 디카페인 (네스프레소 호환)",
+    "intensity": 9,
+    "acidity": 3,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "balanced"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "original"
+    ],
+    "price": 799,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676592",
+    "desc": "달콤한 캐러멜과 균형잡힌 향미. 카누 네스프레소 오리지널 호환 디카페인 캡슐."
+  },
+  {
+    "id": 123,
+    "brand": "카누",
+    "name": "Summer Blend (Nespresso)",
+    "nameKo": "썸머 블렌드 (네스프레소 호환)",
+    "intensity": 8,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "Smoky",
+      "cocoa"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 799,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/133720355",
+    "desc": "스모키한 향과 초콜릿 풍미. 카누 네스프레소 오리지널 호환 아이스 캡슐."
+  },
+  {
+    "id": 124,
+    "brand": "카누",
+    "name": "Brazil Cerrado (Nespresso)",
+    "nameKo": "브라질 세하도 (네스프레소 호환)",
+    "intensity": 8,
+    "acidity": 3,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "nutty",
+      "cocoa"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 880,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/132093420",
+    "desc": "아몬드의 고소함과 밀크 초콜릿의 달콤한 부드러움. 카누 네스프레소 오리지널 호환 싱글오리진 캡슐."
+  },
+  {
+    "id": 125,
+    "brand": "카누",
+    "name": "Ethiopia (Nespresso)",
+    "nameKo": "싱글오리진 에티오피아 (네스프레소 호환)",
+    "intensity": 5,
+    "acidity": 5,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "flowery",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 880,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676642",
+    "desc": "에티오피아 특유의 은은한 꽃향기와 부드러움. 카누 네스프레소 오리지널 호환 싱글오리진 캡슐."
+  },
+  {
+    "id": 126,
+    "brand": "카누",
+    "name": "Colombia (Nespresso)",
+    "nameKo": "싱글오리진 콜롬비아 (네스프레소 호환)",
+    "intensity": 7,
+    "acidity": 4,
+    "body": 3,
+    "bitterness": 2,
+    "notes": [
+      "fruity",
+      "citrus"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 880,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676680",
+    "desc": "콜롬비아 특유의 독특한 과실향. 카누 네스프레소 오리지널 호환 싱글오리진 캡슐."
+  },
+  {
+    "id": 127,
+    "brand": "카누",
+    "name": "Indonesia (Nespresso)",
+    "nameKo": "싱글오리진 인도네시아 (네스프레소 호환)",
+    "intensity": 10,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 4,
+    "notes": [
+      "cocoa",
+      "herb"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 880,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676723",
+    "desc": "길링바사 가공 원두의 카카오와 허브향. 카누 네스프레소 오리지널 호환 싱글오리진 캡슐."
+  },
+  {
+    "id": 128,
+    "brand": "카누",
+    "name": "Silky Light Roast (Dolce Gusto)",
+    "nameKo": "실키 라이트 로스트 (돌체구스토 호환)",
+    "intensity": 4,
+    "acidity": 4,
+    "body": 2,
+    "bitterness": 2,
+    "notes": [
+      "flowery",
+      "citrus"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "dolcegusto"
+    ],
+    "price": 781,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676767",
+    "desc": "재스민향과 산뜻한 산미. 카누 돌체구스토 호환 캡슐."
+  },
+  {
+    "id": 129,
+    "brand": "카누",
+    "name": "Smooth Medium Roast (Dolce Gusto)",
+    "nameKo": "스무스 미디엄 로스트 (돌체구스토 호환)",
+    "intensity": 7,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 3,
+    "notes": [
+      "fruity",
+      "herb"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "dolcegusto"
+    ],
+    "price": 781,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676809",
+    "desc": "달콤한 과일향과 허브의 향미. 카누 돌체구스토 호환 캡슐."
+  },
+  {
+    "id": 130,
+    "brand": "카누",
+    "name": "Velvety Medium Roast (Dolce Gusto)",
+    "nameKo": "벨베티 미디엄 로스트 (돌체구스토 호환)",
+    "intensity": 9,
+    "acidity": 3,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "balanced"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "dolcegusto"
+    ],
+    "price": 781,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676843",
+    "desc": "부드러운 캐러멜과 균형잡힌 향미. 카누 돌체구스토 호환 캡슐."
+  },
+  {
+    "id": 131,
+    "brand": "카누",
+    "name": "Bold Dark Roast (Dolce Gusto)",
+    "nameKo": "볼드 다크 로스트 (돌체구스토 호환)",
+    "intensity": 12,
+    "acidity": 1,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "dark-chocolate",
+      "nutty"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "dolcegusto"
+    ],
+    "price": 781,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676880",
+    "desc": "다크 초콜릿과 고소한 견과류의 향미. 카누 돌체구스토 호환 캡슐."
+  },
+  {
+    "id": 132,
+    "brand": "카누",
+    "name": "Smoky Dark Roast (Dolce Gusto)",
+    "nameKo": "스모키 다크 로스트 (돌체구스토 호환)",
+    "intensity": 13,
+    "acidity": 1,
+    "body": 5,
+    "bitterness": 5,
+    "notes": [
+      "Smoky",
+      "woody"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "dolcegusto"
+    ],
+    "price": 781,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676910",
+    "desc": "풀 바디의 스모키한 향미. 카누 돌체구스토 호환 캡슐."
+  },
+  {
+    "id": 133,
+    "brand": "카누",
+    "name": "Balanced Decaf (Dolce Gusto)",
+    "nameKo": "밸런스드 디카페인 (돌체구스토 호환)",
+    "intensity": 9,
+    "acidity": 3,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "balanced"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "dolcegusto"
+    ],
+    "price": 781,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/129676935",
+    "desc": "달콤한 캐러멜과 균형잡힌 향미. 카누 돌체구스토 호환 디카페인 캡슐."
+  },
+  {
+    "id": 134,
+    "brand": "카누",
+    "name": "Brazil Cerrado (Dolce Gusto)",
+    "nameKo": "브라질 세하도 (돌체구스토 호환)",
+    "intensity": 8,
+    "acidity": 3,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "nutty",
+      "cocoa"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "dolcegusto"
+    ],
+    "price": 781,
+    "buyUrl": "https://www.kanu.co.kr/product-detail/132864410",
+    "desc": "아몬드의 고소함과 밀크 초콜릿의 달콤한 부드러움. 카누 돌체구스토 호환 싱글오리진 캡슐."
+  }
+]
