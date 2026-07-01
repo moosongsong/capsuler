@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { capsules, noteIcons, similar, buyUrlFor } from '../data'
+import { AvatarInner } from './common'
 import { useI18n } from '../i18n'
 import type { Reviews, Review } from '../types'
 
@@ -69,7 +70,7 @@ export default function DetailView({
       </div>
 
       <div className="d-hero">
-        <div className="big"><i className="ti ti-coffee" /></div>
+        <div className="big"><AvatarInner url={c.image} /></div>
         {matchPct ? (
           <div className="match-badge"><i className="ti ti-sparkles" /> {fmtMatch(matchPct)}</div>
         ) : null}
@@ -131,7 +132,7 @@ export default function DetailView({
           {similar(c).map(s => (
             <div key={s.id} className="sim-item" onClick={() => onOpenDetail(s.id)}>
               <div className="cat-ava" style={{ width: 32, height: 32 }}>
-                <i className="ti ti-coffee" style={{ fontSize: 16 }} />
+                <AvatarInner url={s.image} />
               </div>
               <div className="cat-meta">
                 <div style={{ fontSize: 13, fontWeight: 600 }}>

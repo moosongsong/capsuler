@@ -23,6 +23,7 @@ export interface Capsule {
   price: number
   desc: string
   buyUrl?: string // 구매 페이지(없으면 머신 카테고리로 폴백)
+  image?: string // 상품 이미지 URL(없거나 로드 실패 시 커피 아이콘으로 폴백)
   isEnabled?: boolean // false면 단종 처리(공개 목록에서 제외). 미지정=공개
 }
 

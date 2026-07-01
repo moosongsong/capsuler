@@ -26,13 +26,15 @@ const nos = [...new Set([...listHtml.matchAll(/goodsNo=(\d+)/g)].map(m => m[1]))
 const out = []
 for (const no of nos) {
   const i = listHtml.indexOf('goodsNo=' + no)
-  const seg = listHtml.slice(i, i + 800)
+  const seg = listHtml.slice(i, i + 1200)
   const tm = seg.match(/title="([^"]+)"/)
   const title = tm ? tm[1].trim() : ''
   if (!title) continue
   if (/세트|패키지|개입|올인원|\d+\s*팩/.test(title)) continue // 번들 제외
 
   const buyUrl = `https://shop.illycaffe.co.kr/goods/goods_view.php?goodsNo=${no}`
+  const imgM = seg.match(/https:\/\/[a-z0-9]+\.cdn-nhncommerce\.com\/data\/goods\/[^"'? ]+\.(?:jpg|png)/)
+  const image = imgM ? imgM[0] : null
   const packSize = /(\d+)\s*P/i.test(title) ? +title.match(/(\d+)\s*P/i)[1] : 10 // 18P 등, 네스프레소 호환은 10P
   let packPrice = null
   try {
@@ -48,6 +50,7 @@ for (const no of nos) {
     packPrice,
     perCapsule: packPrice ? Math.round(packPrice / packSize) : null,
     buyUrl,
+    image,
   })
 }
 

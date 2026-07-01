@@ -95,6 +95,7 @@ for (const cat of products) {
       aromas,
       price: priceMap[p.id] ?? null,
       buyUrl: p.pdpURLs?.desktop || p.pdpURLs?.opr || null,
+      image: (() => { const ri = p.responsiveImages || {}; const path = ri.plp || ri.standard || p.images?.icon; return path ? 'https://www.nespresso.com' + path : null })(),
     })
   }
 }
@@ -128,6 +129,7 @@ for (const [ko, a] of apiByKo) {
       notes: noteIds, caffeine: a.decaf ? 'decaf' : 'regular', compat: [a.compat],
       price: a.price ?? 0,
       ...(a.buyUrl ? { buyUrl: a.buyUrl } : {}),
+      ...(a.image ? { image: a.image } : {}),
       desc: (a.aromas.map(ar => ar.name).join('·') || a.ko) + ' 향의 네스프레소 캡슐.',
     }
     capsules.push(cap)
@@ -137,6 +139,7 @@ for (const [ko, a] of apiByKo) {
     if (cur.isEnabled === false) { delete cur.isEnabled; priceChanged.push(`${cur.nameKo} (재전시)`) }
     if (a.price != null && a.price !== cur.price) { priceChanged.push(`${cur.nameKo}: ${cur.price}→${a.price}`); cur.price = a.price }
     if (a.buyUrl && a.buyUrl !== cur.buyUrl) cur.buyUrl = a.buyUrl
+    if (a.image && a.image !== cur.image) cur.image = a.image
   }
 }
 

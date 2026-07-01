@@ -81,6 +81,7 @@ for (const { cat, compat, suffix } of LINES) {
       nameKo: base + suffix,
       price: Math.round(p.salePrice / pack),
       buyUrl: `https://www.kanu.co.kr/product-detail/${p.productNo}`,
+      image: (u => (u ? (u.startsWith('//') ? 'https:' + u : u) : null))(p.listImageUrlInfo?.url),
       desc: (p.promotionText || '').replace(/\\n/g, ' ').trim(),
       decaf: /디카페인|디카페|decaf/i.test(base),
     })
@@ -107,6 +108,7 @@ for (const [key, a] of apiByKey) {
       intensity: 0, acidity: 3, body: 3, bitterness: 3,
       notes, caffeine: a.decaf ? 'decaf' : 'regular', compat: [a.compat],
       price: a.price, buyUrl: a.buyUrl,
+      ...(a.image ? { image: a.image } : {}),
       desc: a.desc + ' 카누 캡슐.',
     }
     capsules.push(cap)
@@ -116,6 +118,7 @@ for (const [key, a] of apiByKey) {
     if (cur.isEnabled === false) { delete cur.isEnabled; priceChanged.push(`${cur.nameKo} (재전시)`) }
     if (a.price !== cur.price) { priceChanged.push(`${cur.nameKo}: ${cur.price}→${a.price}`); cur.price = a.price }
     if (a.buyUrl !== cur.buyUrl) cur.buyUrl = a.buyUrl
+    if (a.image && a.image !== cur.image) cur.image = a.image
   }
 }
 
