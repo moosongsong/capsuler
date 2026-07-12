@@ -66,5 +66,83 @@
         "qty": 20
       }
     ]
+  },
+  {
+    "id": 7003,
+    "brand": "폴바셋",
+    "name": "Variety Pack (3 kinds, 36)",
+    "nameKo": "3종 혼합 · 36캡슐",
+    "compat": [
+      "dolcegusto"
+    ],
+    "price": 30000,
+    "image": "https://shop-phinf.pstatic.net/20231027_164/1698365794199yvuHa_PNG/45331048953805256_1269537250.png",
+    "buyUrl": "https://brand.naver.com/baristapaulbassett/products/6006198964",
+    "items": [
+      {
+        "id": 6006,
+        "qty": 12
+      },
+      {
+        "id": 6007,
+        "qty": 12
+      },
+      {
+        "id": 6008,
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "id": 7004,
+    "brand": "폴바셋",
+    "name": "Variety Pack (3 kinds, 60)",
+    "nameKo": "3종 혼합 · 60캡슐",
+    "compat": [
+      "dolcegusto"
+    ],
+    "price": 49900,
+    "image": "https://shop-phinf.pstatic.net/20260224_202/1771919343366lI7UY_PNG/8097985153943031_234459222.png",
+    "buyUrl": "https://brand.naver.com/baristapaulbassett/products/13161208962",
+    "items": [
+      {
+        "id": 6006,
+        "qty": 24
+      },
+      {
+        "id": 6007,
+        "qty": 24
+      },
+      {
+        "id": 6008,
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "id": 7005,
+    "brand": "폴바셋",
+    "name": "Variety Pack (3 kinds, 72)",
+    "nameKo": "3종 혼합 · 72캡슐",
+    "compat": [
+      "dolcegusto"
+    ],
+    "price": 59400,
+    "image": "https://shop-phinf.pstatic.net/20251105_168/1762318183894sURXR_JPEG/87949817920087228_375951593.jpg",
+    "buyUrl": "https://brand.naver.com/baristapaulbassett/products/12637855197",
+    "items": [
+      {
+        "id": 6006,
+        "qty": 24
+      },
+      {
+        "id": 6007,
+        "qty": 24
+      },
+      {
+        "id": 6008,
+        "qty": 24
+      }
+    ]
   }
 ]

@@ -112,5 +112,73 @@
     "buyUrl": "https://brand.naver.com/baristapaulbassett/products/6156288906",
     "image": "https://shop-phinf.pstatic.net/20231027_52/1698365718078w5Gm2_PNG/1739126019537128_1089874221.png",
     "desc": "화사한 꽃향기와 잘 익은 과일의 단맛, 카카오의 쌉싸름한 맛. (강도·산미·바디·쓴맛은 공식 수치가 없어 향미 기반 추정치입니다.)"
+  },
+  {
+    "id": 6006,
+    "brand": "폴바셋",
+    "name": "Signature Blend Lungo",
+    "nameKo": "시그니처 블렌드 룽고",
+    "intensity": 6,
+    "acidity": 3,
+    "body": 3,
+    "bitterness": 2,
+    "notes": [
+      "flowery",
+      "fruity"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "dolcegusto"
+    ],
+    "price": 908,
+    "buyUrl": "https://brand.naver.com/baristapaulbassett/products/5794283104",
+    "image": "https://shop-phinf.pstatic.net/20231027_218/1698365850414a6ewA_PNG/6789898615952145_1831288951.png",
+    "desc": "화사한 꽃향기와 잘 익은 과일의 단맛. (강도·산미·바디·쓴맛은 공식 수치가 없어 향미 기반 추정치입니다.)"
+  },
+  {
+    "id": 6007,
+    "brand": "폴바셋",
+    "name": "Brazil Single Origin Lungo",
+    "nameKo": "브라질 싱글오리진 룽고",
+    "intensity": 6,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "sweet",
+      "cocoa"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "dolcegusto"
+    ],
+    "price": 908,
+    "buyUrl": "https://brand.naver.com/baristapaulbassett/products/5897796140",
+    "image": "https://shop-phinf.pstatic.net/20231027_79/1698365818254fmWOS_JPEG/6739497088379307_434522415.jpg",
+    "desc": "캐러멜의 향과 꿀 같은 달콤한 맛, 카카오의 쌉싸름한 맛. (강도·산미·바디·쓴맛은 공식 수치가 없어 향미 기반 추정치입니다.)"
+  },
+  {
+    "id": 6008,
+    "brand": "폴바셋",
+    "name": "Guatemala Single Origin Lungo",
+    "nameKo": "과테말라 싱글오리진 룽고",
+    "intensity": 7,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "cocoa",
+      "caramel",
+      "nutty"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "dolcegusto"
+    ],
+    "price": 908,
+    "buyUrl": "https://brand.naver.com/baristapaulbassett/products/5897793938",
+    "image": "https://shop-phinf.pstatic.net/20231027_188/16983658357753AUrr_PNG/6739514625337245_2146541068.png",
+    "desc": "초콜릿의 향과 갈색 설탕·말린 과일 같은 단맛, 견과류의 고소한 맛. (강도·산미·바디·쓴맛은 공식 수치가 없어 향미 기반 추정치입니다.)"
   }
 ]
