@@ -10,18 +10,20 @@ import nespressoData from './data/capsules/nespresso.json'
 import illyData from './data/capsules/illy.json'
 import kanuData from './data/capsules/kanu.json'
 import paulbassettData from './data/capsules/paulbassett.json'
+import hollysData from './data/capsules/hollys.json'
 import nespressoPackages from './data/packages/nespresso.json'
 import kanuPackages from './data/packages/kanu.json'
 import paulbassettPackages from './data/packages/paulbassett.json'
+import hollysPackages from './data/packages/hollys.json'
 import notesData from './data/notes.json'
 
 // 전체 데이터(단종 포함). 공개 목록에서는 isEnabled !== false 인 것만 노출.
-export const allCapsules = [...nespressoData, ...illyData, ...kanuData, ...paulbassettData] as unknown as Capsule[]
+export const allCapsules = [...nespressoData, ...illyData, ...kanuData, ...paulbassettData, ...hollysData] as unknown as Capsule[]
 export const capsules = allCapsules.filter(c => c.isEnabled !== false)
 
 // 패키지(어소트먼트/세트). 출처별 JSON을 합치고, 구성 중 존재하는 캡슐만 남겨 정리.
 // items가 빈 패키지(구성 미확보·둘러보기 전용)도 유지 — 추천/상세엔 안 잡히고 목록에만 노출.
-const allPackages = [...nespressoPackages, ...kanuPackages, ...paulbassettPackages] as unknown as Package[]
+const allPackages = [...nespressoPackages, ...kanuPackages, ...paulbassettPackages, ...hollysPackages] as unknown as Package[]
 const capsuleIds = new Set(capsules.map(c => c.id))
 export const packages: Package[] = allPackages
   .filter(p => p.isEnabled !== false)

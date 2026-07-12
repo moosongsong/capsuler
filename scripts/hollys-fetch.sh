@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# 할리스(HOLLYS) 네이버 브랜드스토어 상품 조회 스크립트
+#
+# 네이버 브랜드스토어(brand.naver.com) 캡슐커피 카테고리의 상품 목록을 가져온다.
+# 관문: User-Agent + Referer 헤더가 둘 다 있어야 200. (없거나 루트 referer면 429)
+#       X-Client-* 토큰은 불필요. pageSize는 80 이하.
+#
+# 사용법:
+#   ./hollys-fetch.sh [page] [sortType] [pageSize]
+#     page     : 페이지 번호(기본 1)
+#     sortType : POPULAR(기본) | RECENT | LOW_PRICE | HIGH_PRICE 등
+#     pageSize : 페이지당 개수(기본 40)
+#
+# 결과는 stdout. jq 있으면 예쁘게, 없으면 원본 JSON.
+set -euo pipefail
+
+# 할리스 브랜드 채널 / 슬러그 / 캡슐커피 카테고리
+CHANNEL="2sWDvZ3BP9IUpVR1UVsGT"
+SLUG="hollys2188"
+CATEGORY="b5e15965dc7e4173946cddaa84ebe3c4"
+
+PAGE="${1:-1}"
+SORT="${2:-POPULAR}"
+SIZE="${3:-40}"
+
+URL="https://brand.naver.com/n/v2/channels/${CHANNEL}/categories/${CATEGORY}/products"
+UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36"
+
+curl -sS -G "${URL}" \
+  --data-urlencode "categorySearchType=DISPCATG" \
+  --data-urlencode "sortType=${SORT}" \
+  --data-urlencode "page=${PAGE}" \
+  --data-urlencode "pageSize=${SIZE}" \
+  --data-urlencode "deduplicateGroupEpId=false" \
+  -H "Accept: application/json, text/plain, */*" \
+  -H "Accept-Language: ko-KR,ko;q=0.9" \
+  -H "Referer: https://brand.naver.com/${SLUG}/category/${CATEGORY}" \
+  -H "User-Agent: ${UA}" \
+  | { command -v jq >/dev/null 2>&1 && jq . || cat; }

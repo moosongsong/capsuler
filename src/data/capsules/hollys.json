@@ -1,0 +1,94 @@
+[
+  {
+    "id": 8001,
+    "brand": "할리스",
+    "name": "Signature Blend",
+    "nameKo": "시그니처 블렌드",
+    "intensity": 7,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "nutty",
+      "caramel",
+      "dark-chocolate"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 890,
+    "buyUrl": "https://brand.naver.com/hollys2188/products/5846951564",
+    "image": "https://shop-phinf.pstatic.net/20240415_93/1713161807249dgY1S_JPEG/114297695960117826_1775791050.jpg",
+    "desc": "고소한 견과류의 풍미와 적당한 바디감. 원두산지: 브라질·콜롬비아. (바디·산미는 공식 수치, 강도·쓴맛은 향미 기반 추정치입니다.)"
+  },
+  {
+    "id": 8002,
+    "brand": "할리스",
+    "name": "Decaf Blend",
+    "nameKo": "디카페인 블렌드",
+    "intensity": 6,
+    "acidity": 3,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "nutty",
+      "caramel",
+      "dark-chocolate"
+    ],
+    "caffeine": "decaf",
+    "compat": [
+      "original"
+    ],
+    "price": 890,
+    "buyUrl": "https://brand.naver.com/hollys2188/products/8530194779",
+    "image": "https://shop-phinf.pstatic.net/20240415_85/171316189096731CrA_JPEG/114297789675203578_1871451335.jpg",
+    "desc": "균형잡힌 바디감의 카페인 부담 없는 디카페인. 원두산지: 브라질·콜롬비아. (바디·산미는 공식 수치, 강도·쓴맛은 향미 기반 추정치입니다.)"
+  },
+  {
+    "id": 8003,
+    "brand": "할리스",
+    "name": "Blackaria Blend",
+    "nameKo": "블랙아리아 블렌드",
+    "intensity": 5,
+    "acidity": 4,
+    "body": 3,
+    "bitterness": 2,
+    "notes": [
+      "flowery",
+      "berry",
+      "chocolate"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 890,
+    "buyUrl": "https://brand.naver.com/hollys2188/products/8530093120",
+    "image": "https://shop-phinf.pstatic.net/20240415_143/1713162005554aiUhj_JPEG/114297901288690911_1828728458.jpg",
+    "desc": "스페셜티 원두를 블렌딩한 과일·베리향의 조화로운 풍미. 원두산지: 콜롬비아·에티오피아. (바디·산미는 공식 수치, 강도·쓴맛은 향미 기반 추정치입니다.)"
+  },
+  {
+    "id": 8004,
+    "brand": "할리스",
+    "name": "Eclipse Blend",
+    "nameKo": "이클립스 블렌드",
+    "intensity": 7,
+    "acidity": 2,
+    "body": 4,
+    "bitterness": 3,
+    "notes": [
+      "caramel",
+      "nutty",
+      "cocoa"
+    ],
+    "caffeine": "regular",
+    "compat": [
+      "original"
+    ],
+    "price": 890,
+    "buyUrl": "https://brand.naver.com/hollys2188/products/5846934986",
+    "image": "https://shop-phinf.pstatic.net/20240415_116/17131619501127uVxd_JPEG/114297838826698279_460481687.jpg",
+    "desc": "카라멜의 단맛과 월넛의 고소함. 원두산지: 과테말라·브라질. (바디·산미는 공식 수치, 강도·쓴맛은 향미 기반 추정치입니다.)"
+  }
+]
