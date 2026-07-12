@@ -1,0 +1,70 @@
+[
+  {
+    "id": 7001,
+    "brand": "폴바셋",
+    "name": "Variety Pack (5 kinds, 50)",
+    "nameKo": "5종 혼합 · 50캡슐",
+    "compat": [
+      "original"
+    ],
+    "price": 38000,
+    "image": "https://shop-phinf.pstatic.net/20231027_170/1698365689094kjAiP_PNG/31773899083339576_714991881.png",
+    "buyUrl": "https://brand.naver.com/baristapaulbassett/products/6176561756",
+    "items": [
+      {
+        "id": 6001,
+        "qty": 10
+      },
+      {
+        "id": 6002,
+        "qty": 10
+      },
+      {
+        "id": 6003,
+        "qty": 10
+      },
+      {
+        "id": 6004,
+        "qty": 10
+      },
+      {
+        "id": 6005,
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "id": 7002,
+    "brand": "폴바셋",
+    "name": "Variety Pack (5 kinds, 100)",
+    "nameKo": "5종 혼합 · 100캡슐",
+    "compat": [
+      "original"
+    ],
+    "price": 75000,
+    "image": "https://shop-phinf.pstatic.net/20260129_115/1769671549282nAWI2_JPEG/79802010977090178_727661694.jpg",
+    "buyUrl": "https://brand.naver.com/baristapaulbassett/products/13036116563",
+    "items": [
+      {
+        "id": 6001,
+        "qty": 20
+      },
+      {
+        "id": 6002,
+        "qty": 20
+      },
+      {
+        "id": 6003,
+        "qty": 20
+      },
+      {
+        "id": 6004,
+        "qty": 20
+      },
+      {
+        "id": 6005,
+        "qty": 20
+      }
+    ]
+  }
+]

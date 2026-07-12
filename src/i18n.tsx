@@ -10,8 +10,8 @@ const MACHINE_LABELS: Record<Lang, Record<MachineSystem, string>> = {
 }
 // ── 브랜드 라벨(언어별). 매핑에 없으면 원래 이름 그대로 사용 ──
 const BRAND_LABELS: Record<Lang, Record<string, string>> = {
-  ko: { '카누': '카누' },
-  en: { '카누': 'KANU' },
+  ko: { '카누': '카누', '폴바셋': '폴바셋' },
+  en: { '카누': 'KANU', '폴바셋': 'Paul Bassett' },
 }
 
 const MACHINE_LABELS_SHORT: Record<Lang, Record<MachineSystem, string>> = {
