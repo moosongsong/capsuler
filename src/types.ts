@@ -60,6 +60,7 @@ export interface RecPrefs {
   intensity: number
   acidity: number
   body: number
+  bitterness: number
   notes: Set<string>
   decaf: boolean
 }
@@ -84,6 +85,7 @@ export interface Settings {
   dark: boolean
   intensityStyle: IntensityStyle
   lang: Lang
+  machines: MachineSystem[] // 보유 머신. 비어 있으면 전체, 지정 시 추천을 이 머신 호환 캡슐로 제한
 }
 
 export type TabName = 'cat' | 'rec' | 'fav' | 'my'

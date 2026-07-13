@@ -3,7 +3,7 @@ import { capsules, packages, MACHINES } from '../data'
 import { CapsuleItem, PackageCard, Empty } from './common'
 import { useI18n } from '../i18n'
 import type { UIKey } from '../i18n'
-import type { CatState, IntensityStyle, SortKey } from '../types'
+import type { CatState, IntensityStyle, SortKey, MachineSystem } from '../types'
 
 // 실제 API 향미 중 자주 등장하는 것들을 필터 칩으로 노출
 const CAT_NOTES = ['cereal', 'woody', 'cocoa', 'biscuity', 'berry', 'caramel', 'spicy', 'fruity']
@@ -25,14 +25,24 @@ interface CatViewProps {
   catState: CatState
   setCatState: Dispatch<SetStateAction<CatState>>
   intensityStyle: IntensityStyle
+  ownedMachines: MachineSystem[] // 보유 머신(비어 있으면 전체 노출)
   onOpenDetail: (id: number) => void
   onOpenPackage: (id: number) => void
 }
 
-export default function CatView({ catState, setCatState, intensityStyle, onOpenDetail, onOpenPackage }: CatViewProps) {
+export default function CatView({ catState, setCatState, intensityStyle, ownedMachines, onOpenDetail, onOpenPackage }: CatViewProps) {
   const { t, note, machine, brand, totalCount, showing } = useI18n()
   const isPkg = catState.mode === 'package'
-  const brands = ['전체', ...new Set(capsules.map(c => c.brand))]
+
+  // 보유 머신이 지정되면 그 머신 호환만 기본 노출. 머신 칩도 보유 머신으로 제한.
+  const owned = ownedMachines.length ? ownedMachines : null
+  const singleBase = owned ? capsules.filter(c => c.compat.some(m => owned.includes(m))) : capsules
+  const pkgBase = owned ? packages.filter(p => p.compat.some(m => owned.includes(m))) : packages
+  const machineOptions = owned ? MACHINES.filter(m => owned.includes(m)) : MACHINES
+  // 보유 머신 밖의 값이 저장돼 있으면 '전체'로 간주
+  const effMachine: CatState['machine'] =
+    catState.machine !== 'all' && owned && !owned.includes(catState.machine) ? 'all' : catState.machine
+  const brands = ['전체', ...new Set(singleBase.map(c => c.brand))]
 
   // 모드 전환 시 정렬값도 해당 모드에 맞게 초기화
   const setMode = (mode: CatState['mode']) =>
@@ -46,14 +56,20 @@ export default function CatView({ catState, setCatState, intensityStyle, onOpenD
     })
   }
 
-  // 단품 목록
-  let list = capsules.slice()
+  // 단품 목록: 보유 머신 base → 브랜드/머신/검색/향미 필터
+  let list = singleBase.slice()
   if (catState.brand !== '전체') list = list.filter(c => c.brand === catState.brand)
-  if (catState.machine !== 'all') {
-    const m = catState.machine
+  if (effMachine !== 'all') {
+    const m = effMachine
     list = list.filter(c => c.compat.includes(m))
   }
-  if (catState.search) list = list.filter(c => c.name.toLowerCase().includes(catState.search) || c.nameKo.includes(catState.search))
+  if (catState.search) {
+    const q = catState.search
+    // 이름·브랜드·향미(키+현재 언어 라벨)를 모두 검색 대상으로 삼는다
+    list = list.filter(c =>
+      [c.name, c.nameKo, c.brand, brand(c.brand), ...c.notes, ...c.notes.map(note)].some(v => v.toLowerCase().includes(q)),
+    )
+  }
   if (catState.notes.size) list = list.filter(c => c.notes.some(n => catState.notes.has(n)))
   list.sort((a, b) => {
     switch (catState.sort) {
@@ -67,13 +83,16 @@ export default function CatView({ catState, setCatState, intensityStyle, onOpenD
   })
 
   // 패키지 목록 (강도·향미 필터 미적용, 가격/이름 정렬)
-  let pkgList = packages.slice()
+  let pkgList = pkgBase.slice()
   if (catState.brand !== '전체') pkgList = pkgList.filter(p => p.brand === catState.brand)
-  if (catState.machine !== 'all') {
-    const m = catState.machine
+  if (effMachine !== 'all') {
+    const m = effMachine
     pkgList = pkgList.filter(p => p.compat.includes(m))
   }
-  if (catState.search) pkgList = pkgList.filter(p => p.name.toLowerCase().includes(catState.search) || p.nameKo.includes(catState.search))
+  if (catState.search) {
+    const q = catState.search
+    pkgList = pkgList.filter(p => [p.name, p.nameKo, p.brand, brand(p.brand)].some(v => v.toLowerCase().includes(q)))
+  }
   pkgList.sort((a, b) => {
     switch (catState.sort) {
       case 'price-desc': return b.price - a.price
@@ -83,7 +102,7 @@ export default function CatView({ catState, setCatState, intensityStyle, onOpenD
   })
 
   const sortOptions = isPkg ? PACKAGE_SORT : SINGLE_SORT
-  const totalN = isPkg ? packages.length : capsules.length
+  const totalN = isPkg ? pkgBase.length : singleBase.length
   const shownN = isPkg ? pkgList.length : list.length
 
   return (
@@ -128,15 +147,15 @@ export default function CatView({ catState, setCatState, intensityStyle, onOpenD
 
         <div className="brand-row">
           <button
-            className={'brand-chip' + (catState.machine === 'all' ? ' on' : '')}
+            className={'brand-chip' + (effMachine === 'all' ? ' on' : '')}
             onClick={() => setCatState(s => ({ ...s, machine: 'all' }))}
           >
             <i className="ti ti-puzzle" /> {t('machine_all')}
           </button>
-          {MACHINES.map(m => (
+          {machineOptions.map(m => (
             <button
               key={m}
-              className={'brand-chip' + (catState.machine === m ? ' on' : '')}
+              className={'brand-chip' + (effMachine === m ? ' on' : '')}
               onClick={() => setCatState(s => ({ ...s, machine: m }))}
             >
               {machine(m, true)}

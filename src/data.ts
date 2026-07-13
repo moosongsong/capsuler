@@ -42,8 +42,6 @@ export const noteLabels: Record<Lang, Record<string, string>> = {
 // 필터/순회용 머신 목록
 export const MACHINES = ['original', 'vertuo', 'dolcegusto', 'iperespresso', 'kanubarista'] as const
 
-export const won = (n: number): string => n.toLocaleString('ko-KR') + '원'
-
 // 머신별 카테고리 페이지(캡슐에 개별 buyUrl이 없을 때 폴백)
 const categoryUrl: Record<string, string> = {
   original: 'https://www.nespresso.com/kr/ko/order/capsules/original',
@@ -59,14 +57,38 @@ export function buyUrlFor(c: Capsule): string {
 }
 
 // 추천 점수 계산: 사용자 취향(p)과 캡슐(c)의 거리 기반
+// 강도·산미·바디·쓴맛 4개 축의 정규화 거리에 가중치를 두고, 향미 일치는 가산점.
 export function recScore(p: RecPrefs, c: Capsule): number {
   if (p.decaf && c.caffeine !== 'decaf') return -Infinity
   const iD = Math.abs(p.intensity - c.intensity) / 12
   const aD = Math.abs(p.acidity - c.acidity) / 4
   const bD = Math.abs(p.body - c.body) / 4
-  let s = 1 - (iD * 0.45 + aD * 0.30 + bD * 0.25)
+  const btD = Math.abs(p.bitterness - c.bitterness) / 4
+  let s = 1 - (iD * 0.40 + aD * 0.20 + bD * 0.20 + btD * 0.20)
   s += c.notes.filter(n => p.notes.has(n)).length * 0.05
   return s
+}
+
+// 추천 카드에 "왜 추천됐는지" 근거로 보여줄 항목
+export type RecReason =
+  | { kind: 'notes'; notes: string[] } // 사용자가 고른 향미와 겹침
+  | { kind: 'close'; dim: 'intensity' | 'acidity' | 'body' | 'bitterness' } // 특정 축이 취향과 근접
+
+// 취향(p)과 캡슐(c)을 비교해 근거 최대 2개 산출(향미 일치 → 가장 근접한 축 순).
+export function recReasons(p: RecPrefs, c: Capsule): RecReason[] {
+  const out: RecReason[] = []
+  const matched = c.notes.filter(n => p.notes.has(n))
+  if (matched.length) out.push({ kind: 'notes', notes: matched })
+  const dims = [
+    { dim: 'intensity' as const, d: Math.abs(p.intensity - c.intensity) / 12 },
+    { dim: 'acidity' as const, d: Math.abs(p.acidity - c.acidity) / 4 },
+    { dim: 'body' as const, d: Math.abs(p.body - c.body) / 4 },
+    { dim: 'bitterness' as const, d: Math.abs(p.bitterness - c.bitterness) / 4 },
+  ]
+  // 정규화 거리가 충분히 가까운(≈12% 이내) 축 중 가장 근접한 하나
+  const closest = dims.filter(x => x.d <= 0.12).sort((a, b) => a.d - b.d)[0]
+  if (closest) out.push({ kind: 'close', dim: closest.dim })
+  return out.slice(0, 2)
 }
 
 // 강도(1~13)를 막대 5칸으로 환산
@@ -120,8 +142,9 @@ export function similar(c: Capsule): Capsule[] {
       const iD = Math.abs(c.intensity - x.intensity) / 12
       const aD = Math.abs(c.acidity - x.acidity) / 4
       const bD = Math.abs(c.body - x.body) / 4
+      const btD = Math.abs(c.bitterness - x.bitterness) / 4
       const overlap = x.notes.filter(n => c.notes.includes(n)).length
-      return { x, s: 1 - (iD * 0.45 + aD * 0.30 + bD * 0.25) + overlap * 0.05 }
+      return { x, s: 1 - (iD * 0.40 + aD * 0.20 + bD * 0.20 + btD * 0.20) + overlap * 0.05 }
     })
     .sort((a, b) => b.s - a.s)
     .slice(0, 2)

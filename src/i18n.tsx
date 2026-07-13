@@ -27,12 +27,13 @@ const UI = {
     sort_intensity_desc: '진한 순', sort_intensity_asc: '연한 순', sort_price_asc: '저렴한 순', sort_price_desc: '비싼 순', sort_name: '이름순',
     empty_no_match: '조건에 맞는 캡슐이 없어요',
     rec_title: '오늘의 한 잔 찾기', rec_sub: '취향을 살짝 알려주면 딱 맞는 캡슐을 골라드려요',
-    slider_intensity: '진하기', slider_acidity: '상큼함', slider_body: '묵직함',
+    slider_intensity: '진하기', slider_acidity: '상큼함', slider_body: '묵직함', slider_bitter: '쓴맛',
     rec_notes_q: '어떤 향이 좋아요?', decaf_only: '디카페인만 볼래요', rec_header: '이건 어때요?', empty_relax: '조건에 맞는 캡슐이 없어요. 살짝 풀어볼까요?',
     fav_title: '찜한 캡슐', fav_sub: '마음에 둔 캡슐을 모아뒀어요', fav_empty1: '아직 찜한 캡슐이 없어요', fav_empty2: '마음에 드는 캡슐의 하트를 눌러보세요',
     my_title: '마이 페이지', my_sub: '내 취향과 기록을 한곳에',
     login_name: '송무송 님', login_sub: 'moosong@coffee.app · 카카오로 로그인됨', login_name2: '계정 관리 (준비 중)', login_sub2: '실제 앱에서는 프로필·로그아웃 메뉴가 열려요',
     settings_h: '설정', set_decaf: '디카페인 기본값', set_decaf_desc: '추천을 항상 디카페인으로 시작',
+    set_machine: '내 머신', set_machine_desc: '보유한 머신으로 내릴 수 있는 캡슐만 추천 (선택 안 하면 전체)',
     set_dark: '다크 모드', set_dark_desc: '어두운 테마로 보기', set_intensity: '강도 표시', set_intensity_desc: '막대 또는 숫자로 표시',
     intensity_bar: '막대', intensity_num: '숫자', set_lang: '언어', set_lang_desc: '캡슐 이름·라벨 표시 언어', footer: 'capsuler · v0.1 프로토타입',
     decaf_label: '디카페인', compat_h: '호환 머신', notes_h: '향미 노트', similar_h: '비슷한 캡슐',
@@ -48,12 +49,13 @@ const UI = {
     sort_intensity_desc: 'Strongest', sort_intensity_asc: 'Mildest', sort_price_asc: 'Cheapest', sort_price_desc: 'Priciest', sort_name: 'Name',
     empty_no_match: 'No capsules match your filters',
     rec_title: 'Find your cup', rec_sub: 'Tell us your taste and we’ll pick the right capsule',
-    slider_intensity: 'Intensity', slider_acidity: 'Acidity', slider_body: 'Body',
+    slider_intensity: 'Intensity', slider_acidity: 'Acidity', slider_body: 'Body', slider_bitter: 'Bitterness',
     rec_notes_q: 'Which aromas do you like?', decaf_only: 'Decaf only', rec_header: 'How about these?', empty_relax: 'Nothing matches. Try loosening the filters?',
     fav_title: 'Saved Capsules', fav_sub: 'The capsules you’ve bookmarked', fav_empty1: 'No saved capsules yet', fav_empty2: 'Tap the heart on capsules you like',
     my_title: 'My Page', my_sub: 'Your taste and history in one place',
     login_name: 'Moosong', login_sub: 'moosong@coffee.app · Signed in with Kakao', login_name2: 'Account (coming soon)', login_sub2: 'The real app opens profile & sign-out here',
     settings_h: 'Settings', set_decaf: 'Decaf by default', set_decaf_desc: 'Always start picks with decaf',
+    set_machine: 'My machines', set_machine_desc: 'Only recommend capsules your machines can brew (none = all)',
     set_dark: 'Dark mode', set_dark_desc: 'Use the dark theme', set_intensity: 'Intensity display', set_intensity_desc: 'Show as bars or a number',
     intensity_bar: 'Bars', intensity_num: 'Number', set_lang: 'Language', set_lang_desc: 'Language for capsule names & labels', footer: 'capsuler · v0.1 prototype',
     decaf_label: 'Decaf', compat_h: 'Compatible machines', notes_h: 'Aroma notes', similar_h: 'Similar capsules',
@@ -78,6 +80,8 @@ export interface I18n {
   totalCount: (n: number) => string
   showing: (n: number) => string
   matchPct: (n: number) => string
+  whyNotes: (labels: string[]) => string
+  whyClose: (dimLabel: string) => string
   intensityWord: (n: number) => string
   pkgMatch: (n: number) => string
   pkgSize: (n: number) => string
@@ -95,6 +99,8 @@ function build(lang: Lang): I18n {
     totalCount: n => (lang === 'ko' ? `전체 ${n}개` : `${n} total`),
     showing: n => (lang === 'ko' ? `${n}개 표시 중` : `${n} shown`),
     matchPct: n => (lang === 'ko' ? `취향과 ${n}% 일치` : `${n}% match`),
+    whyNotes: labels => (lang === 'ko' ? `${labels.join('·')} 일치` : `Matches ${labels.join(', ')}`),
+    whyClose: dimLabel => (lang === 'ko' ? `${dimLabel} 취향과 근접` : `${dimLabel} close to your taste`),
     intensityWord: n => {
       const v = n === 0 ? '–' : n // 강도 미표기(0)는 대시로
       return lang === 'ko' ? `강도 ${v}` : `Intensity ${v}`

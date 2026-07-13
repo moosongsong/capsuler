@@ -1,28 +1,35 @@
 import { useEffect } from 'react'
 import type { Dispatch, SetStateAction } from 'react'
-import { capsules, noteIcons, recScore } from '../data'
+import { capsules, noteIcons, recScore, recReasons } from '../data'
 import { Switch, Empty } from './common'
 import { useI18n } from '../i18n'
 import type { UIKey } from '../i18n'
-import type { RecState } from '../types'
+import type { RecState, MachineSystem } from '../types'
 
 // 실제 API 향미 중 대표적인 것들을 취향 선택 칩으로 노출
 const REC_NOTES = ['cocoa', 'woody', 'fruity', 'caramel', 'biscuity', 'berry']
-const SLIDERS: { key: 'intensity' | 'acidity' | 'body'; labelKey: UIKey; icon: string; min: number; max: number }[] = [
+type SliderKey = 'intensity' | 'acidity' | 'body' | 'bitterness'
+const SLIDERS: { key: SliderKey; labelKey: UIKey; icon: string; min: number; max: number }[] = [
   { key: 'intensity', labelKey: 'slider_intensity', icon: 'ti-flame', min: 1, max: 13 },
   { key: 'acidity', labelKey: 'slider_acidity', icon: 'ti-lemon-2', min: 1, max: 5 },
   { key: 'body', labelKey: 'slider_body', icon: 'ti-droplet', min: 1, max: 5 },
+  { key: 'bitterness', labelKey: 'slider_bitter', icon: 'ti-coffee', min: 1, max: 5 },
 ]
+// 근거의 dim → 슬라이더 라벨 키 매핑
+const DIM_LABEL: Record<'intensity' | 'acidity' | 'body' | 'bitterness', UIKey> = {
+  intensity: 'slider_intensity', acidity: 'slider_acidity', body: 'slider_body', bitterness: 'slider_bitter',
+}
 
 interface RecViewProps {
   recState: RecState
   setRecState: Dispatch<SetStateAction<RecState>>
   decafDefault: boolean
+  machines: MachineSystem[] // 보유 머신(비어 있으면 전체)
   onOpenDetail: (id: number, matchPct?: number) => void
 }
 
-export default function RecView({ recState, setRecState, decafDefault, onOpenDetail }: RecViewProps) {
-  const { t, note, name, brand } = useI18n()
+export default function RecView({ recState, setRecState, decafDefault, machines, onOpenDetail }: RecViewProps) {
+  const { t, note, name, brand, whyNotes, whyClose } = useI18n()
 
   // 추천 화면 진입 시 '디카페인 기본값' 설정이 켜져 있으면 디카페인만 보기 활성화
   useEffect(() => {
@@ -30,7 +37,7 @@ export default function RecView({ recState, setRecState, decafDefault, onOpenDet
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const setField = (key: 'intensity' | 'acidity' | 'body' | 'decaf', value: number | boolean) =>
+  const setField = (key: SliderKey | 'decaf', value: number | boolean) =>
     setRecState(s => ({ ...s, [key]: value }))
 
   const toggleNote = (n: string) => {
@@ -41,7 +48,12 @@ export default function RecView({ recState, setRecState, decafDefault, onOpenDet
     })
   }
 
-  const ranked = capsules
+  // 보유 머신이 지정돼 있으면 해당 머신 호환 캡슐만 추천 대상으로 삼는다
+  const pool = machines.length
+    ? capsules.filter(c => c.compat.some(m => machines.includes(m)))
+    : capsules
+
+  const ranked = pool
     .map(c => ({ c, s: recScore(recState, c) }))
     .filter(x => x.s > -Infinity)
     .sort((a, b) => b.s - a.s)
@@ -89,7 +101,7 @@ export default function RecView({ recState, setRecState, decafDefault, onOpenDet
           <span style={{ fontSize: 13, color: 'var(--ink-2)' }}>
             <i className="ti ti-moon" /> {t('decaf_only')}
           </span>
-          <Switch on={recState.decaf} onClick={() => setField('decaf', !recState.decaf)} />
+          <Switch label={t('decaf_only')} on={recState.decaf} onClick={() => setField('decaf', !recState.decaf)} />
         </div>
 
         <div className="h-row"><i className="ti ti-sparkles" /> {t('rec_header')}</div>
@@ -100,6 +112,9 @@ export default function RecView({ recState, setRecState, decafDefault, onOpenDet
             ranked.map((x, i) => {
               const c = x.c
               const pct = Math.round(Math.max(0, Math.min(1, x.s)) * 100)
+              const reasons = recReasons(recState, c).map(r =>
+                r.kind === 'notes' ? whyNotes(r.notes.map(note)) : whyClose(t(DIM_LABEL[r.dim])),
+              )
               return (
                 <div
                   key={c.id}
@@ -117,10 +132,18 @@ export default function RecView({ recState, setRecState, decafDefault, onOpenDet
                     </div>
                     <span className="pct">{pct}%</span>
                   </div>
+                  {reasons.length > 0 && (
+                    <div className="rec-why">
+                      {reasons.map((r, j) => (
+                        <span key={j} className="why-chip"><i className="ti ti-check" /> {r}</span>
+                      ))}
+                    </div>
+                  )}
                   <div className="rec-stats">
                     <span><i className="ti ti-flame" /> {c.intensity}</span>
                     <span><i className="ti ti-lemon-2" /> {c.acidity}</span>
                     <span><i className="ti ti-droplet" /> {c.body}</span>
+                    <span><i className="ti ti-coffee" /> {c.bitterness}</span>
                   </div>
                   <div className="rec-notes">
                     {c.notes.map(n => (

@@ -21,12 +21,19 @@ export function AvatarInner({ url }: { url?: string }) {
   return <i className="ti ti-coffee" />
 }
 
-// 토글 스위치
-export function Switch({ on, onClick }: { on: boolean; onClick: () => void }) {
+// 토글 스위치 (키보드·스크린리더 접근을 위해 button + role="switch")
+export function Switch({ on, onClick, label }: { on: boolean; onClick: () => void; label?: string }) {
   return (
-    <div className={'switch' + (on ? ' on' : '')} onClick={onClick}>
+    <button
+      type="button"
+      role="switch"
+      aria-checked={on}
+      aria-label={label}
+      className={'switch' + (on ? ' on' : '')}
+      onClick={onClick}
+    >
       <span className="knob" />
-    </div>
+    </button>
   )
 }
 
